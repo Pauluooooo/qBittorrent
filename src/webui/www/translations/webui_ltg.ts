@@ -118,7 +118,7 @@
     </message>
     <message>
         <source>Add subcategory...</source>
-        <translation type="unfinished" />
+        <translation>Pīlikt zamkategoreju...</translation>
     </message>
 </context>
 <context>
@@ -189,27 +189,27 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>Portam priekš Tuolvaļdis panela (Web UI) juoir nu 1 da 65535.</translation>
+        <translation type="vanished">Portam priekš Tuolvaļdis panela (Web UI) juoir nu 1 da 65535.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>Dasaslēgšuonās naīsadevās, varams, ka qBittorrent navā dasnēdzuoms.</translation>
+        <translation type="vanished">Dasaslēgšuonās naīsadevās, varams, ka qBittorrent navā dasnēdzuoms.</translation>
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>Napareizs slāgvuords voi paroļs</translation>
+        <translation type="vanished">Napareizs slāgvuords voi paroļs</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Lītuotuojs</translation>
+        <translation type="vanished">Lītuotuojs</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Paroļs</translation>
+        <translation type="vanished">Paroļs</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Dasaslāgt</translation>
+        <translation type="vanished">Dasaslāgt</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -349,7 +349,7 @@
     </message>
     <message>
         <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent tika nūgrīzts</translation>
+        <translation type="vanished">qBittorrent tika nūgrīzts</translation>
     </message>
     <message>
         <source>Open documentation</source>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>Vajadzeigs JavaScript! Īgrīzt Javascript, lai Tuolvaļdis panelis (Web UI) dorbuotuos pareizi</translation>
+        <translation type="vanished">Vajadzeigs JavaScript! Īgrīzt Javascript, lai Tuolvaļdis panelis (Web UI) dorbuotuos pareizi</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -393,6 +393,18 @@
     </message>
     <message>
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -497,7 +509,7 @@
     <message>
         <source>[D: %1, U: %2] qBittorrent %3</source>
         <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[A: %1, N: %2] qBittorrent %3</translation>
+        <translation type="vanished">[A: %1, N: %2] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -576,10 +588,6 @@
         <translation>Atsasyuteišonas dreizuma atvaigs</translation>
     </message>
     <message>
-        <source>Connection status</source>
-        <translation>Škārsteikla salaiduma statuss</translation>
-    </message>
-    <message>
         <source>Alternative speed limits: On</source>
         <translation>Aļternativie dreizumi: Nui</translation>
     </message>
@@ -605,7 +613,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation>Atsaukt</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -625,6 +633,10 @@
     </message>
     <message>
         <source>Log</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -652,7 +664,7 @@
     </message>
     <message>
         <source>Web UI</source>
-        <translation>Tuolvaļde</translation>
+        <translation type="vanished">Tuolvaļde</translation>
     </message>
     <message>
         <source>Language</source>
@@ -799,10 +811,6 @@
         <translation>Lītuot:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Nivīnu)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -825,10 +833,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Lītuot vidinīkserveri kūplītuotuoju salaidumim</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Lītuot vidinīkserveri tikai torrentim</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1009,14 +1013,6 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <source>The Web UI username must be at least 3 characters long.</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>The Web UI password must be at least 6 characters long.</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>minutes</source>
         <translation>mynotu</translation>
     </message>
@@ -1054,15 +1050,11 @@
     </message>
     <message>
         <source>Use alternative Web UI</source>
-        <translation>Lītuot cytu tuolvaļdis paneļa saduri</translation>
+        <translation type="vanished">Lītuot cytu tuolvaļdis paneļa saduri</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
         <translation>Nūklusiejuma izglobuošonys vīta:</translation>
-    </message>
-    <message>
-        <source>The alternative Web UI files location cannot be blank.</source>
-        <translation type="unfinished" />
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1177,10 +1169,6 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <source>When seeding time reaches</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Allow multiple connections from the same IP address:</source>
         <translation>Atļaut nazcik salaidumus nu vīnas IP adress:</translation>
     </message>
@@ -1225,10 +1213,6 @@
         <translation>libtorrent izdola</translation>
     </message>
     <message>
-        <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation type="vanished">Izīmūšie porti (Min) [0: Nūgrīzts]</translation>
-    </message>
-    <message>
         <source>Recheck torrents on completion:</source>
         <translation>Atkuortuotai puorsavērt torrentus piec atsasyuteišonas dabeigšonas:</translation>
     </message>
@@ -1247,10 +1231,6 @@
     <message>
         <source>Remove torrent</source>
         <translation>Nūjimt torrentu</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation type="vanished">Izīmūšie porti (Max) [0: Nūgrīzts]:</translation>
     </message>
     <message>
         <source>Asynchronous I/O threads:</source>
@@ -1417,14 +1397,6 @@
         <translation>RSS Gudrais epizozu fiļtrys</translation>
     </message>
     <message>
-        <source>Disk cache (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Cītdiska vydatguods (vajadzeigs libtorrent &lt; 2.0):</translation>
-    </message>
-    <message>
-        <source>Disk cache expiry interval (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Cītdiska vydatguoda dereiguma iņtervals (vajadzeigs libtorrent &lt; 2.0):</translation>
-    </message>
-    <message>
         <source>Validate HTTPS tracker certificate:</source>
         <translation type="unfinished" />
     </message>
@@ -1554,7 +1526,7 @@
     </message>
     <message>
         <source>Enable OS cache</source>
-        <translation type="unfinished" />
+        <translation>Lītuot sistemys vydatguodu</translation>
     </message>
     <message>
         <source>Refresh interval:</source>
@@ -1617,10 +1589,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Metadata received</source>
         <translation type="unfinished" />
     </message>
@@ -1634,7 +1602,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
-        <translation type="unfinished" />
+        <translation>Pīvadums: 172.17.32.0/24, fdff:ffff:c8::/40</translation>
     </message>
     <message>
         <source>SQLite database (experimental)</source>
@@ -1654,7 +1622,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished" />
+        <translation>dīnu</translation>
     </message>
     <message>
         <source>Log file</source>
@@ -1662,7 +1630,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Behavior</source>
-        <translation type="unfinished" />
+        <translation>Izavedīņs</translation>
     </message>
     <message>
         <source>Delete backup logs older than:</source>
@@ -1674,15 +1642,15 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished" />
+        <translation>godim</translation>
     </message>
     <message>
         <source>Save path:</source>
-        <translation type="unfinished" />
+        <translation>Izglobuošonas vīta:</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished" />
+        <translation>mienešīm</translation>
     </message>
     <message>
         <source>Remember Multi-Rename settings</source>
@@ -1697,23 +1665,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1726,18 +1678,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Use Subcategories</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
-        <translation type="unfinished" />
+        <translation>Lītuot zamkategorejas</translation>
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1749,11 +1693,151 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
+        <source>UPnP lease duration [0: permanent lease]:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>UPnP lease duration [0: permanent lease]:</source>
+        <source>Bdecode depth limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Nivīnu)</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2062,7 +2146,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished" />
+        <translation>Lītuot Reguļaras izsaceibas</translation>
     </message>
     <message>
         <source>Filename</source>
@@ -2078,10 +2162,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2118,6 +2198,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Case sensitive</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Match all occurrences</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2336,6 +2420,14 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Checking (0)</source>
         <translation>Puorbaud (0)</translation>
     </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TorrentContentModel</name>
@@ -2488,6 +2580,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Availability</source>
         <translation>Daīmamums</translation>
     </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TrackerListWidget</name>
@@ -2585,7 +2681,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished" />
+        <translation>Kūpeigais lelums</translation>
     </message>
     <message>
         <source>Times Downloaded</source>
@@ -2907,6 +3003,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Renaming</source>
+        <translation>Puorsaukšona</translation>
+    </message>
+    <message>
+        <source>Comment</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2933,8 +3033,12 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>reitings</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation>mynotu</translation>
+        <source>total minutes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3452,10 +3556,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>New name:</source>
         <translation>Jauna pasauka:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3800,6 +3900,10 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā v
         <source>Don't create subfolder</source>
         <translation>Naradeit zamapvuoci</translation>
     </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TrackerFiltersList</name>
@@ -3839,7 +3943,7 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā v
     <name>ExecutionLogWidget</name>
     <message>
         <source>General</source>
-        <translation type="unfinished" />
+        <translation>Vyscaureigi</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -3847,11 +3951,11 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā v
     </message>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished" />
+        <translation>Nazynoms</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished" />
+        <translation>Vysys</translation>
     </message>
     <message>
         <source>showing</source>
@@ -3859,11 +3963,11 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā v
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation>Puorspīst</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation>Izlaseit vysys</translation>
     </message>
     <message>
         <source>ID</source>
@@ -3879,7 +3983,7 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā v
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation>Viereibu</translation>
     </message>
     <message>
         <source>Information Messages</source>
@@ -3895,15 +3999,15 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā v
     </message>
     <message>
         <source>Blocked IPs</source>
-        <translation type="unfinished" />
+        <translation>Nūblokētās IP</translation>
     </message>
     <message>
         <source>out of</source>
-        <translation type="unfinished" />
+        <translation>nu</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished" />
+        <translation>Statuss</translation>
     </message>
     <message>
         <source>Timestamp</source>
@@ -3915,7 +4019,7 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā v
     </message>
     <message>
         <source>Message</source>
-        <translation type="unfinished" />
+        <translation>Viestejums</translation>
     </message>
     <message>
         <source>Log Levels:</source>
@@ -3931,7 +4035,7 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā v
     </message>
     <message>
         <source>IP</source>
-        <translation type="unfinished" />
+        <translation>IP</translation>
     </message>
     <message>
         <source>Banned</source>
@@ -3951,7 +4055,7 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā v
     </message>
     <message>
         <source>Normal</source>
-        <translation type="unfinished" />
+        <translation>Norma</translation>
     </message>
     <message>
         <source>items</source>

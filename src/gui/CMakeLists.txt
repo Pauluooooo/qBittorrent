@@ -1,16 +1,10 @@
-if (QT6)
-    find_package(Qt6 ${minQt6Version} REQUIRED COMPONENTS Widgets Svg)
-else()
-    find_package(Qt5 ${minQt5Version} REQUIRED COMPONENTS Widgets Svg)
-    if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
-        find_package(Qt5 ${minQt5Version} REQUIRED COMPONENTS WinExtras)
-    endif()
-endif()
+find_package(Qt6 ${minQt6Version} REQUIRED COMPONENTS Widgets Svg)
 
 # CMAKE_AUTO_UI causes unnecessary rebuilds
 qt_wrap_ui(UI_HEADERS
     aboutdialog.ui
     addnewtorrentdialog.ui
+    addtorrentparamswidget.ui
     autoexpandabledialog.ui
     banlistoptionsdialog.ui
     cookiesdialog.ui
@@ -23,7 +17,6 @@ qt_wrap_ui(UI_HEADERS
     previewselectdialog.ui
     properties/peersadditiondialog.ui
     properties/propertieswidget.ui
-    properties/trackersadditiondialog.ui
     rss/automatedrssdownloader.ui
     rss/rsswidget.ui
     search/pluginselectdialog.ui
@@ -36,8 +29,10 @@ qt_wrap_ui(UI_HEADERS
     torrentcategorydialog.ui
     torrentcreatordialog.ui
     torrentoptionsdialog.ui
+    torrentsharelimitswidget.ui
     torrenttagsdialog.ui
     trackerentriesdialog.ui
+    trackersadditiondialog.ui
     uithemedialog.ui
     watchedfolderoptionsdialog.ui
 )
@@ -46,19 +41,24 @@ add_library(qbt_gui STATIC
     # headers
     aboutdialog.h
     addnewtorrentdialog.h
+    addtorrentparamswidget.h
     advancedsettings.h
     autoexpandabledialog.h
     banlistoptionsdialog.h
     color.h
+    colorscheme.h
     cookiesdialog.h
     cookiesmodel.h
     deletionconfirmationdialog.h
     desktopintegration.h
     downloadfromurldialog.h
     executionlogwidget.h
+    filterpatternformat.h
+    filterpatternformatmenu.h
     flowlayout.h
     fspathedit.h
     fspathedit_p.h
+    guiaddtorrentmanager.h
     guiapplicationcomponent.h
     hidabletabwidget.h
     interfaces/iguiapplication.h
@@ -83,8 +83,6 @@ add_library(qbt_gui STATIC
     properties/proptabbar.h
     properties/speedplotview.h
     properties/speedwidget.h
-    properties/trackerlistwidget.h
-    properties/trackersadditiondialog.h
     raisedmessagebox.h
     rss/articlelistwidget.h
     rss/automatedrssdownloader.h
@@ -110,8 +108,14 @@ add_library(qbt_gui STATIC
     torrentcontentwidget.h
     torrentcreatordialog.h
     torrentoptionsdialog.h
+    torrentsharelimitswidget.h
     torrenttagsdialog.h
     trackerentriesdialog.h
+    trackerlist/trackerlistitemdelegate.h
+    trackerlist/trackerlistmodel.h
+    trackerlist/trackerlistsortmodel.h
+    trackerlist/trackerlistwidget.h
+    trackersadditiondialog.h
     transferlistdelegate.h
     transferlistfilters/basefilterwidget.h
     transferlistfilters/categoryfiltermodel.h
@@ -140,6 +144,7 @@ add_library(qbt_gui STATIC
     # sources
     aboutdialog.cpp
     addnewtorrentdialog.cpp
+    addtorrentparamswidget.cpp
     advancedsettings.cpp
     autoexpandabledialog.cpp
     banlistoptionsdialog.cpp
@@ -149,10 +154,11 @@ add_library(qbt_gui STATIC
     desktopintegration.cpp
     downloadfromurldialog.cpp
     executionlogwidget.cpp
+    filterpatternformatmenu.cpp
     flowlayout.cpp
     fspathedit.cpp
     fspathedit_p.cpp
-    guiapplicationcomponent.cpp
+    guiaddtorrentmanager.cpp
     hidabletabwidget.cpp
     ipsubnetwhitelistoptionsdialog.cpp
     lineedit.cpp
@@ -175,8 +181,6 @@ add_library(qbt_gui STATIC
     properties/proptabbar.cpp
     properties/speedplotview.cpp
     properties/speedwidget.cpp
-    properties/trackerlistwidget.cpp
-    properties/trackersadditiondialog.cpp
     raisedmessagebox.cpp
     rss/articlelistwidget.cpp
     rss/automatedrssdownloader.cpp
@@ -202,8 +206,14 @@ add_library(qbt_gui STATIC
     torrentcontentwidget.cpp
     torrentcreatordialog.cpp
     torrentoptionsdialog.cpp
+    torrentsharelimitswidget.cpp
     torrenttagsdialog.cpp
     trackerentriesdialog.cpp
+    trackerlist/trackerlistitemdelegate.cpp
+    trackerlist/trackerlistmodel.cpp
+    trackerlist/trackerlistsortmodel.cpp
+    trackerlist/trackerlistwidget.cpp
+    trackersadditiondialog.cpp
     transferlistdelegate.cpp
     transferlistfilters/basefilterwidget.cpp
     transferlistfilters/categoryfiltermodel.cpp
@@ -271,15 +281,12 @@ if ((CMAKE_SYSTEM_NAME STREQUAL "Windows") OR (CMAKE_SYSTEM_NAME STREQUAL "Darwi
     )
 endif()
 
-if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
-    target_link_libraries(qbt_gui PRIVATE PowrProf)
-    if (NOT QT6)
-        target_link_libraries(qbt_gui PRIVATE Qt5::WinExtras)
-    endif()
-endif()
-
 if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     target_sources(qbt_gui PRIVATE
+        macosdockbadge/badger.h
+        macosdockbadge/badger.mm
+        macosdockbadge/badgeview.h
+        macosdockbadge/badgeview.mm
         macutilities.h
         macutilities.mm
     )

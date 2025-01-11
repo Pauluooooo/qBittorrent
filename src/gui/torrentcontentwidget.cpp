@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2022  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2022-2024  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2014  Ivan Sorokin <vanyacpp@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
@@ -37,7 +37,6 @@
 #include <QMessageBox>
 #include <QModelIndexList>
 #include <QShortcut>
-#include <QThread>
 #include <QWheelEvent>
 
 #include "base/bittorrent/torrentcontenthandler.h"
@@ -56,11 +55,27 @@
 #include "gui/macutilities.h"
 #endif
 
+namespace
+{
+    QList<QPersistentModelIndex> toPersistentIndexes(const QModelIndexList &indexes)
+    {
+        QList<QPersistentModelIndex> persistentIndexes;
+        persistentIndexes.reserve(indexes.size());
+        for (const QModelIndex &index : indexes)
+            persistentIndexes.emplaceBack(index);
+
+        return persistentIndexes;
+    }
+}
+
 TorrentContentWidget::TorrentContentWidget(QWidget *parent)
     : QTreeView(parent)
 {
+    setDragEnabled(true);
+    setDragDropMode(QAbstractItemView::DragOnly);
     setExpandsOnDoubleClick(false);
     setSortingEnabled(true);
+    setUniformRowHeights(true);
     header()->setSortIndicator(0, Qt::AscendingOrder);
     header()->setFirstSectionMovable(true);
     header()->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -88,10 +103,6 @@ TorrentContentWidget::TorrentContentWidget(QWidget *parent)
 
     const auto *renameFileHotkey = new QShortcut(Qt::Key_F2, this, nullptr, nullptr, Qt::WidgetShortcut);
     connect(renameFileHotkey, &QShortcut::activated, this, &TorrentContentWidget::renameSelectedFile);
-    const auto *openFileHotkeyReturn = new QShortcut(Qt::Key_Return, this, nullptr, nullptr, Qt::WidgetShortcut);
-    connect(openFileHotkeyReturn, &QShortcut::activated, this, &TorrentContentWidget::openSelectedFile);
-    const auto *openFileHotkeyEnter = new QShortcut(Qt::Key_Enter, this, nullptr, nullptr, Qt::WidgetShortcut);
-    connect(openFileHotkeyEnter, &QShortcut::activated, this, &TorrentContentWidget::openSelectedFile);
 
     connect(model(), &QAbstractItemModel::modelReset, this, &TorrentContentWidget::expandRecursively);
 }
@@ -115,6 +126,32 @@ void TorrentContentWidget::refresh()
     setUpdatesEnabled(false);
     m_model->refresh();
     setUpdatesEnabled(true);
+}
+
+bool TorrentContentWidget::openByEnterKey() const
+{
+    return m_openFileHotkeyEnter;
+}
+
+void TorrentContentWidget::setOpenByEnterKey(const bool value)
+{
+    if (value == openByEnterKey())
+        return;
+
+    if (value)
+    {
+        m_openFileHotkeyReturn = new QShortcut(Qt::Key_Return, this, nullptr, nullptr, Qt::WidgetShortcut);
+        connect(m_openFileHotkeyReturn, &QShortcut::activated, this, &TorrentContentWidget::openSelectedFile);
+        m_openFileHotkeyEnter = new QShortcut(Qt::Key_Enter, this, nullptr, nullptr, Qt::WidgetShortcut);
+        connect(m_openFileHotkeyEnter, &QShortcut::activated, this, &TorrentContentWidget::openSelectedFile);
+    }
+    else
+    {
+        delete m_openFileHotkeyEnter;
+        m_openFileHotkeyEnter = nullptr;
+        delete m_openFileHotkeyReturn;
+        m_openFileHotkeyReturn = nullptr;
+    }
 }
 
 TorrentContentWidget::DoubleClickAction TorrentContentWidget::doubleClickAction() const
@@ -150,10 +187,20 @@ Path TorrentContentWidget::getItemPath(const QModelIndex &index) const
     return path;
 }
 
-void TorrentContentWidget::setFilterPattern(const QString &patternText)
+void TorrentContentWidget::setFilterPattern(const QString &patternText, const FilterPatternFormat format)
 {
-    const QString pattern = Utils::String::wildcardToRegexPattern(patternText);
-    m_filterModel->setFilterRegularExpression(QRegularExpression(pattern, QRegularExpression::CaseInsensitiveOption));
+    if (format == FilterPatternFormat::PlainText)
+    {
+        m_filterModel->setFilterFixedString(patternText);
+        m_filterModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
+    }
+    else
+    {
+        const QString pattern = ((format == FilterPatternFormat::Regex)
+                ? patternText : Utils::String::wildcardToRegexPattern(patternText));
+        m_filterModel->setFilterRegularExpression(QRegularExpression(pattern, QRegularExpression::CaseInsensitiveOption));
+    }
+
     if (patternText.isEmpty())
     {
         collapseAll();
@@ -196,9 +243,9 @@ void TorrentContentWidget::keyPressEvent(QKeyEvent *event)
 
     const Qt::CheckState state = (static_cast<Qt::CheckState>(value.toInt()) == Qt::Checked)
                                  ? Qt::Unchecked : Qt::Checked;
-    const QModelIndexList selection = selectionModel()->selectedRows(TorrentContentModelItem::COL_NAME);
+    const QList<QPersistentModelIndex> selection = toPersistentIndexes(selectionModel()->selectedRows(TorrentContentModelItem::COL_NAME));
 
-    for (const QModelIndex &index : selection)
+    for (const QPersistentModelIndex &index : selection)
         model()->setData(index, state, Qt::CheckStateRole);
 }
 
@@ -225,10 +272,10 @@ void TorrentContentWidget::renameSelectedFile()
 
 void TorrentContentWidget::applyPriorities(const BitTorrent::DownloadPriority priority)
 {
-    const QModelIndexList selectedRows = selectionModel()->selectedRows(0);
-    for (const QModelIndex &index : selectedRows)
+    const QList<QPersistentModelIndex> selectedRows = toPersistentIndexes(selectionModel()->selectedRows(Priority));
+    for (const QPersistentModelIndex &index : selectedRows)
     {
-        model()->setData(index.sibling(index.row(), Priority), static_cast<int>(priority));
+        model()->setData(index, static_cast<int>(priority));
     }
 }
 
@@ -238,7 +285,7 @@ void TorrentContentWidget::applyPrioritiesByOrder()
     // a download priority that will apply to each item. The number of groups depends on how
     // many "download priority" are available to be assigned
 
-    const QModelIndexList selectedRows = selectionModel()->selectedRows(0);
+    const QList<QPersistentModelIndex> selectedRows = toPersistentIndexes(selectionModel()->selectedRows(Priority));
 
     const qsizetype priorityGroups = 3;
     const auto priorityGroupSize = std::max<qsizetype>((selectedRows.length() / priorityGroups), 1);
@@ -260,8 +307,8 @@ void TorrentContentWidget::applyPrioritiesByOrder()
             break;
         }
 
-        const QModelIndex &index = selectedRows[i];
-        model()->setData(index.sibling(index.row(), Priority), static_cast<int>(priority));
+        const QPersistentModelIndex &index = selectedRows[i];
+        model()->setData(index, static_cast<int>(priority));
     }
 }
 
@@ -351,12 +398,12 @@ void TorrentContentWidget::displayContextMenu()
 
         if (!contentHandler()->actualStorageLocation().isEmpty())
         {
-            menu->addAction(UIThemeManager::instance()->getIcon(u"folder-documents"_qs), tr("Open")
+            menu->addAction(UIThemeManager::instance()->getIcon(u"folder-documents"_s), tr("Open")
                             , this, [this, index]() { openItem(index); });
-            menu->addAction(UIThemeManager::instance()->getIcon(u"directory"_qs), tr("Open containing folder")
+            menu->addAction(UIThemeManager::instance()->getIcon(u"directory"_s), tr("Open containing folder")
                             , this, [this, index]() { openParentFolder(index); });
         }
-        menu->addAction(UIThemeManager::instance()->getIcon(u"edit-rename"_qs), tr("Rename...")
+        menu->addAction(UIThemeManager::instance()->getIcon(u"edit-rename"_s), tr("Rename...")
                         , this, &TorrentContentWidget::renameSelectedFile);
         menu->addSeparator();
 
@@ -453,7 +500,7 @@ void TorrentContentWidget::onItemDoubleClicked(const QModelIndex &index)
     const auto *contentHandler = m_model->contentHandler();
     Q_ASSERT(contentHandler && contentHandler->hasMetadata());
 
-    if (Q_UNLIKELY(!contentHandler || !contentHandler->hasMetadata()))
+    if (!contentHandler || !contentHandler->hasMetadata()) [[unlikely]]
         return;
 
     if (m_doubleClickAction == DoubleClickAction::Rename)

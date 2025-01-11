@@ -1,5 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
+ * Copyright (C) 2023  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2018  Mike Tzou (Chocobo1)
  *
  * This program is free software; you can redistribute it and/or
@@ -29,14 +30,15 @@
 #include "bytearray.h"
 
 #include <QByteArray>
-#include <QVector>
+#include <QByteArrayView>
+#include <QList>
 
-QVector<QByteArray> Utils::ByteArray::splitToViews(const QByteArray &in, const QByteArray &sep, const Qt::SplitBehavior behavior)
+QList<QByteArrayView> Utils::ByteArray::splitToViews(const QByteArrayView in, const QByteArrayView sep, const Qt::SplitBehavior behavior)
 {
     if (sep.isEmpty())
         return {in};
 
-    QVector<QByteArray> ret;
+    QList<QByteArrayView> ret;
     ret.reserve((behavior == Qt::KeepEmptyParts)
                 ? (1 + (in.size() / sep.size()))
                 : (1 + (in.size() / (sep.size() + 1))));
@@ -48,7 +50,7 @@ QVector<QByteArray> Utils::ByteArray::splitToViews(const QByteArray &in, const Q
             end = in.size();
 
         // omit empty parts
-        const QByteArray part = QByteArray::fromRawData((in.constData() + head), (end - head));
+        const QByteArrayView part = in.mid(head, (end - head));
         if (!part.isEmpty() || (behavior == Qt::KeepEmptyParts))
             ret += part;
 
@@ -58,13 +60,51 @@ QVector<QByteArray> Utils::ByteArray::splitToViews(const QByteArray &in, const Q
     return ret;
 }
 
-const QByteArray Utils::ByteArray::midView(const QByteArray &in, const int pos, const int len)
+QByteArray Utils::ByteArray::asQByteArray(const QByteArrayView view)
 {
-    if ((pos < 0) || (pos >= in.size()) || (len == 0))
-        return {};
+    // `QByteArrayView::toByteArray()` will deep copy the data
+    // So we provide our own fast path for appropriate situations/code
+    return QByteArray::fromRawData(view.constData(), view.size());
+}
 
-    const int validLen = ((len < 0) || (pos + len) >= in.size())
-            ? in.size() - pos
-            : len;
-    return QByteArray::fromRawData(in.constData() + pos, validLen);
+QByteArray Utils::ByteArray::toBase32(const QByteArray &in)
+{
+    const char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+    const char padchar = '=';
+
+    const qsizetype inSize = in.size();
+
+    auto tmp = QByteArray((inSize + 4) / 5 * 8, Qt::Uninitialized);
+    qsizetype inIndex = 0;
+    char *out = tmp.data();
+    while (inIndex < inSize)
+    {
+        // encode 5 bytes at a time
+        qsizetype inPadLen = 5;
+        int64_t chunk = 0;
+        while (inPadLen > 0)
+        {
+            chunk |= static_cast<int64_t>(static_cast<uchar>(in.data()[inIndex++])) << (--inPadLen * 8);
+            if (inIndex == inSize)
+                break;
+        }
+
+        const int outCharCounts[] = {8, 7, 5, 4, 2};
+        for (int i = 7; i >= 0; --i)
+        {
+            if (i >= (8 - outCharCounts[inPadLen]))
+            {
+                const int shift = (i * 5);
+                const int64_t mask = static_cast<int64_t>(0x1f) << shift;
+                const int charIndex = (chunk & mask) >> shift;
+                *out++ = alphabet[charIndex];
+            }
+            else
+            {
+                *out++ = padchar;
+            }
+        }
+    }
+
+    return tmp;
 }

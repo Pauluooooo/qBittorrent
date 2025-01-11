@@ -118,7 +118,7 @@
     </message>
     <message>
         <source>Add subcategory...</source>
-        <translation type="unfinished" />
+        <translation>Tambah subkategori...</translation>
     </message>
 </context>
 <context>
@@ -189,27 +189,27 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>Port yang digunakan untuk UI Sesawang mestilah diantara 1 hingga 65535.</translation>
+        <translation type="vanished">Port yang digunakan untuk UI Sesawang mestilah diantara 1 hingga 65535.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>Tidak boleh daftar masuk, qBittorrent berkemungkinan tidak boleh dicapai.</translation>
+        <translation type="vanished">Tidak boleh daftar masuk, qBittorrent berkemungkinan tidak boleh dicapai.</translation>
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>Nama Pengguna atau Kata Laluan tidak sah.</translation>
+        <translation type="vanished">Nama Pengguna atau Kata Laluan tidak sah.</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nama pengguna</translation>
+        <translation type="vanished">Nama pengguna</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Kata Laluan</translation>
+        <translation type="vanished">Kata Laluan</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Daftar Masuk</translation>
+        <translation type="vanished">Daftar Masuk</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -349,7 +349,7 @@
     </message>
     <message>
         <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent telah dimatikan</translation>
+        <translation type="vanished">qBittorrent telah dimatikan</translation>
     </message>
     <message>
         <source>Open documentation</source>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>Skrip Java Diperlukan! Anda mesti benarkan Skrip Java supaya UI Sesawang dapat berfungsi dengan baik.</translation>
+        <translation type="vanished">Skrip Java Diperlukan! Anda mesti benarkan Skrip Java supaya UI Sesawang dapat berfungsi dengan baik.</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -389,10 +389,22 @@
     </message>
     <message>
         <source>Original author</source>
-        <translation type="unfinished" />
+        <translation>Pengarang asal</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -497,7 +509,7 @@
     <message>
         <source>[D: %1, U: %2] qBittorrent %3</source>
         <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[T: %1, N: %2] qBittorrent %3</translation>
+        <translation type="vanished">[T: %1, N: %2] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -576,10 +588,6 @@
         <translation>Ikon kelajuan muat turun</translation>
     </message>
     <message>
-        <source>Connection status</source>
-        <translation>Status sambungan</translation>
-    </message>
-    <message>
         <source>Alternative speed limits: On</source>
         <translation>Had kelajuan alternatif: Hidup</translation>
     </message>
@@ -605,7 +613,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation>Batal</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -621,10 +629,14 @@
     </message>
     <message>
         <source>Execution Log</source>
-        <translation type="unfinished" />
+        <translation>Log Pelakuan</translation>
     </message>
     <message>
         <source>Log</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -652,7 +664,7 @@
     </message>
     <message>
         <source>Web UI</source>
-        <translation>UI Sesawang</translation>
+        <translation type="vanished">UI Sesawang</translation>
     </message>
     <message>
         <source>Language</source>
@@ -799,10 +811,6 @@
         <translation>Jenis:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Tiada)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -825,10 +833,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Guna proksi untuk sambungan rakan</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Guna proksi hanya untuk torrent</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1010,11 +1014,11 @@
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
-        <translation>Nama pengguna UI Sesawang mestilah sekurang-kurangnya 3 aksara panjangnya.</translation>
+        <translation type="vanished">Nama pengguna UI Sesawang mestilah sekurang-kurangnya 3 aksara panjangnya.</translation>
     </message>
     <message>
         <source>The Web UI password must be at least 6 characters long.</source>
-        <translation>Kata laluan UI Sesawang mestilah sekurang-kurangnya 6 aksara panjangnya.</translation>
+        <translation type="vanished">Kata laluan UI Sesawang mestilah sekurang-kurangnya 6 aksara panjangnya.</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -1054,7 +1058,7 @@
     </message>
     <message>
         <source>Use alternative Web UI</source>
-        <translation>Guna UI Sesawang alternatif</translation>
+        <translation type="vanished">Guna UI Sesawang alternatif</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
@@ -1062,7 +1066,7 @@
     </message>
     <message>
         <source>The alternative Web UI files location cannot be blank.</source>
-        <translation>Lokasi fail UI Sesawang alternatif tidak boleh kosong.</translation>
+        <translation type="vanished">Lokasi fail UI Sesawang alternatif tidak boleh kosong.</translation>
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1177,10 +1181,6 @@
         <translation>Bila nisbah dicapai</translation>
     </message>
     <message>
-        <source>When seeding time reaches</source>
-        <translation>Bila masa penyemaian dicapai</translation>
-    </message>
-    <message>
         <source>Allow multiple connections from the same IP address:</source>
         <translation>Benarkan sambungan berbilang daripada alamat IP yang sama:</translation>
     </message>
@@ -1225,10 +1225,6 @@
         <translation>Seksyen libtorrent</translation>
     </message>
     <message>
-        <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation type="vanished">Port keluar (Min) [0: Dilumpuhkan]:</translation>
-    </message>
-    <message>
         <source>Recheck torrents on completion:</source>
         <translation>Semak semula torrent seusai lengkap:</translation>
     </message>
@@ -1247,10 +1243,6 @@
     <message>
         <source>Remove torrent</source>
         <translation>Buang torrent</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation type="vanished">Port keluar (Max) [0: Dilumpuhkan]:</translation>
     </message>
     <message>
         <source>Asynchronous I/O threads:</source>
@@ -1329,20 +1321,12 @@
         <translation>sekat dalam tempoh:</translation>
     </message>
     <message>
-        <source>Stop tracker timeout:</source>
-        <translation type="vanished">Henti had masa tamat penjejak:</translation>
-    </message>
-    <message>
         <source>Ban client after consecutive failures:</source>
         <translation>Sekat klien selepas kegagalan berturutan:</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
         <translation>Benarkan bendera Keselamatan kuki (perlu HTTPS)</translation>
-    </message>
-    <message>
-        <source>UPnP lease duration [0: Permanent lease]:</source>
-        <translation type="vanished">Jangkamasa tempoh sewa UPnP [0: Sewa kekal]</translation>
     </message>
     <message>
         <source>Header: value pairs, one per line</source>
@@ -1359,10 +1343,6 @@
     <message>
         <source>Enable fetching RSS feeds</source>
         <translation>Benarkan peroleh suapan RSS</translation>
-    </message>
-    <message>
-        <source>Hashing threads (requires libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">Rajutan cincangan (perlu libtorrent &gt;= 2.0):</translation>
     </message>
     <message>
         <source>Peer turnover threshold percentage:</source>
@@ -1558,7 +1538,7 @@
     </message>
     <message>
         <source>Enable OS cache</source>
-        <translation type="unfinished" />
+        <translation>Benarkan cache OS</translation>
     </message>
     <message>
         <source>Refresh interval:</source>
@@ -1625,10 +1605,6 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Metadata received</source>
         <translation type="unfinished" />
     </message>
@@ -1642,7 +1618,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
-        <translation type="unfinished" />
+        <translation>Contoh: 172.17.32.0/24, fdff:ffff:c8::/40</translation>
     </message>
     <message>
         <source>SQLite database (experimental)</source>
@@ -1658,23 +1634,23 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <translation>Sandar fail log selepas:</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished" />
+        <translation>hari</translation>
     </message>
     <message>
         <source>Log file</source>
-        <translation type="unfinished" />
+        <translation>Fail log</translation>
     </message>
     <message>
         <source>Behavior</source>
-        <translation type="unfinished" />
+        <translation>Kelakuan</translation>
     </message>
     <message>
         <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
+        <translation>Padam log sandar lebih tua dari:</translation>
     </message>
     <message>
         <source>Use proxy for BitTorrent purposes</source>
@@ -1682,15 +1658,15 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished" />
+        <translation>tahun</translation>
     </message>
     <message>
         <source>Save path:</source>
-        <translation type="unfinished" />
+        <translation>Laluan simpan:</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished" />
+        <translation>bulan</translation>
     </message>
     <message>
         <source>Remember Multi-Rename settings</source>
@@ -1705,23 +1681,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1734,18 +1694,10 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Use Subcategories</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
-        <translation type="unfinished" />
+        <translation>Guna Subkategori</translation>
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1757,11 +1709,151 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
+        <source>UPnP lease duration [0: permanent lease]:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>UPnP lease duration [0: permanent lease]:</source>
+        <source>Bdecode depth limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Tiada)</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2062,7 +2154,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>N/A</source>
-        <translation type="unfinished" />
+        <translation>T/A</translation>
     </message>
     <message>
         <source>Progress:</source>
@@ -2070,7 +2162,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished" />
+        <translation>Guna ungkapan nalar</translation>
     </message>
     <message>
         <source>Filename</source>
@@ -2086,10 +2178,6 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2126,6 +2214,10 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Case sensitive</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Match all occurrences</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2344,6 +2436,14 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <source>Checking (0)</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TorrentContentModel</name>
@@ -2496,6 +2596,10 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <source>Availability</source>
         <translation>Ketersediaan</translation>
     </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TrackerListWidget</name>
@@ -2593,7 +2697,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished" />
+        <translation>Jumlah Saiz</translation>
     </message>
     <message>
         <source>Times Downloaded</source>
@@ -2609,7 +2713,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>Asal</translation>
     </message>
 </context>
 <context>
@@ -2915,6 +3019,10 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Renaming</source>
+        <translation>Penamaan semula</translation>
+    </message>
+    <message>
+        <source>Comment</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2941,8 +3049,12 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <translation>nisbah</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation>minit</translation>
+        <source>total minutes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3140,7 +3252,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>to</source>
-        <translation type="unfinished" />
+        <translation>hingga</translation>
     </message>
     <message>
         <source>Results</source>
@@ -3460,10 +3572,6 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <source>New name:</source>
         <translation>Nama baharu:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3640,7 +3748,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>An expression with an empty %1 clause (e.g. %2)</source>
-        <translation type="unfinished" />
+        <translation>Satu ungkapan dengan klausa %1 kosong (seperti %2)</translation>
     </message>
     <message>
         <source>Example: </source>
@@ -3708,7 +3816,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source> will match 2, 5, 8 through 15, 30 and onward episodes of season one</source>
-        <translation type="unfinished" />
+        <translation>akan padankan 2, 5, 8 menerusi 15, 30 dan episod seterusnya bagi musim pertama</translation>
     </message>
     <message>
         <source>Rule deletion confirmation</source>
@@ -3793,18 +3901,22 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Torrent content layout:</source>
-        <translation type="unfinished" />
+        <translation>Bentangan kandungan torrent:</translation>
     </message>
     <message>
         <source>Create subfolder</source>
-        <translation type="unfinished" />
+        <translation>Cipta subfolder</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>Asal</translation>
     </message>
     <message>
         <source>Don't create subfolder</source>
+        <translation>Jangan cipta subfolder</translation>
+    </message>
+    <message>
+        <source>Add Tags:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -3816,7 +3928,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>All (%1)</source>
-        <translation type="unfinished" />
+        <translation>Semua (%1)</translation>
     </message>
     <message>
         <source>Trackerless (%1)</source>
@@ -3846,7 +3958,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     <name>ExecutionLogWidget</name>
     <message>
         <source>General</source>
-        <translation type="unfinished" />
+        <translation>Am</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -3854,11 +3966,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished" />
+        <translation>Tidak diketahui</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished" />
+        <translation>Semua</translation>
     </message>
     <message>
         <source>showing</source>
@@ -3866,11 +3978,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation>Salin</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation>Pilih Semua</translation>
     </message>
     <message>
         <source>ID</source>
@@ -3882,19 +3994,19 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation>Kosongkan</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation>Amaran</translation>
     </message>
     <message>
         <source>Information Messages</source>
-        <translation type="unfinished" />
+        <translation>Mesej Maklumat</translation>
     </message>
     <message>
         <source>Warning Messages</source>
-        <translation type="unfinished" />
+        <translation>Mesej Amaran</translation>
     </message>
     <message>
         <source>Filter logs</source>
@@ -3902,15 +4014,15 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Blocked IPs</source>
-        <translation type="unfinished" />
+        <translation>IP Disekat</translation>
     </message>
     <message>
         <source>out of</source>
-        <translation type="unfinished" />
+        <translation>luar dari</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished" />
+        <translation>Status</translation>
     </message>
     <message>
         <source>Timestamp</source>
@@ -3922,7 +4034,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Message</source>
-        <translation type="unfinished" />
+        <translation>Mesej</translation>
     </message>
     <message>
         <source>Log Levels:</source>
@@ -3938,7 +4050,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>IP</source>
-        <translation type="unfinished" />
+        <translation>IP</translation>
     </message>
     <message>
         <source>Banned</source>
@@ -3946,7 +4058,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Normal Messages</source>
-        <translation type="unfinished" />
+        <translation>Mesesj Biasa</translation>
     </message>
     <message>
         <source>Critical</source>
@@ -3954,11 +4066,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Critical Messages</source>
-        <translation type="unfinished" />
+        <translation>Mesej Kritikal</translation>
     </message>
     <message>
         <source>Normal</source>
-        <translation type="unfinished" />
+        <translation>Biasa</translation>
     </message>
     <message>
         <source>items</source>

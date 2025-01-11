@@ -30,10 +30,8 @@
 #pragma once
 
 #include <QtContainerFwd>
-#include <QFrame>
-#include <QHash>
+#include <QWidget>
 
-#include "base/bittorrent/torrent.h"
 #include "base/bittorrent/trackerentry.h"
 
 class CategoryFilterWidget;
@@ -42,7 +40,13 @@ class TagFilterWidget;
 class TrackersFilterWidget;
 class TransferListWidget;
 
-class TransferListFiltersWidget final : public QFrame
+namespace BitTorrent
+{
+    class Torrent;
+    struct TrackerEntryStatus;
+}
+
+class TransferListFiltersWidget final : public QWidget
 {
     Q_OBJECT
     Q_DISABLE_COPY_MOVE(TransferListFiltersWidget)
@@ -52,12 +56,11 @@ public:
     void setDownloadTrackerFavicon(bool value);
 
 public slots:
-    void addTrackers(const BitTorrent::Torrent *torrent, const QVector<BitTorrent::TrackerEntry> &trackers);
+    void addTrackers(const BitTorrent::Torrent *torrent, const QList<BitTorrent::TrackerEntry> &trackers);
     void removeTrackers(const BitTorrent::Torrent *torrent, const QStringList &trackers);
     void refreshTrackers(const BitTorrent::Torrent *torrent);
-    void changeTrackerless(const BitTorrent::Torrent *torrent, bool trackerless);
-    void trackerEntriesUpdated(const BitTorrent::Torrent *torrent
-            , const QHash<QString, BitTorrent::TrackerEntry> &updatedTrackerEntries);
+    void trackerEntryStatusesUpdated(const BitTorrent::Torrent *torrent
+            , const QHash<QString, BitTorrent::TrackerEntryStatus> &updatedTrackers);
 
 private slots:
     void onCategoryFilterStateChanged(bool enabled);

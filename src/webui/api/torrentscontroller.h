@@ -39,15 +39,19 @@ public:
     using APIController::APIController;
 
 private slots:
+    void countAction();
     void infoAction();
     void propertiesAction();
     void trackersAction();
     void webseedsAction();
+    void addWebSeedsAction();
+    void editWebSeedAction();
+    void removeWebSeedsAction();
     void filesAction();
     void pieceHashesAction();
     void pieceStatesAction();
-    void resumeAction();
-    void pauseAction();
+    void startAction();
+    void stopAction();
     void recheckAction();
     void reannounceAction();
     void renameAction();
@@ -88,4 +92,6 @@ private slots:
     void renameFileAction();
     void renameFolderAction();
     void exportAction();
+    void SSLParametersAction();
+    void setSSLParametersAction();
 };

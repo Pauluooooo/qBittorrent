@@ -68,7 +68,7 @@
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
+        <translation>Ajouter en haut de la file d'attente</translation>
     </message>
 </context>
 <context>
@@ -86,7 +86,7 @@
     <name>CategoryFilterWidget</name>
     <message>
         <source>Add category...</source>
-        <translation>Ajouter une catégorie...</translation>
+        <translation>Ajouter une catégorie…</translation>
     </message>
     <message>
         <source>Remove category</source>
@@ -110,7 +110,7 @@
     </message>
     <message>
         <source>Edit category...</source>
-        <translation>Modifier la catégorie...</translation>
+        <translation>Modifier la catégorie…</translation>
     </message>
     <message>
         <source>Remove torrents</source>
@@ -118,7 +118,7 @@
     </message>
     <message>
         <source>Add subcategory...</source>
-        <translation type="unfinished" />
+        <translation>Ajouter une sous-catégorie…</translation>
     </message>
 </context>
 <context>
@@ -189,27 +189,27 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>Le port utilisé pour l'IU Web doit être compris entre 1024 et 65535.</translation>
+        <translation type="vanished">Le port utilisé pour l'IU Web doit être compris entre 1024 et 65535.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>Impossible de se connecter, qBittorrent est probablement inaccessible.</translation>
+        <translation type="vanished">Impossible de se connecter, qBittorrent est probablement inaccessible.</translation>
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>Nom d'utilisateur ou mot de passe invalide.</translation>
+        <translation type="vanished">Nom d'utilisateur ou mot de passe invalide.</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nom d'utilisateur</translation>
+        <translation type="vanished">Nom d'utilisateur</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Mot de passe</translation>
+        <translation type="vanished">Mot de passe</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Se connecter</translation>
+        <translation type="vanished">Se connecter</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>Download Torrents from their URLs or Magnet links</source>
-        <translation>Télécharger les torrents depuis leurs URL ou liens magnets</translation>
+        <translation>Télécharger les torrents depuis leurs URL ou liens magnet</translation>
     </message>
     <message>
         <source>Upload local torrent</source>
@@ -349,7 +349,7 @@
     </message>
     <message>
         <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent a été arrêté</translation>
+        <translation type="vanished">qBittorrent a été arrêté</translation>
     </message>
     <message>
         <source>Open documentation</source>
@@ -357,7 +357,7 @@
     </message>
     <message>
         <source>Register to handle magnet links...</source>
-        <translation>Associer aux liens magnets...</translation>
+        <translation>Associer aux liens magnet…</translation>
     </message>
     <message>
         <source>Unable to add peers. Please ensure you are adhering to the IP:port format.</source>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>JavaScript est requis ! Vous devez activer JavaScript pour que l'IU Web fonctionne correctement</translation>
+        <translation type="vanished">JavaScript est requis ! Vous devez activer JavaScript pour que l'IU Web fonctionne correctement</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -395,6 +395,18 @@
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
         <translation>Êtes-vous sûr de vouloir retirer les torrents sélectionnés de la liste des transferts ?</translation>
     </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -420,7 +432,7 @@
     </message>
     <message>
         <source>Options...</source>
-        <translation>Options...</translation>
+        <translation>Options…</translation>
     </message>
     <message>
         <source>Resume</source>
@@ -497,7 +509,7 @@
     <message>
         <source>[D: %1, U: %2] qBittorrent %3</source>
         <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[R : %1, E : %2] qBittorrent %3</translation>
+        <translation type="vanished">[R : %1, E : %2] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -576,10 +588,6 @@
         <translation>Icône de la vitesse de téléchargement</translation>
     </message>
     <message>
-        <source>Connection status</source>
-        <translation>État de la connexion</translation>
-    </message>
-    <message>
         <source>Alternative speed limits: On</source>
         <translation>Limites de vitesse alternatives : Activées</translation>
     </message>
@@ -627,6 +635,10 @@
         <source>Log</source>
         <translation>Journal</translation>
     </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -652,7 +664,7 @@
     </message>
     <message>
         <source>Web UI</source>
-        <translation>IU Web</translation>
+        <translation type="vanished">IU Web</translation>
     </message>
     <message>
         <source>Language</source>
@@ -676,7 +688,7 @@
     </message>
     <message>
         <source>Torrent Queueing</source>
-        <translation>Priorisation des torrents</translation>
+        <translation>File d'attente des torrents</translation>
     </message>
     <message>
         <source>Automatically add these trackers to new downloads:</source>
@@ -768,7 +780,7 @@
     </message>
     <message>
         <source>Use UPnP / NAT-PMP port forwarding from my router</source>
-        <translation>Utiliser la redirection de port sur mon routeur via UPnP / NAT-PMP</translation>
+        <translation>Utiliser la redirection de port sur mon routeur via UPnP/NAT-PMP</translation>
     </message>
     <message>
         <source>Connections Limits</source>
@@ -799,10 +811,6 @@
         <translation>Type :</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Aucun)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -827,16 +835,12 @@
         <translation>Utiliser le proxy pour se connecter aux pairs</translation>
     </message>
     <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Utiliser le proxy seulement pour les torrents</translation>
-    </message>
-    <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
         <translation>Chemin du filtre (.dat, .p2p, .p2b) :</translation>
     </message>
     <message>
         <source>Manually banned IP addresses...</source>
-        <translation>Adresses IP bannies manuellement...</translation>
+        <translation>Adresses IP bannies manuellement…</translation>
     </message>
     <message>
         <source>Apply to trackers</source>
@@ -950,7 +954,7 @@
     </message>
     <message>
         <source>Use UPnP / NAT-PMP to forward the port from my router</source>
-        <translation>Utiliser la redirection de port sur mon routeur via UPnP / NAT-PMP</translation>
+        <translation>Utiliser la redirection de port sur mon routeur via UPnP/NAT-PMP</translation>
     </message>
     <message>
         <source>Certificate:</source>
@@ -1010,11 +1014,11 @@
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
-        <translation>Le nom d'utilisateur pour l'IU Web doit comporter au moins 3 caractères.</translation>
+        <translation type="vanished">Le nom d'utilisateur pour l'IU Web doit comporter au moins 3 caractères.</translation>
     </message>
     <message>
         <source>The Web UI password must be at least 6 characters long.</source>
-        <translation>Le mot de passe pour l'IU Web doit comporter au moins 6 caractères.</translation>
+        <translation type="vanished">Le mot de passe pour l'IU Web doit comporter au moins 6 caractères.</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -1054,7 +1058,7 @@
     </message>
     <message>
         <source>Use alternative Web UI</source>
-        <translation>Utiliser l'IU Web alternative</translation>
+        <translation type="vanished">Utiliser l'IU Web alternative</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
@@ -1062,7 +1066,7 @@
     </message>
     <message>
         <source>The alternative Web UI files location cannot be blank.</source>
-        <translation>L'emplacement des fichiers pour l'IU Web alternative ne peut pas être vide.</translation>
+        <translation type="vanished">L'emplacement des fichiers pour l'IU Web alternative ne peut pas être vide.</translation>
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1142,7 +1146,7 @@
     </message>
     <message>
         <source>μTP-TCP mixed mode algorithm:</source>
-        <translation>Algorithme de mode mixte μTP-TCP :</translation>
+        <translation>Algorithme du mode mixte μTP-TCP :</translation>
     </message>
     <message>
         <source>Upload rate based</source>
@@ -1175,10 +1179,6 @@
     <message>
         <source>When ratio reaches</source>
         <translation>Lorsque le ratio est atteint</translation>
-    </message>
-    <message>
-        <source>When seeding time reaches</source>
-        <translation>Lorsque la durée de partage est atteinte</translation>
     </message>
     <message>
         <source>Allow multiple connections from the same IP address:</source>
@@ -1225,10 +1225,6 @@
         <translation>Section libtorrent</translation>
     </message>
     <message>
-        <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation type="vanished">Ports sortants (Min) [0: Désactivé] :</translation>
-    </message>
-    <message>
         <source>Recheck torrents on completion:</source>
         <translation>Revérifier les torrents à la fin :</translation>
     </message>
@@ -1247,10 +1243,6 @@
     <message>
         <source>Remove torrent</source>
         <translation>Retirer le torrent</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation type="vanished">Ports sortants (Max) [0: Désactivé] :</translation>
     </message>
     <message>
         <source>Asynchronous I/O threads:</source>
@@ -1329,20 +1321,12 @@
         <translation>Banni pour :</translation>
     </message>
     <message>
-        <source>Stop tracker timeout:</source>
-        <translation type="vanished">Délai d'expiration avant l'arrêt du tracker :</translation>
-    </message>
-    <message>
         <source>Ban client after consecutive failures:</source>
         <translation>Bannir le client suite à des échecs consécutifs :</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
         <translation>Activer l'indicateur de sécurité des cookies (nécessite HTTPS)</translation>
-    </message>
-    <message>
-        <source>UPnP lease duration [0: Permanent lease]:</source>
-        <translation type="vanished">Durée du bail UPnP [0: Bail permanent] :</translation>
     </message>
     <message>
         <source>Header: value pairs, one per line</source>
@@ -1359,14 +1343,6 @@
     <message>
         <source>Enable fetching RSS feeds</source>
         <translation>Active la réception de flux RSS</translation>
-    </message>
-    <message>
-        <source>Hashing threads (requires libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">Fils de hachage (requiert libtorrent &gt;= 2.0) :</translation>
-    </message>
-    <message>
-        <source>Coalesce reads &amp; writes (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Fusionner lectures et écritures (nécessite libtorrent &lt; 2.0) :</translation>
     </message>
     <message>
         <source>Peer turnover threshold percentage:</source>
@@ -1390,11 +1366,11 @@
     </message>
     <message>
         <source>Edit auto downloading rules...</source>
-        <translation>Modifier les règles de téléchargement automatique...</translation>
+        <translation>Modifier les règles de téléchargement automatique…</translation>
     </message>
     <message>
         <source>Download REPACK/PROPER episodes</source>
-        <translation>Télécharger les épisodes REPACK / PROPER</translation>
+        <translation>Télécharger les épisodes REPACK/PROPER</translation>
     </message>
     <message>
         <source>Feeds refresh interval:</source>
@@ -1430,15 +1406,7 @@
     </message>
     <message>
         <source>RSS Smart Episode Filter</source>
-        <translation>Filtre d'épisodes intelligent par RSS</translation>
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Cache du disque (requiert libtorrent &lt; 2.0) :</translation>
-    </message>
-    <message>
-        <source>Disk cache expiry interval (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Intervalle d'expiration du cache du disque (requiert libtorrent &lt; 2.0) :</translation>
+        <translation>Filtre d'épisode intelligent par RSS</translation>
     </message>
     <message>
         <source>Validate HTTPS tracker certificate:</source>
@@ -1545,14 +1513,6 @@
         <translation>Cette option est moins efficace sous Linux</translation>
     </message>
     <message>
-        <source>Disk IO type (libtorrent &gt;= 2.0; requires restart):</source>
-        <translation type="vanished">Type d'E/S du disque (libtorrent &gt;= 2.0; redémarrage requis) :</translation>
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &gt;= 2.0.6)</source>
-        <translation type="vanished">Double écriture (requiert libtorrent &gt;= 2.0.6)</translation>
-    </message>
-    <message>
         <source>It controls the internal state update interval which in turn will affect UI updates</source>
         <translation>Ceci contrôle l'intervalle de mise à jour de l'état interne qui, à son tour, affectera les mises à jour de l'IU</translation>
     </message>
@@ -1574,7 +1534,7 @@
     </message>
     <message>
         <source>Max concurrent HTTP announces:</source>
-        <translation>Maximum d'annonces HTTP parallèles :</translation>
+        <translation>Nombre maximal d'annonces HTTP simultanées :</translation>
     </message>
     <message>
         <source>Enable OS cache</source>
@@ -1583,10 +1543,6 @@
     <message>
         <source>Refresh interval:</source>
         <translation>Intervalle d'actualisation</translation>
-    </message>
-    <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">Limite d'utilisation de la mémoire vive (RAM) (appliquée si libtorrent &gt;= 2.0) :</translation>
     </message>
     <message>
         <source>ms</source>
@@ -1648,10 +1604,6 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
         <translation>Si cochée, les recherches de nom d'hôte sont effectuées via le proxy.</translation>
     </message>
     <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation>Utiliser un proxy pour la recherche du nom d'hôte</translation>
-    </message>
-    <message>
         <source>Metadata received</source>
         <translation>Métadonnées reçues</translation>
     </message>
@@ -1681,110 +1633,274 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <translation>Sauvegarder le fichier journal après :</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished" />
+        <translation>jours</translation>
     </message>
     <message>
         <source>Log file</source>
-        <translation type="unfinished" />
+        <translation>Fichier journal</translation>
     </message>
     <message>
         <source>Behavior</source>
-        <translation type="unfinished" />
+        <translation>Comportement</translation>
     </message>
     <message>
         <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
+        <translation>Supprimer les journaux sauvegardés antérieurs à :</translation>
     </message>
     <message>
         <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
+        <translation>Utiliser un proxy à des fins BitTorrent</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished" />
+        <translation>années</translation>
     </message>
     <message>
         <source>Save path:</source>
-        <translation type="unfinished" />
+        <translation>Répertoire de destination :</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished" />
+        <translation>mois</translation>
     </message>
     <message>
         <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
+        <translation>Mémoriser les paramètres de multi-renommage</translation>
     </message>
     <message>
         <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
+        <translation>Utiliser un proxy à des fins générales</translation>
     </message>
     <message>
         <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
+        <translation>Utiliser un proxy à des fins RSS</translation>
     </message>
     <message>
         <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Intervalle d'expiration du cache disque (nécessite libtorrent &amp;lt; 2.0): </translation>
     </message>
     <message>
         <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Limite d'utilisation de la mémoire physique (RAM) (appliqué si libtorrent &amp;gt;= 2.0):</translation>
     </message>
     <message>
         <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Cache disque (nécessite libtorrent &amp;lt; 2.0):</translation>
     </message>
     <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>Taille du cache d'envoi au socket [0: valeur par défaut]</translation>
     </message>
     <message>
         <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Fusionner lectures &amp;amp; écritures (nécessite libtorrent &amp;lt; 2.0) :</translation>
     </message>
     <message>
         <source>Outgoing ports (Max) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Ports de sortie (Max.) [0: désactivé]:</translation>
     </message>
     <message>
         <source>Socket receive buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>Taille du cache de réception du socket [0: valeur par défaut]:</translation>
     </message>
     <message>
         <source>Use Subcategories</source>
-        <translation type="unfinished" />
+        <translation>Utiliser les sous-catégories</translation>
     </message>
     <message>
         <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Type d'E/S du disque (libtorrent &gt;= 2.0; redémarrage requis):</translation>
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
+        <translation>Ajouter en haut de la file d'attente</translation>
     </message>
     <message>
         <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Double écriture (requiert libtorrent &amp;gt;= 2.0.6)</translation>
     </message>
     <message>
         <source>Stop tracker timeout [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Délai d'attente lors de l’arrêt du tracker [0: désactivé] :</translation>
     </message>
     <message>
         <source>Outgoing ports (Min) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Ports de sortie (Min.) [0: désactivé]:</translation>
     </message>
     <message>
         <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Fils de hachage (requiert libtorrent &amp;gt;= 2.0):</translation>
     </message>
     <message>
         <source>UPnP lease duration [0: permanent lease]:</source>
+        <translation>Durée de l'allocation UPnP [0: allocation permanente]:</translation>
+    </message>
+    <message>
+        <source>Bdecode depth limit:</source>
+        <translation>Limite de la profondeur pour Bdecode :</translation>
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation>Limite de jetons pour Bdecode :</translation>
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation>Lorsque la durée totale de partage atteint</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Aucun)</translation>
+    </message>
+    <message>
+        <source>I2P inbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">Taille de l'I2P entrant (requiert libtorrent &amp;gt;= 2.0) :</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation>Chemin de l’exécutable Python (peut nécessiter un redémarrage) :</translation>
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation>Réinitialise aux valeurs par défaut si vide</translation>
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation>Recherche du nom d'hôte via un proxy</translation>
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation>Si &amp;quot;mode mixte&amp;quot; est activé, les torrents I2P sont autorisés a obtenir des pairs venant d'autres sources que le tracker et a se connecter à des IPs classiques sans fournir d'anonymisation. Cela peut être utile si l'utilisateur n'est pas intéressé par l'anonymisation de I2P mais veux tout de même être capable de se connecter à des pairs I2P.</translation>
+    </message>
+    <message>
+        <source>I2P inbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">Quantité d'I2P entrant (requiert libtorrent &amp;gt;= 2.0) :</translation>
+    </message>
+    <message>
+        <source>I2P outbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">Taille de l'I2P sortant (requiert libtorrent &amp;gt;= 2.0) :</translation>
+    </message>
+    <message>
+        <source>I2P outbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">Quantité d'I2P sortant (requiert libtorrent &amp;gt;= 2.0) :</translation>
+    </message>
+    <message>
+        <source>I2P (Experimental) (requires libtorrent &amp;gt;= 2.0)</source>
+        <translation type="vanished">I2P (Expérimental) (requiert libtorrent &amp;gt;= 2.0)</translation>
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation>Nœuds d'amorçage DHT :</translation>
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation>Lorsque la durée de partage inactif atteint</translation>
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation>Mode mixte</translation>
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation>Limite de la taille du fichier .torrent :</translation>
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation>(Détection automatique si vide)</translation>
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation>Conserver les fichiers non sélectionnés dans le dossier « .unwanted »</translation>
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation>Activer Mark-of-the-Web (MOTW) pour les fichiers téléchargés (requiert macOS ou Windows) :</translation>
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1860,11 +1976,11 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Country/Region</source>
-        <translation>Pays / Région</translation>
+        <translation>Pays/Région</translation>
     </message>
     <message>
         <source>Add peers...</source>
-        <translation>Ajouter des pairs...</translation>
+        <translation>Ajouter des pairs…</translation>
     </message>
     <message>
         <source>Peer ID Client</source>
@@ -1937,7 +2053,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>ETA:</source>
-        <translation>Temps restant :</translation>
+        <translation>Temps restant  estimé :</translation>
     </message>
     <message>
         <source>Uploaded:</source>
@@ -2013,7 +2129,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Completed On:</source>
-        <translation>Complété le :</translation>
+        <translation>Terminé le :</translation>
     </message>
     <message>
         <source>Created On:</source>
@@ -2065,11 +2181,11 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Filter files...</source>
-        <translation>Filtrer les fichiers...</translation>
+        <translation>Filtrer les fichiers…</translation>
     </message>
     <message>
         <source>Rename...</source>
-        <translation>Renommer...</translation>
+        <translation>Renommer…</translation>
     </message>
     <message>
         <source>%1 (seeded for %2)</source>
@@ -2093,63 +2209,63 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished" />
+        <translation>Utiliser les expressions régulières</translation>
     </message>
     <message>
         <source>Filename</source>
-        <translation type="unfinished" />
+        <translation>Nom de fichier</translation>
     </message>
     <message>
         <source>Filename + Extension</source>
-        <translation type="unfinished" />
+        <translation>Nom de fichier + extension</translation>
     </message>
     <message>
         <source>Enumerate Files</source>
-        <translation type="unfinished" />
+        <translation>Énumérer les fichiers</translation>
     </message>
     <message>
         <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
+        <translation>Échec du renommage : le fichier ou le dossier existe déjà</translation>
     </message>
     <message>
         <source>Toggle Selection</source>
-        <translation type="unfinished" />
+        <translation>Basculer la sélection</translation>
     </message>
     <message>
         <source>Replacement Input</source>
-        <translation type="unfinished" />
+        <translation>Entrée de remplacement</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished" />
+        <translation>Remplacer</translation>
     </message>
     <message>
         <source>Extension</source>
-        <translation type="unfinished" />
+        <translation>Extension</translation>
     </message>
     <message>
         <source>Replace All</source>
-        <translation type="unfinished" />
+        <translation>Remplacer tout</translation>
     </message>
     <message>
         <source>Include files</source>
-        <translation type="unfinished" />
+        <translation>Inclure les fichiers</translation>
     </message>
     <message>
         <source>Include folders</source>
-        <translation type="unfinished" />
+        <translation>Inclure les dossiers</translation>
     </message>
     <message>
         <source>Search Files</source>
-        <translation type="unfinished" />
+        <translation>Rechercher des fichiers</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation type="unfinished" />
+        <translation>Sensible à la casse</translation>
+    </message>
+    <message>
+        <source>Match all occurrences</source>
+        <translation>Correspondance de toutes les occurrences</translation>
     </message>
 </context>
 <context>
@@ -2172,7 +2288,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Other...</source>
-        <translation>Autre...</translation>
+        <translation>Autre…</translation>
     </message>
     <message>
         <source>Type folder here</source>
@@ -2277,11 +2393,11 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Completed (0)</source>
-        <translation>Complétés (0)</translation>
+        <translation>Terminés (0)</translation>
     </message>
     <message>
         <source>Resumed (0)</source>
-        <translation>En cours (0)</translation>
+        <translation>Repris (0)</translation>
     </message>
     <message>
         <source>Paused (0)</source>
@@ -2297,7 +2413,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Errored (0)</source>
-        <translation>En erreur (0)</translation>
+        <translation>Erronés (0)</translation>
     </message>
     <message>
         <source>All (%1)</source>
@@ -2313,7 +2429,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Completed (%1)</source>
-        <translation>Complétés (%1)</translation>
+        <translation>Terminés (%1)</translation>
     </message>
     <message>
         <source>Paused (%1)</source>
@@ -2321,7 +2437,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Resumed (%1)</source>
-        <translation>En cours (%1)</translation>
+        <translation>Repris (%1)</translation>
     </message>
     <message>
         <source>Active (%1)</source>
@@ -2333,7 +2449,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Errored (%1)</source>
-        <translation>En erreur (%1)</translation>
+        <translation>Erronés (%1)</translation>
     </message>
     <message>
         <source>Stalled Uploading (%1)</source>
@@ -2366,6 +2482,14 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     <message>
         <source>Checking (0)</source>
         <translation>En vérification (0)</translation>
+    </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation>En déplacement (%1)</translation>
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation>En déplacement (0)</translation>
     </message>
 </context>
 <context>
@@ -2439,7 +2563,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     <message>
         <source>Completed On</source>
         <comment>Torrent was completed on 01/01/2010 08:00</comment>
-        <translation>Complété le</translation>
+        <translation>Terminé le</translation>
     </message>
     <message>
         <source>Tracker</source>
@@ -2453,7 +2577,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     <message>
         <source>Up Limit</source>
         <comment>i.e: Upload limit</comment>
-        <translation>Limite d'émission</translation>
+        <translation>Limite d'envoi</translation>
     </message>
     <message>
         <source>Downloaded</source>
@@ -2493,7 +2617,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     <message>
         <source>Completed</source>
         <comment>Amount of data completed (e.g. in MB)</comment>
-        <translation>Complété</translation>
+        <translation>Terminé</translation>
     </message>
     <message>
         <source>Ratio Limit</source>
@@ -2518,6 +2642,10 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     <message>
         <source>Availability</source>
         <translation>Disponibilité</translation>
+    </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation>Réannonce dans</translation>
     </message>
 </context>
 <context>
@@ -2544,7 +2672,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Updating...</source>
-        <translation>Mise à jour en cours...</translation>
+        <translation>Mise à jour en cours…</translation>
     </message>
     <message>
         <source>Working</source>
@@ -2576,7 +2704,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Edit tracker URL...</source>
-        <translation>Modifier l'URL du tracker...</translation>
+        <translation>Modifier l'URL du tracker…</translation>
     </message>
     <message>
         <source>Tracker editing</source>
@@ -2624,15 +2752,15 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Add trackers...</source>
-        <translation>Ajouter des trackers...</translation>
+        <translation>Ajouter des trackers…</translation>
     </message>
     <message>
         <source>Renamed</source>
-        <translation type="unfinished" />
+        <translation>Renommé</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>Original</translation>
     </message>
 </context>
 <context>
@@ -2659,7 +2787,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Completed</source>
-        <translation>Complété</translation>
+        <translation>Terminé</translation>
     </message>
     <message>
         <source>Moving</source>
@@ -2679,7 +2807,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Errored</source>
-        <translation>En erreur</translation>
+        <translation>Erroné</translation>
     </message>
     <message>
         <source>[F] Downloading</source>
@@ -2726,7 +2854,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     <name>TransferListFiltersWidget</name>
     <message>
         <source>Status</source>
-        <translation>États</translation>
+        <translation>État</translation>
     </message>
     <message>
         <source>Categories</source>
@@ -2742,7 +2870,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Collapse/expand</source>
-        <translation type="unfinished" />
+        <translation>Réduire/Développer </translation>
     </message>
 </context>
 <context>
@@ -2808,7 +2936,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Set location...</source>
-        <translation>Chemin de sauvegarde…</translation>
+        <translation>Définir l’emplacement…</translation>
     </message>
     <message>
         <source>Download first and last pieces first</source>
@@ -2910,7 +3038,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Add...</source>
-        <translation>Ajouter...</translation>
+        <translation>Ajouter…</translation>
     </message>
     <message>
         <source>Info hash v1</source>
@@ -2934,11 +3062,15 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Rename Files...</source>
-        <translation type="unfinished" />
+        <translation>Renommer les fichiers…</translation>
     </message>
     <message>
         <source>Renaming</source>
-        <translation type="unfinished" />
+        <translation>Renommage</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation>Commentaire</translation>
     </message>
 </context>
 <context>
@@ -2964,8 +3096,12 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
         <translation>ratio</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation>minutes</translation>
+        <source>total minutes</source>
+        <translation>minutes totales</translation>
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation>minutes inactives</translation>
     </message>
 </context>
 <context>
@@ -3123,7 +3259,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Search plugins...</source>
-        <translation>Greffons de recherche...</translation>
+        <translation>Greffons de recherche…</translation>
     </message>
     <message>
         <source>All categories</source>
@@ -3171,11 +3307,11 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>showing</source>
-        <translation>affiche</translation>
+        <translation>en affiche</translation>
     </message>
     <message>
         <source>Click the "Search plugins..." button at the bottom right of the window to install some.</source>
-        <translation>Cliquez sur le bouton « Rechercher des greffons... » en bas à droite de la fenêtre pour en installer.</translation>
+        <translation>Cliquez sur le bouton « Rechercher des greffons… » en bas à droite de la fenêtre pour en installer.</translation>
     </message>
     <message>
         <source>There aren't any search plugins installed.</source>
@@ -3302,7 +3438,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Add tag...</source>
-        <translation>Ajouter une étiquette...</translation>
+        <translation>Ajouter une étiquette…</translation>
     </message>
     <message>
         <source>Tag:</source>
@@ -3483,10 +3619,6 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
         <source>New name:</source>
         <translation>Nouveau nom :</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3516,7 +3648,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>RSS Downloader...</source>
-        <translation>Téléchargeur de RSS...</translation>
+        <translation>Téléchargeur de RSS…</translation>
     </message>
     <message>
         <source>Mark items read</source>
@@ -3540,7 +3672,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Rename...</source>
-        <translation>Renommer...</translation>
+        <translation>Renommer…</translation>
     </message>
     <message>
         <source>Feed URL:</source>
@@ -3548,7 +3680,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>New folder...</source>
-        <translation>Nouveau dossier...</translation>
+        <translation>Nouveau dossier…</translation>
     </message>
     <message>
         <source>New subscription</source>
@@ -3580,7 +3712,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>New subscription...</source>
-        <translation>Nouvel abonnement...</translation>
+        <translation>Nouvel abonnement…</translation>
     </message>
     <message>
         <source>Download torrent</source>
@@ -3683,7 +3815,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Infinite range: &lt;b&gt;1x25-;&lt;/b&gt; matches episodes 25 and upward of season one, and all episodes of later seasons</source>
-        <translation>Intervalle infini : &lt;b&gt;1x25-;&lt;/b&gt; correspond aux épisodes 25 et suivants de la saison 1,  et tous les épisodes des saisons postérieures</translation>
+        <translation>Intervalle infini : &lt;b&gt;1x25-;&lt;/b&gt; correspond aux épisodes 25 et suivants de la saison 1,  et tous les épisodes des saisons ultérieures</translation>
     </message>
     <message>
         <source>Save to a Different Directory</source>
@@ -3767,7 +3899,7 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Use Smart Episode Filter</source>
-        <translation>Utiliser le filtre d'épisodes intelligent</translation>
+        <translation>Utiliser le filtre d'épisode intelligent</translation>
     </message>
     <message>
         <source>If word order is important use * instead of whitespace.</source>
@@ -3807,12 +3939,12 @@ Utiliser ';' pour diviser plusieurs entrées. Le caractère générique '*' peut
     </message>
     <message>
         <source>Clear downloaded episodes...</source>
-        <translation>Effacer les épisodes téléchargés...</translation>
+        <translation>Effacer les épisodes téléchargés…</translation>
     </message>
     <message>
         <source>Smart Episode Filter will check the episode number to prevent downloading of duplicates.
 Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also support - as a separator)</source>
-        <translation>Le filtre d'épisodes intelligent vérifiera le numéro de l'épisode afin d'éviter le téléchargement de doublons.
+        <translation>Le filtre d'épisode intelligent vérifiera le numéro de l'épisode afin d'éviter le téléchargement de doublons.
 Les formats supportés : S01E01, 1x1, 2017.12.31 et 31.12.2017 (les formats date supportent également - comme séparateur)</translation>
     </message>
     <message>
@@ -3830,6 +3962,10 @@ Les formats supportés : S01E01, 1x1, 2017.12.31 et 31.12.2017 (les formats date
     <message>
         <source>Don't create subfolder</source>
         <translation>Ne pas créer un sous-dossier</translation>
+    </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation>Ajouter des Tags :</translation>
     </message>
 </context>
 <context>
@@ -3934,7 +4070,7 @@ Les formats supportés : S01E01, 1x1, 2017.12.31 et 31.12.2017 (les formats date
     </message>
     <message>
         <source>Status</source>
-        <translation>États</translation>
+        <translation>État</translation>
     </message>
     <message>
         <source>Timestamp</source>
@@ -3998,7 +4134,7 @@ Les formats supportés : S01E01, 1x1, 2017.12.31 et 31.12.2017 (les formats date
     </message>
     <message>
         <source>Choose a log level...</source>
-        <translation>Choisissez un niveau de journalisation...</translation>
+        <translation>Choisissez un niveau de journalisation…</translation>
     </message>
 </context>
 </TS>

@@ -41,15 +41,16 @@ namespace Http
         {
             OK,
             Incomplete,
+            BadMethod,
             BadRequest
         };
 
         struct ParseResult
         {
             // when `status != ParseStatus::OK`, `request` & `frameSize` are undefined
-            ParseStatus status;
+            ParseStatus status = ParseStatus::BadRequest;
             Request request;
-            long frameSize;  // http request frame size (bytes)
+            long frameSize = 0;  // http request frame size (bytes)
         };
 
         static ParseResult parse(const QByteArray &data);
@@ -59,12 +60,12 @@ namespace Http
     private:
         RequestParser() = default;
 
-        ParseResult doParse(const QByteArray &data);
+        ParseResult doParse(QByteArrayView data);
         bool parseStartLines(QStringView data);
         bool parseRequestLine(const QString &line);
 
-        bool parsePostMessage(const QByteArray &data);
-        bool parseFormData(const QByteArray &data);
+        bool parsePostMessage(QByteArrayView data);
+        bool parseFormData(QByteArrayView data);
 
         Request m_request;
     };

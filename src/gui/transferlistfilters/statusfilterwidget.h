@@ -53,12 +53,12 @@ private:
     // No need to redeclare them here as slots.
     void showMenu() override;
     void applyFilter(int row) override;
-    void handleTorrentsLoaded(const QVector<BitTorrent::Torrent *> &torrents) override;
+    void handleTorrentsLoaded(const QList<BitTorrent::Torrent *> &torrents) override;
     void torrentAboutToBeDeleted(BitTorrent::Torrent *) override;
 
     void configure();
 
-    void update(const QVector<BitTorrent::Torrent *> &torrents);
+    void update(const QList<BitTorrent::Torrent *> &torrents);
     void updateTorrentStatus(const BitTorrent::Torrent *torrent);
     void updateTexts();
     void hideZeroItems();
@@ -68,8 +68,8 @@ private:
     int m_nbDownloading = 0;
     int m_nbSeeding = 0;
     int m_nbCompleted = 0;
-    int m_nbResumed = 0;
-    int m_nbPaused = 0;
+    int m_nbRunning = 0;
+    int m_nbStopped = 0;
     int m_nbActive = 0;
     int m_nbInactive = 0;
     int m_nbStalled = 0;

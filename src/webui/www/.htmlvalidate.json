@@ -3,15 +3,10 @@
     "html-validate:recommended"
   ],
   "rules": {
-    "empty-heading": "off",
+    "input-missing-label": "error",
     "long-title": "off",
-    "no-conditional-comment": "off",
     "no-inline-style": "off",
-    "prefer-button": "off",
-    "prefer-tbody": "off",
-    "text-content": "off",
-    "void-style": "off",
-    "wcag/h63": "off",
-    "wcag/h71": "off"
+    "no-missing-references": "error",
+    "prefer-button": "off"
   }
 }

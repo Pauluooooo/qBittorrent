@@ -118,7 +118,7 @@
     </message>
     <message>
         <source>Add subcategory...</source>
-        <translation type="unfinished" />
+        <translation>ქვეკატეგორიის დამატება...</translation>
     </message>
 </context>
 <context>
@@ -189,27 +189,27 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>პორტი გამოყენებეული ვებ ინტერფეისისთვის უნდა იყოს 1-დან 65535-მდე.</translation>
+        <translation type="vanished">პორტი გამოყენებეული ვებ ინტერფეისისთვის უნდა იყოს 1-დან 65535-მდე.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>შესვლა არ არის შესაძლებელი, შესაძლებელია qBittorrent-ი არ არის ხელმისაწვდომი.</translation>
+        <translation type="vanished">შესვლა არ არის შესაძლებელი, შესაძლებელია qBittorrent-ი არ არის ხელმისაწვდომი.</translation>
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>არასწორი მომხმარებლის სახელი ან პაროლი.</translation>
+        <translation type="vanished">არასწორი მომხმარებლის სახელი ან პაროლი.</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>მომხმარებლის სახელი</translation>
+        <translation type="vanished">მომხმარებლის სახელი</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>პაროლი</translation>
+        <translation type="vanished">პაროლი</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>შესვლა</translation>
+        <translation type="vanished">შესვლა</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -349,7 +349,7 @@
     </message>
     <message>
         <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent-ი გამორთული იქნა</translation>
+        <translation type="vanished">qBittorrent-ი გამორთული იქნა</translation>
     </message>
     <message>
         <source>Open documentation</source>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>JavaScript-ი აუცილებელია! თქვენ უნდა გააქტიუროთ JavaScirpt-ი ვებ-ინტერფეისის სწორი მუშაობისთვის</translation>
+        <translation type="vanished">JavaScript-ი აუცილებელია! თქვენ უნდა გააქტიუროთ JavaScirpt-ი ვებ-ინტერფეისის სწორი მუშაობისთვის</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -389,10 +389,22 @@
     </message>
     <message>
         <source>Original author</source>
-        <translation type="unfinished" />
+        <translation>ნამდვილი ავტორი</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -495,11 +507,6 @@
         <translation>დარწყმუნებული ხართ რომ qBittorrent-იდან გასვლა გსურთ?</translation>
     </message>
     <message>
-        <source>[D: %1, U: %2] qBittorrent %3</source>
-        <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Alternative speed limits</source>
         <translation>ალტერნატიული სიჩქარის ლიმიტები</translation>
     </message>
@@ -576,10 +583,6 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Connection status</source>
-        <translation>კავშირის სტატუსი</translation>
-    </message>
-    <message>
         <source>Alternative speed limits: On</source>
         <translation>ალტერნატიული სიჩქარის ლიმიტი: ჩართლია</translation>
     </message>
@@ -605,11 +608,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation>გაუქმება</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation>წაშლა</translation>
     </message>
     <message>
         <source>Would you like to resume all torrents?</source>
@@ -621,10 +624,14 @@
     </message>
     <message>
         <source>Execution Log</source>
-        <translation type="unfinished" />
+        <translation>გაშვების ჟურნალი</translation>
     </message>
     <message>
         <source>Log</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -652,7 +659,7 @@
     </message>
     <message>
         <source>Web UI</source>
-        <translation>ვებ ინტერფეისი</translation>
+        <translation type="vanished">ვებ ინტერფეისი</translation>
     </message>
     <message>
         <source>Language</source>
@@ -760,7 +767,7 @@
     </message>
     <message>
         <source>Listening Port</source>
-        <translation type="unfinished" />
+        <translation>მოსამსენი პორტი</translation>
     </message>
     <message>
         <source>Port used for incoming connections:</source>
@@ -768,7 +775,7 @@
     </message>
     <message>
         <source>Use UPnP / NAT-PMP port forwarding from my router</source>
-        <translation type="unfinished" />
+        <translation>UPnP / NAT-PMP-ს გამოყენება ჩემი როუტერიდან პორტის გადამისამართებისთვის</translation>
     </message>
     <message>
         <source>Connections Limits</source>
@@ -799,10 +806,6 @@
         <translation>ტიპი:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(არცერთი)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -825,10 +828,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Proxy-ს გამოყენება პირის კავშირებისთვის</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Proxy-ს გამოყენება მარტო ტორენტებისთვის</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -890,7 +889,7 @@
     </message>
     <message>
         <source>Apply rate limit to transport overhead</source>
-        <translation type="unfinished" />
+        <translation>შეფარდების ლიმიტის მორგება ზედა ტრანსფერებზე</translation>
     </message>
     <message>
         <source>Apply rate limit to µTP protocol</source>
@@ -1010,11 +1009,11 @@
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
-        <translation>ვებ ინტერფეისის სახელი უნდა იყოს მინიმუმ 3 სიმბოლო</translation>
+        <translation type="vanished">ვებ ინტერფეისის სახელი უნდა იყოს მინიმუმ 3 სიმბოლო</translation>
     </message>
     <message>
         <source>The Web UI password must be at least 6 characters long.</source>
-        <translation>ვებ ინტერფეისის პაროლი უნდა იყოს მინიმუმ 6 სიმბოლო.</translation>
+        <translation type="vanished">ვებ ინტერფეისის პაროლი უნდა იყოს მინიმუმ 6 სიმბოლო.</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -1054,15 +1053,11 @@
     </message>
     <message>
         <source>Use alternative Web UI</source>
-        <translation>ალტერნატიული ვებ ინტერფეისის გამოყენება</translation>
+        <translation type="vanished">ალტერნატიული ვებ ინტერფეისის გამოყენება</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
         <translation>ჩვეულებრივი შენახვის გზა:</translation>
-    </message>
-    <message>
-        <source>The alternative Web UI files location cannot be blank.</source>
-        <translation type="unfinished" />
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1174,10 +1169,6 @@
     </message>
     <message>
         <source>When ratio reaches</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>When seeding time reaches</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1362,7 +1353,7 @@
     </message>
     <message>
         <source>RSS Reader</source>
-        <translation type="unfinished" />
+        <translation>RSS წამკითხველი</translation>
     </message>
     <message>
         <source>Edit auto downloading rules...</source>
@@ -1382,7 +1373,7 @@
     </message>
     <message>
         <source>Maximum number of articles per feed:</source>
-        <translation type="unfinished" />
+        <translation>სტატიების მაქს. რაოდენობა ერთი არხიდან:</translation>
     </message>
     <message>
         <source> min</source>
@@ -1538,7 +1529,7 @@
     </message>
     <message>
         <source>Enable OS cache</source>
-        <translation type="unfinished" />
+        <translation>OS ქეშის ჩართვა</translation>
     </message>
     <message>
         <source>Refresh interval:</source>
@@ -1601,10 +1592,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Metadata received</source>
         <translation type="unfinished" />
     </message>
@@ -1622,7 +1609,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>SQLite database (experimental)</source>
-        <translation type="unfinished" />
+        <translation>SQLite მონაცემთა ბაზა (ექსპერიმენტალური)</translation>
     </message>
     <message>
         <source>Resume data storage type (requires restart):</source>
@@ -1630,7 +1617,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Fastresume files</source>
-        <translation type="unfinished" />
+        <translation>Fastresume ფაილები</translation>
     </message>
     <message>
         <source>Backup the log file after:</source>
@@ -1638,7 +1625,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished" />
+        <translation>დღე</translation>
     </message>
     <message>
         <source>Log file</source>
@@ -1646,7 +1633,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Behavior</source>
-        <translation type="unfinished" />
+        <translation>ქცევა</translation>
     </message>
     <message>
         <source>Delete backup logs older than:</source>
@@ -1658,15 +1645,15 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished" />
+        <translation>წელი</translation>
     </message>
     <message>
         <source>Save path:</source>
-        <translation type="unfinished" />
+        <translation>შენახვის დირექტორია:</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished" />
+        <translation>თვე</translation>
     </message>
     <message>
         <source>Remember Multi-Rename settings</source>
@@ -1681,23 +1668,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1710,18 +1681,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Use Subcategories</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
-        <translation type="unfinished" />
+        <translation>სუბკატეგორიების გამოყენება</translation>
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1733,11 +1696,151 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
+        <source>UPnP lease duration [0: permanent lease]:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>UPnP lease duration [0: permanent lease]:</source>
+        <source>Bdecode depth limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(არცერთი)</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2026,7 +2129,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>%1 (seeded for %2)</source>
-        <translation type="unfinished" />
+        <translation>%1 (სიდირდება %2)</translation>
     </message>
     <message>
         <source>Info Hash v2:</source>
@@ -2046,7 +2149,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished" />
+        <translation>სტანდარტული გამოსახულებების გამოყენება</translation>
     </message>
     <message>
         <source>Filename</source>
@@ -2062,10 +2165,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2102,6 +2201,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Case sensitive</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Match all occurrences</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2320,6 +2423,14 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Checking (0)</source>
         <translation>იმოწმება (0)</translation>
     </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TorrentContentModel</name>
@@ -2470,6 +2581,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Availability</source>
+        <translation>ხელმისაწვდომია</translation>
+    </message>
+    <message>
+        <source>Reannounce In</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2505,7 +2620,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished" />
+        <translation>გამორთულია</translation>
     </message>
     <message>
         <source>Not contacted yet</source>
@@ -2545,11 +2660,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Remaining</source>
-        <translation type="unfinished" />
+        <translation>დარჩა</translation>
     </message>
     <message>
         <source>Availability</source>
-        <translation type="unfinished" />
+        <translation>ხელმისაწვდომია</translation>
     </message>
     <message>
         <source>Tier</source>
@@ -2557,7 +2672,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Download Priority</source>
-        <translation type="unfinished" />
+        <translation>ჩამოტვირთვის პრიორიტეტი</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2565,11 +2680,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished" />
+        <translation>პროგრესი</translation>
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished" />
+        <translation>მთლიანი ზომა</translation>
     </message>
     <message>
         <source>Times Downloaded</source>
@@ -2585,7 +2700,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>ორიგინალი</translation>
     </message>
 </context>
 <context>
@@ -2628,11 +2743,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Queued</source>
-        <translation type="unfinished" />
+        <translation>რიგშია</translation>
     </message>
     <message>
         <source>Errored</source>
-        <translation type="unfinished" />
+        <translation>შეცდომა</translation>
     </message>
     <message>
         <source>[F] Downloading</source>
@@ -2640,7 +2755,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Downloading metadata</source>
-        <translation type="unfinished" />
+        <translation>მეტამონაცემების ჩამოტვირთვა</translation>
     </message>
     <message>
         <source>Checking</source>
@@ -2664,11 +2779,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Stalled</source>
-        <translation type="unfinished" />
+        <translation>გაჩერებულია</translation>
     </message>
     <message>
         <source>%1 (seeded for %2)</source>
-        <translation type="unfinished" />
+        <translation>%1 (სიდირდება %2)</translation>
     </message>
     <message>
         <source>[F] Downloading metadata</source>
@@ -2783,7 +2898,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>Reset</source>
         <comment>Reset category</comment>
-        <translation type="unfinished" />
+        <translation>ჩამოყრა</translation>
     </message>
     <message>
         <source>Force recheck</source>
@@ -2883,7 +2998,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation>წაშლა</translation>
     </message>
     <message>
         <source>Rename Files...</source>
@@ -2891,6 +3006,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Renaming</source>
+        <translation>დარჩენილია</translation>
+    </message>
+    <message>
+        <source>Comment</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2917,8 +3036,12 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>minutes</source>
-        <translation>წუთი</translation>
+        <source>total minutes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3116,11 +3239,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>to</source>
-        <translation type="unfinished" />
+        <translation>მდე</translation>
     </message>
     <message>
         <source>Results</source>
-        <translation type="unfinished" />
+        <translation>შედეგები</translation>
     </message>
     <message>
         <source>showing</source>
@@ -3151,15 +3274,15 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation>დახურვა</translation>
     </message>
     <message>
         <source>Installed search plugins:</source>
-        <translation type="unfinished" />
+        <translation>დაყენებული საძიებო პლაგინები:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished" />
+        <translation>ჩართული</translation>
     </message>
     <message>
         <source>Warning: Be sure to comply with your country's copyright laws when downloading torrents from any of these search engines.</source>
@@ -3209,7 +3332,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished" />
+        <translation>ჩართული</translation>
     </message>
     <message>
         <source>Version</source>
@@ -3240,7 +3363,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished" />
+        <translation>ოკ</translation>
     </message>
     <message>
         <source>Format: IPv4:port / [IPv6]:port</source>
@@ -3388,7 +3511,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <name>OptionDialog</name>
     <message>
         <source>All addresses</source>
-        <translation type="unfinished" />
+        <translation>ყველა მისამართები</translation>
     </message>
     <message>
         <source>All IPv6 addresses</source>
@@ -3436,10 +3559,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>New name:</source>
         <translation>ახალი სახელი</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3449,7 +3568,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Please choose a new name for this RSS feed</source>
-        <translation type="unfinished" />
+        <translation>გთხოვთ აირჩიეთ ახალი სახელი ამ RSS არხისთვის</translation>
     </message>
     <message>
         <source>Please choose a folder name</source>
@@ -3457,7 +3576,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>New feed name:</source>
-        <translation type="unfinished" />
+        <translation>არხის ახალი სახელი:</translation>
     </message>
     <message>
         <source>Update all</source>
@@ -3469,19 +3588,19 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>RSS Downloader...</source>
-        <translation type="unfinished" />
+        <translation>RSS ჩამომტვირთავი...</translation>
     </message>
     <message>
         <source>Mark items read</source>
-        <translation type="unfinished" />
+        <translation>ელემენტის წაკითხულად მონიშვნა</translation>
     </message>
     <message>
         <source>Update all feeds</source>
-        <translation type="unfinished" />
+        <translation>ყველა არხის განახლება</translation>
     </message>
     <message>
         <source>Copy feed URL</source>
-        <translation type="unfinished" />
+        <translation>არხის ბმილის კოპირება</translation>
     </message>
     <message>
         <source>Torrents: (double-click to download)</source>
@@ -3489,7 +3608,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Open news URL</source>
-        <translation type="unfinished" />
+        <translation>სიახლეების ბმულის გახსნა</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -3505,7 +3624,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>New subscription</source>
-        <translation type="unfinished" />
+        <translation>ახალი ხელმოწერა</translation>
     </message>
     <message>
         <source>Update</source>
@@ -3533,7 +3652,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>New subscription...</source>
-        <translation type="unfinished" />
+        <translation>ახალი ხელმოწერა...</translation>
     </message>
     <message>
         <source>Download torrent</source>
@@ -3783,6 +3902,10 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <source>Don't create subfolder</source>
         <translation>არ შეიქმნას სუბდირექტორია</translation>
     </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TrackerFiltersList</name>
@@ -3822,7 +3945,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     <name>ExecutionLogWidget</name>
     <message>
         <source>General</source>
-        <translation type="unfinished" />
+        <translation>მთავარი</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -3830,11 +3953,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished" />
+        <translation>უცნობია</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished" />
+        <translation>ყველა</translation>
     </message>
     <message>
         <source>showing</source>
@@ -3842,11 +3965,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation>ასლი</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation>ყველას არჩევა</translation>
     </message>
     <message>
         <source>ID</source>
@@ -3858,7 +3981,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation>წაშლა</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -3866,11 +3989,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Information Messages</source>
-        <translation type="unfinished" />
+        <translation>ინფორმაციული შეტყობინებები</translation>
     </message>
     <message>
         <source>Warning Messages</source>
-        <translation type="unfinished" />
+        <translation>გასაფრთხილებელი შეტყობინებები</translation>
     </message>
     <message>
         <source>Filter logs</source>
@@ -3878,7 +4001,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Blocked IPs</source>
-        <translation type="unfinished" />
+        <translation>დაბლოკირებული IP მისამართები</translation>
     </message>
     <message>
         <source>out of</source>
@@ -3886,7 +4009,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished" />
+        <translation>სტატუსი</translation>
     </message>
     <message>
         <source>Timestamp</source>
@@ -3898,7 +4021,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Message</source>
-        <translation type="unfinished" />
+        <translation>შეტყობინება</translation>
     </message>
     <message>
         <source>Log Levels:</source>
@@ -3914,7 +4037,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>IP</source>
-        <translation type="unfinished" />
+        <translation>IP</translation>
     </message>
     <message>
         <source>Banned</source>
@@ -3922,7 +4045,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Normal Messages</source>
-        <translation type="unfinished" />
+        <translation>ჩვეულებრივი შეტყობინებები</translation>
     </message>
     <message>
         <source>Critical</source>
@@ -3930,11 +4053,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Critical Messages</source>
-        <translation type="unfinished" />
+        <translation>კრიტირული შეტყობინებები</translation>
     </message>
     <message>
         <source>Normal</source>
-        <translation type="unfinished" />
+        <translation>ჩვეულებრივი</translation>
     </message>
     <message>
         <source>items</source>
@@ -3942,7 +4065,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Results</source>
-        <translation type="unfinished" />
+        <translation>შედეგები</translation>
     </message>
     <message>
         <source>Info</source>

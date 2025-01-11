@@ -68,7 +68,7 @@
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
+        <translation>Hozzáadás a várólista elejére</translation>
     </message>
 </context>
 <context>
@@ -118,7 +118,7 @@
     </message>
     <message>
         <source>Add subcategory...</source>
-        <translation type="unfinished" />
+        <translation>Alkategória hozzáadása…</translation>
     </message>
 </context>
 <context>
@@ -189,27 +189,27 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>Web UI-hoz használt portnak 1024 és 65535 közé kell esnie.</translation>
+        <translation type="vanished">Web UI-hoz használt portnak 1024 és 65535 közé kell esnie.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>Nem sikerült bejelentkezni, qBittorrent talán elérhetetlen.</translation>
+        <translation type="vanished">Nem sikerült bejelentkezni, qBittorrent talán elérhetetlen.</translation>
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>Érvénytelen felhasználónév vagy Jelszó.</translation>
+        <translation type="vanished">Érvénytelen felhasználónév vagy Jelszó.</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Felhasználónév</translation>
+        <translation type="vanished">Felhasználónév</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Jelszó</translation>
+        <translation type="vanished">Jelszó</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Bejelentkezés</translation>
+        <translation type="vanished">Bejelentkezés</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -349,7 +349,7 @@
     </message>
     <message>
         <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent le lett állítva</translation>
+        <translation type="vanished">qBittorrent le lett állítva</translation>
     </message>
     <message>
         <source>Open documentation</source>
@@ -357,7 +357,7 @@
     </message>
     <message>
         <source>Register to handle magnet links...</source>
-        <translation>Regisztráljon a magnet linkek kezeléséhez...</translation>
+        <translation>Regisztrálja a magnet linkek kezeléséhez...</translation>
     </message>
     <message>
         <source>Unable to add peers. Please ensure you are adhering to the IP:port format.</source>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>JavaScript szükséges! A Web UI megfelelő működéséhez engedélyeznie kell a JavaScriptet</translation>
+        <translation type="vanished">JavaScript szükséges! A Web UI megfelelő működéséhez engedélyeznie kell a JavaScriptet</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -394,6 +394,18 @@
     <message>
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
         <translation>Egészen biztos, hogy törlöd a kiválasztott torrenteket az átviteli listáról?</translation>
+    </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -497,7 +509,7 @@
     <message>
         <source>[D: %1, U: %2] qBittorrent %3</source>
         <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[L: %1/s, F: %2/s] qBittorrent %3</translation>
+        <translation type="vanished">[L: %1/s, F: %2/s] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -576,10 +588,6 @@
         <translation>Letöltési sebesség ikon</translation>
     </message>
     <message>
-        <source>Connection status</source>
-        <translation>Kapcsolat állapota</translation>
-    </message>
-    <message>
         <source>Alternative speed limits: On</source>
         <translation>Alternatív sebességkorlátok: Bekapcsolva</translation>
     </message>
@@ -627,6 +635,10 @@
         <source>Log</source>
         <translation>Napló</translation>
     </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -652,7 +664,7 @@
     </message>
     <message>
         <source>Web UI</source>
-        <translation>Web UI</translation>
+        <translation type="vanished">Web UI</translation>
     </message>
     <message>
         <source>Language</source>
@@ -799,10 +811,6 @@
         <translation>Típus:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Nincs)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -816,7 +824,7 @@
     </message>
     <message>
         <source>Host:</source>
-        <translation>Host:</translation>
+        <translation>Kiszolgáló:</translation>
     </message>
     <message>
         <source>Port:</source>
@@ -825,10 +833,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Proxy használata a peerkapcsolatokhoz</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Csak a torrentekhez használjon proxyt</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -861,7 +865,7 @@
     <message>
         <source>From:</source>
         <extracomment>from (time1 to time2)</extracomment>
-        <translation>Ettől:</translation>
+        <translation>Feladó:</translation>
     </message>
     <message>
         <source>To:</source>
@@ -926,7 +930,7 @@
     </message>
     <message>
         <source>Enable anonymous mode</source>
-        <translation>Névtelen mód engedélyezése</translation>
+        <translation>Anonymous mód engedélyezése</translation>
     </message>
     <message>
         <source>Maximum active downloads:</source>
@@ -1010,11 +1014,11 @@
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
-        <translation>Web UI felhasználónevének legalább 3 karakter hosszúnak kell lennie.</translation>
+        <translation type="vanished">Web UI felhasználónevének legalább 3 karakter hosszúnak kell lennie.</translation>
     </message>
     <message>
         <source>The Web UI password must be at least 6 characters long.</source>
-        <translation>Web UI jelszavának legalább 6 karakter hosszúnak kell lennie.</translation>
+        <translation type="vanished">Web UI jelszavának legalább 6 karakter hosszúnak kell lennie.</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -1054,7 +1058,7 @@
     </message>
     <message>
         <source>Use alternative Web UI</source>
-        <translation>Alternatív Web UI használata</translation>
+        <translation type="vanished">Alternatív Web UI használata</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
@@ -1062,7 +1066,7 @@
     </message>
     <message>
         <source>The alternative Web UI files location cannot be blank.</source>
-        <translation>Alternatív Web UI fájlok helye nem lehet üres.</translation>
+        <translation type="vanished">Alternatív Web UI fájlok helye nem lehet üres.</translation>
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1098,7 +1102,7 @@
     </message>
     <message>
         <source>Enable Host header validation</source>
-        <translation>Host fejléc érvényesítés engedélyezése</translation>
+        <translation>Kiszolgáló fejléc érvényesítés engedélyezése</translation>
     </message>
     <message>
         <source>Security</source>
@@ -1177,10 +1181,6 @@
         <translation>Amikor az arányt eléri</translation>
     </message>
     <message>
-        <source>When seeding time reaches</source>
-        <translation>Amikor a seedidőt eléri</translation>
-    </message>
-    <message>
         <source>Allow multiple connections from the same IP address:</source>
         <translation>Több kapcsolat engedélyezése ugyanarról az IP-címről</translation>
     </message>
@@ -1225,10 +1225,6 @@
         <translation>libtorrent beállítások</translation>
     </message>
     <message>
-        <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation type="vanished">Kimenő portok (Min) [0: Letiltva]:</translation>
-    </message>
-    <message>
         <source>Recheck torrents on completion:</source>
         <translation>Torrentek újraellenőrzése a letöltésük végeztével:</translation>
     </message>
@@ -1247,10 +1243,6 @@
     <message>
         <source>Remove torrent</source>
         <translation>Torrent eltávolítása</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation type="vanished">Kimenő portok (Max) [0: Letiltva]:</translation>
     </message>
     <message>
         <source>Asynchronous I/O threads:</source>
@@ -1329,20 +1321,12 @@
         <translation>tiltás:</translation>
     </message>
     <message>
-        <source>Stop tracker timeout:</source>
-        <translation type="vanished">Tracker leállításának időtúllépése:</translation>
-    </message>
-    <message>
         <source>Ban client after consecutive failures:</source>
         <translation>Kliens tiltása egymást követő hibák után:</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
         <translation>A Secure jelző engedélyezése a sütiknél (HTTPS szükséges)</translation>
-    </message>
-    <message>
-        <source>UPnP lease duration [0: Permanent lease]:</source>
-        <translation type="vanished">UPnP bérlés időtartama [0: Állandó bérlés]:</translation>
     </message>
     <message>
         <source>Header: value pairs, one per line</source>
@@ -1359,14 +1343,6 @@
     <message>
         <source>Enable fetching RSS feeds</source>
         <translation>RSS csatornák lekérdezésének engedélyezése</translation>
-    </message>
-    <message>
-        <source>Hashing threads (requires libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">Hash ellenőrző szálak (szükséges libtorrent &gt;=2.0):</translation>
-    </message>
-    <message>
-        <source>Coalesce reads &amp; writes (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Olvasások és írások egyesítése (szükséges libtorrent &lt;2.0):</translation>
     </message>
     <message>
         <source>Peer turnover threshold percentage:</source>
@@ -1406,7 +1382,7 @@
     </message>
     <message>
         <source>Maximum number of articles per feed:</source>
-        <translation>Csatornánkénti cikkek maximum száma:</translation>
+        <translation>Csatornánkénti elemek maximum száma:</translation>
     </message>
     <message>
         <source> min</source>
@@ -1431,14 +1407,6 @@
     <message>
         <source>RSS Smart Episode Filter</source>
         <translation>RSS okos epizód szűrő</translation>
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Merevlemez gyorsítótár (szükséges libtorrent &lt;2.0):</translation>
-    </message>
-    <message>
-        <source>Disk cache expiry interval (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Merevlemez gyorsítótár lejárati időköze (szükséges libtorrent &lt;2.0):</translation>
     </message>
     <message>
         <source>Validate HTTPS tracker certificate:</source>
@@ -1545,14 +1513,6 @@
         <translation>Ez az opció kevésbé hatékony Linuxon</translation>
     </message>
     <message>
-        <source>Disk IO type (libtorrent &gt;= 2.0; requires restart):</source>
-        <translation type="vanished">Lemez IO típusa (libtorrent &gt;= 2.0; újraindítást igényel):</translation>
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &gt;= 2.0.6)</source>
-        <translation type="vanished">Keresztül-írás (szükséges libtorrent &gt;= 2.0.6)</translation>
-    </message>
-    <message>
         <source>It controls the internal state update interval which in turn will affect UI updates</source>
         <translation>Ez szabályozza a belső állapotfrissítési időközt, ami viszont hatással lesz a felhasználói felület frissítéseire</translation>
     </message>
@@ -1585,10 +1545,6 @@
         <translation>Frissítési időköz:</translation>
     </message>
     <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">Fizikai memória (RAM) használati korlát (alkalmazva ha libtorrent &gt;= 2.0):</translation>
-    </message>
-    <message>
         <source>ms</source>
         <translation> ms</translation>
     </message>
@@ -1610,7 +1566,7 @@ In order to defend against DNS rebinding attack,
 you should put in domain names used by WebUI server.
 
 Use ';' to split multiple entries. Can use wildcard '*'.</source>
-        <translation>Fehérlista a HTTP Host fejléc értékek szűrésére.
+        <translation>Fehérlista a HTTP Kiszolgáló fejléc értékek szűrésére.
 A DNS újrakötési támadások ellen,
 írja be a WebUI kiszolgáló domain neveit.
 
@@ -1646,11 +1602,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>If checked, hostname lookups are done via the proxy.</source>
-        <translation>Ha be van jelölve, a hoszt nevek proxyn keresztül lesznek feloldva.</translation>
-    </message>
-    <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation>Proxy használata kiszolgálónevek feloldásához</translation>
+        <translation>Ha be van jelölve, a kiszolgáló nevek proxyn keresztül lesznek feloldva.</translation>
     </message>
     <message>
         <source>Metadata received</source>
@@ -1682,110 +1634,274 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <translation>Naplófájl biztonsági mentése ennyi után:</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished" />
+        <translation>nap</translation>
     </message>
     <message>
         <source>Log file</source>
-        <translation type="unfinished" />
+        <translation>Naplófájl</translation>
     </message>
     <message>
         <source>Behavior</source>
-        <translation type="unfinished" />
+        <translation>Működés</translation>
     </message>
     <message>
         <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
+        <translation>Naplófájlok biztonsági mentéseinek törlése ennyi után:</translation>
     </message>
     <message>
         <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
+        <translation>Proxy használata BitTorrent célokra</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished" />
+        <translation>év</translation>
     </message>
     <message>
         <source>Save path:</source>
-        <translation type="unfinished" />
+        <translation>Mentési útvonal:</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished" />
+        <translation>hónap</translation>
     </message>
     <message>
         <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
+        <translation>Multi-Átnevezési beállítások megjegyzése</translation>
     </message>
     <message>
         <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
+        <translation>Proxy általános célokra történő használata</translation>
     </message>
     <message>
         <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
+        <translation>Proxy használata RSS célokra</translation>
     </message>
     <message>
         <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Merevlemez gyorsítótár lejárati időköze (libtorrent &amp;lt; 2.0 szükséges):</translation>
     </message>
     <message>
         <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Fizikai memória (RAM) használati korlát (alkalmazva ha libtorrent &amp;gt;= 2.0):</translation>
     </message>
     <message>
         <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Merevlemez gyorsítótár (libtorrent &amp;lt; 2.0 szükséges):</translation>
     </message>
     <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>Socket küldő puffer mérete [0: rendszer alapértelmezett]</translation>
     </message>
     <message>
         <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Olvasások és írások egyesítése (libtorrent &amp;lt; 2.0 szükséges):</translation>
     </message>
     <message>
         <source>Outgoing ports (Max) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Kimenő portok (Max) [0: kikapcsolva]:</translation>
     </message>
     <message>
         <source>Socket receive buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>Socket fogadó puffer mérete [0: rendszer alapértelmezett]</translation>
     </message>
     <message>
         <source>Use Subcategories</source>
-        <translation type="unfinished" />
+        <translation>Alkategóriák használata</translation>
     </message>
     <message>
         <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Lemez IO típusa (libtorrent &amp;gt;= 2.0; újraindítást igényel):</translation>
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
+        <translation>Hozzáadás a várólista elejére</translation>
     </message>
     <message>
         <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Write-through (libtorrent &amp;gt;= 2.0.6 szükséges)</translation>
     </message>
     <message>
         <source>Stop tracker timeout [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Stop tracker időtúllépés [0: kikapcsolva]</translation>
     </message>
     <message>
         <source>Outgoing ports (Min) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Kimenő portok (Min) [0: kikapcsolva]:</translation>
     </message>
     <message>
         <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Hash ellenőrző szálak (libtorrent &amp;gt;= 2.0 szükséges):</translation>
     </message>
     <message>
         <source>UPnP lease duration [0: permanent lease]:</source>
+        <translation>UPnP bérlés időtartama [0: állandó bérlés]:</translation>
+    </message>
+    <message>
+        <source>Bdecode depth limit:</source>
+        <translation>Bdecode mélység korlát:</translation>
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation>Bdecode token korlát:</translation>
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation>Amikor a teljes seed időt eléri</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Nincs)</translation>
+    </message>
+    <message>
+        <source>I2P inbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P bejövő hossz (libtorrent &gt;= 2.0 szükséges):</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation>Python útvonala (újraindítást igényelhet):</translation>
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation>Alapértelmezettre visszaáll ha üres</translation>
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation>Kiszolgálónév lekérdezése proxyn keresztül</translation>
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation>Ha a &amp;quot;kevert mód&amp;quot; engedélyezett, az I2P torrenteknek is megengedett, hogy partnereket szerezzenek a trackeren kívüli forrásokból is, és rendes IP-címekhez csatlakozzanak, anonimizálást nem biztosítva. Ez hasznos lehet, ha a felhasználó nem érdekelt az I2P anonimizálásában, de mégis szeretne I2P partnerekhez csatlakozni.</translation>
+    </message>
+    <message>
+        <source>I2P inbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P bejövő mennyiség (libtorrent &amp;gt;= 2.0 szükséges):</translation>
+    </message>
+    <message>
+        <source>I2P outbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P kimenő hossz (libtorrent &amp;gt;= 2.0 szükséges):</translation>
+    </message>
+    <message>
+        <source>I2P outbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P kimenő mennyiség (libtorrent &amp;gt;= 2.0 szükséges):</translation>
+    </message>
+    <message>
+        <source>I2P (Experimental) (requires libtorrent &amp;gt;= 2.0)</source>
+        <translation type="vanished">I2P (Kísérleti) (libtorrent &amp;gt;= 2.0 szükséges)</translation>
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation>DHT bootstrap csomópontok:</translation>
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation>Amikor az inaktív seed időt eléri</translation>
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation>Kevert mód</translation>
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation>.torrent fájl méret korlát:</translation>
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation>(Auto felismerés ha üres)</translation>
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation>Tartsa a nem kiválasztott fájlokat ".unwanted" mappában</translation>
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation>Engedélyezze a Mark-of-the-Web (MOTW) használatát letöltött fájlokhoz (macOS vagy Windows szükséges):</translation>
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2086,7 +2202,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>N/A</source>
-        <translation>Nincs adat</translation>
+        <translation>N/A</translation>
     </message>
     <message>
         <source>Progress:</source>
@@ -2094,63 +2210,63 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished" />
+        <translation>Reguláris kifejezések használata</translation>
     </message>
     <message>
         <source>Filename</source>
-        <translation type="unfinished" />
+        <translation>Fájlnév</translation>
     </message>
     <message>
         <source>Filename + Extension</source>
-        <translation type="unfinished" />
+        <translation>Fájlnév + Kiterjesztés</translation>
     </message>
     <message>
         <source>Enumerate Files</source>
-        <translation type="unfinished" />
+        <translation>Fájlok felsorolása</translation>
     </message>
     <message>
         <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
+        <translation>Átnevezés sikertelen: a fájl vagy mappa már létezik</translation>
     </message>
     <message>
         <source>Toggle Selection</source>
-        <translation type="unfinished" />
+        <translation>Kijelölés kapcsolása</translation>
     </message>
     <message>
         <source>Replacement Input</source>
-        <translation type="unfinished" />
+        <translation>Csere beviteli mező</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished" />
+        <translation>Csere</translation>
     </message>
     <message>
         <source>Extension</source>
-        <translation type="unfinished" />
+        <translation>Kiterjesztés</translation>
     </message>
     <message>
         <source>Replace All</source>
-        <translation type="unfinished" />
+        <translation>Összes cseréje</translation>
     </message>
     <message>
         <source>Include files</source>
-        <translation type="unfinished" />
+        <translation>Beleértve a fájlokat</translation>
     </message>
     <message>
         <source>Include folders</source>
-        <translation type="unfinished" />
+        <translation>Beleértve a mappákat</translation>
     </message>
     <message>
         <source>Search Files</source>
-        <translation type="unfinished" />
+        <translation>Fájlok keresése</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation type="unfinished" />
+        <translation>Nagy- és kisbetű érzékeny</translation>
+    </message>
+    <message>
+        <source>Match all occurrences</source>
+        <translation>Minden előfordulás egyezzen</translation>
     </message>
 </context>
 <context>
@@ -2368,6 +2484,14 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
         <source>Checking (0)</source>
         <translation>Ellenőrzés (0)</translation>
     </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation>Áthelyezés (%1)</translation>
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation>Áthelyezés (0)</translation>
+    </message>
 </context>
 <context>
     <name>TorrentContentModel</name>
@@ -2422,7 +2546,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     <message>
         <source>ETA</source>
         <comment>i.e: Estimated Time of Arrival / Time left</comment>
-        <translation>Idő</translation>
+        <translation>Várható befejezési idő:</translation>
     </message>
     <message>
         <source>Category</source>
@@ -2520,6 +2644,10 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
         <source>Availability</source>
         <translation>Elérhetőség</translation>
     </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation>Újrajelentés</translation>
+    </message>
 </context>
 <context>
     <name>TrackerListWidget</name>
@@ -2553,7 +2681,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Kikapcsolva</translation>
+        <translation>Letiltva</translation>
     </message>
     <message>
         <source>Not contacted yet</source>
@@ -2629,11 +2757,11 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>Renamed</source>
-        <translation type="unfinished" />
+        <translation>Átnevezve</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>Eredeti</translation>
     </message>
 </context>
 <context>
@@ -2668,7 +2796,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>[F] Seeding</source>
-        <translation>[F] Seedelés</translation>
+        <translation>[K] Seedelés</translation>
     </message>
     <message>
         <source>Seeding</source>
@@ -2684,7 +2812,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>[F] Downloading</source>
-        <translation>[F] Letöltés</translation>
+        <translation>[K] Letöltés</translation>
     </message>
     <message>
         <source>Downloading metadata</source>
@@ -2720,7 +2848,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>[F] Downloading metadata</source>
-        <translation>[F] Metaadatok letöltése</translation>
+        <translation>[K] Metaadatok letöltése</translation>
     </message>
 </context>
 <context>
@@ -2743,7 +2871,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>Collapse/expand</source>
-        <translation type="unfinished" />
+        <translation>Összecsuk/kinyit</translation>
     </message>
 </context>
 <context>
@@ -2768,7 +2896,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     <message>
         <source>Force Resume</source>
         <comment>Force Resume/start the torrent</comment>
-        <translation>Erőltetett folytatás</translation>
+        <translation>Kényszerített folytatás</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -2831,7 +2959,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     <message>
         <source>Reset</source>
         <comment>Reset category</comment>
-        <translation>Reset</translation>
+        <translation>Alaphelyzetbe állít</translation>
     </message>
     <message>
         <source>Force recheck</source>
@@ -2935,11 +3063,15 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>Rename Files...</source>
-        <translation type="unfinished" />
+        <translation>Fájlok átnevezése...</translation>
     </message>
     <message>
         <source>Renaming</source>
-        <translation type="unfinished" />
+        <translation>Átnevezés</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation>Megjegyzés</translation>
     </message>
 </context>
 <context>
@@ -2965,8 +3097,12 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
         <translation>arány</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation>perc</translation>
+        <source>total minutes</source>
+        <translation>összes perc</translation>
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation>inaktív perc</translation>
     </message>
 </context>
 <context>
@@ -3484,10 +3620,6 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
         <source>New name:</source>
         <translation>Új név:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3596,7 +3728,7 @@ Használja a ';' karaktert az elválasztásra, ha több is van. A '*' helyettes�
     </message>
     <message>
         <source>Matching RSS Articles</source>
-        <translation>Egyező RSS cikkek</translation>
+        <translation>Egyező RSS elemek</translation>
     </message>
     <message>
         <source>* to match zero or more of any characters</source>
@@ -3831,6 +3963,10 @@ Támogatja a formátumokat: S01E01, 1x1, 2017.12.31 és 31.12.2017. (A dátumfor
     <message>
         <source>Don't create subfolder</source>
         <translation>Ne hozzon létre almappát</translation>
+    </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation>Címkék hozzáadása:</translation>
     </message>
 </context>
 <context>

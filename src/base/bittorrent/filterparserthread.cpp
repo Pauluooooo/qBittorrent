@@ -89,7 +89,7 @@ namespace
         }
 
     private:
-        lt::address_v4::bytes_type m_buf;
+        lt::address_v4::bytes_type m_buf {};
     };
 
     bool parseIPAddress(const char *data, lt::address &address)
@@ -111,7 +111,6 @@ namespace
 
 FilterParserThread::FilterParserThread(QObject *parent)
     : QThread(parent)
-    , m_abort(false)
 {
 }
 
@@ -134,7 +133,7 @@ int FilterParserThread::parseDATFilterFile()
         return ruleCount;
     }
 
-    std::vector<char> buffer(BUFFER_SIZE, 0); // seems a bit faster than QVector
+    std::vector<char> buffer(BUFFER_SIZE, 0); // seems a bit faster than QList
     qint64 bytesRead = 0;
     int offset = 0;
     int start = 0;
@@ -298,7 +297,7 @@ int FilterParserThread::parseP2PFilterFile()
         return ruleCount;
     }
 
-    std::vector<char> buffer(BUFFER_SIZE, 0); // seems a bit faster than QVector
+    std::vector<char> buffer(BUFFER_SIZE, 0); // seems a bit faster than QList
     qint64 bytesRead = 0;
     int offset = 0;
     int start = 0;
@@ -618,17 +617,17 @@ void FilterParserThread::run()
 {
     qDebug("Processing filter file");
     int ruleCount = 0;
-    if (m_filePath.hasExtension(u".p2p"_qs))
+    if (m_filePath.hasExtension(u".p2p"_s))
     {
         // PeerGuardian p2p file
         ruleCount = parseP2PFilterFile();
     }
-    else if (m_filePath.hasExtension(u".p2b"_qs))
+    else if (m_filePath.hasExtension(u".p2b"_s))
     {
         // PeerGuardian p2b file
         ruleCount = parseP2BFilterFile();
     }
-    else if (m_filePath.hasExtension(u".dat"_qs))
+    else if (m_filePath.hasExtension(u".dat"_s))
     {
         // eMule DAT format
         ruleCount = parseDATFilterFile();

@@ -68,7 +68,7 @@
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
+        <translation>대기열 맨 위에 추가</translation>
     </message>
 </context>
 <context>
@@ -86,15 +86,15 @@
     <name>CategoryFilterWidget</name>
     <message>
         <source>Add category...</source>
-        <translation>범주 추가하기…</translation>
+        <translation>범주 추가…</translation>
     </message>
     <message>
         <source>Remove category</source>
-        <translation>범주 제거하기</translation>
+        <translation>범주 제거</translation>
     </message>
     <message>
         <source>Remove unused categories</source>
-        <translation>사용하지 않는 범주 제거하기</translation>
+        <translation>미사용 범주 제거</translation>
     </message>
     <message>
         <source>Resume torrents</source>
@@ -110,15 +110,15 @@
     </message>
     <message>
         <source>Edit category...</source>
-        <translation>범주 편집하기…</translation>
+        <translation>범주 편집…</translation>
     </message>
     <message>
         <source>Remove torrents</source>
-        <translation>토렌트 제거하기</translation>
+        <translation>토렌트 제거</translation>
     </message>
     <message>
         <source>Add subcategory...</source>
-        <translation type="unfinished" />
+        <translation>하위 범주 추가…</translation>
     </message>
 </context>
 <context>
@@ -189,27 +189,27 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>웹 UI에 사용하는 포트는 1 ~ 65535여야 합니다.</translation>
+        <translation type="vanished">웹 UI에 사용하는 포트는 1 ~ 65535여야 합니다.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>로그인 할 수 없습니다. qBittorrent가 접근할 수 없는 것 같습니다.</translation>
+        <translation type="vanished">로그인 할 수 없습니다. qBittorrent가 접근할 수 없는 것 같습니다.</translation>
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>사용자 이름/암호가 올바르지 않습니다.</translation>
+        <translation type="vanished">사용자 이름/암호가 올바르지 않습니다.</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>사용자 이름</translation>
+        <translation type="vanished">사용자 이름</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>암호</translation>
+        <translation type="vanished">암호</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>로그인</translation>
+        <translation type="vanished">로그인</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -217,7 +217,7 @@
     </message>
     <message>
         <source>Add</source>
-        <translation>추가하기</translation>
+        <translation>추가</translation>
     </message>
     <message>
         <source>Upload Torrents</source>
@@ -242,7 +242,7 @@
     </message>
     <message>
         <source>Set location</source>
-        <translation>위치 설정하기</translation>
+        <translation>위치 설정</translation>
     </message>
     <message>
         <source>Limit upload rate</source>
@@ -305,7 +305,7 @@
     </message>
     <message>
         <source>Save</source>
-        <translation>저장하기</translation>
+        <translation>저장</translation>
     </message>
     <message>
         <source>qBittorrent client is not reachable</source>
@@ -329,7 +329,7 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>편집하기</translation>
+        <translation>편집</translation>
     </message>
     <message>
         <source>Free space: %1</source>
@@ -349,7 +349,7 @@
     </message>
     <message>
         <source>qBittorrent has been shutdown</source>
-        <translation>qBitTorrent가 전원을 끕니다</translation>
+        <translation type="vanished">qBitTorrent가 전원을 끕니다</translation>
     </message>
     <message>
         <source>Open documentation</source>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>JavaScript가 필요합니다! 웹 UI가 올바르게 동작하려면 반드시 JavaScript를 활성화해야 합니다</translation>
+        <translation type="vanished">JavaScript가 필요합니다! 웹 UI가 올바르게 동작하려면 반드시 JavaScript를 활성화해야 합니다</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -395,12 +395,24 @@
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
         <translation>전송 목록에서 선택한 토렌트를 제거하시겠습니까?</translation>
     </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Edit</source>
-        <translation>편집하기</translation>
+        <translation>편집</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -440,7 +452,7 @@
     </message>
     <message>
         <source>Donate!</source>
-        <translation>기부하기!</translation>
+        <translation>기부!</translation>
     </message>
     <message>
         <source>Resume All</source>
@@ -464,7 +476,7 @@
     </message>
     <message>
         <source>Add Torrent File...</source>
-        <translation>토렌트 파일 추가하기…</translation>
+        <translation>토렌트 파일 추가…</translation>
     </message>
     <message>
         <source>Documentation</source>
@@ -472,7 +484,7 @@
     </message>
     <message>
         <source>Add Torrent Link...</source>
-        <translation>토렌트 링크 추가하기…</translation>
+        <translation>토렌트 링크 추가…</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -497,7 +509,7 @@
     <message>
         <source>[D: %1, U: %2] qBittorrent %3</source>
         <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[D: %1, U: %2] qBittorrent %3</translation>
+        <translation type="vanished">[D: %1, U: %2] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -521,11 +533,11 @@
     </message>
     <message>
         <source>Move up in the queue</source>
-        <translation>대기열에서 위로 이동하기</translation>
+        <translation>대기열에서 위로 이동</translation>
     </message>
     <message>
         <source>Move Up Queue</source>
-        <translation>대기열 위로 이동하기</translation>
+        <translation>대기열 위로 이동</translation>
     </message>
     <message>
         <source>Bottom of Queue</source>
@@ -533,7 +545,7 @@
     </message>
     <message>
         <source>Move to the bottom of the queue</source>
-        <translation>대기열 맨 아래로 이동하기</translation>
+        <translation>대기열 맨 아래로 이동</translation>
     </message>
     <message>
         <source>Top of Queue</source>
@@ -541,15 +553,15 @@
     </message>
     <message>
         <source>Move Down Queue</source>
-        <translation>대기열 아래로 이동하기</translation>
+        <translation>대기열 아래로 이동</translation>
     </message>
     <message>
         <source>Move down in the queue</source>
-        <translation>대기열에서 아래로 이동하기</translation>
+        <translation>대기열에서 아래로 이동</translation>
     </message>
     <message>
         <source>Move to the top of the queue</source>
-        <translation>대기열 맨 위로 이동하기</translation>
+        <translation>대기열 맨 위로 이동</translation>
     </message>
     <message>
         <source>Your browser does not support this feature</source>
@@ -574,10 +586,6 @@
     <message>
         <source>Download speed icon</source>
         <translation>내려받기 속도 아이콘</translation>
-    </message>
-    <message>
-        <source>Connection status</source>
-        <translation>연결 상태</translation>
     </message>
     <message>
         <source>Alternative speed limits: On</source>
@@ -605,11 +613,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>취소하기</translation>
+        <translation>취소</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>제거하기</translation>
+        <translation>제거</translation>
     </message>
     <message>
         <source>Would you like to resume all torrents?</source>
@@ -626,6 +634,10 @@
     <message>
         <source>Log</source>
         <translation>로그</translation>
+    </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -652,7 +664,7 @@
     </message>
     <message>
         <source>Web UI</source>
-        <translation>웹 UI</translation>
+        <translation type="vanished">웹 UI</translation>
     </message>
     <message>
         <source>Language</source>
@@ -696,15 +708,15 @@
     </message>
     <message>
         <source>Use HTTPS instead of HTTP</source>
-        <translation>HTTP 대신 HTTPS 사용하기</translation>
+        <translation>HTTP 대신 HTTPS 사용</translation>
     </message>
     <message>
         <source>Bypass authentication for clients on localhost</source>
-        <translation>localhost의 클라이언트에 대한 인증 우회하기</translation>
+        <translation>localhost의 클라이언트에 대한 인증 우회</translation>
     </message>
     <message>
         <source>Bypass authentication for clients in whitelisted IP subnets</source>
-        <translation>허용 목록에 있는 IP 서브넷의 클라이언트에 대한 인증 우회하기</translation>
+        <translation>허용 목록에 있는 IP 서브넷의 클라이언트에 대한 인증 우회</translation>
     </message>
     <message>
         <source>Update my dynamic domain name</source>
@@ -768,7 +780,7 @@
     </message>
     <message>
         <source>Use UPnP / NAT-PMP port forwarding from my router</source>
-        <translation>라우터에서 UPnP / NAT-PMP 포트 전환 사용하기</translation>
+        <translation>라우터에서 포트 포워딩하기 위해 UPnP / NAT-PMP 사용</translation>
     </message>
     <message>
         <source>Connections Limits</source>
@@ -799,10 +811,6 @@
         <translation>유형:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(없음)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -824,11 +832,7 @@
     </message>
     <message>
         <source>Use proxy for peer connections</source>
-        <translation>피어 연결에 프록시 사용하기</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">토렌트에 프록시만 사용하기</translation>
+        <translation>피어 연결에 프록시 사용</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -922,11 +926,11 @@
     </message>
     <message>
         <source>Disable encryption</source>
-        <translation>암호화 비활성화하기</translation>
+        <translation>암호화 비활성화</translation>
     </message>
     <message>
         <source>Enable anonymous mode</source>
-        <translation>익명 모드 활성화하기</translation>
+        <translation>익명 모드 활성화</translation>
     </message>
     <message>
         <source>Maximum active downloads:</source>
@@ -950,7 +954,7 @@
     </message>
     <message>
         <source>Use UPnP / NAT-PMP to forward the port from my router</source>
-        <translation>라우터 포트를 전환하기 위해 UPnP / NAT-PMP 사용하기</translation>
+        <translation>라우터에서 포트 포워딩하기 위해 UPnP / NAT-PMP 사용</translation>
     </message>
     <message>
         <source>Certificate:</source>
@@ -1010,11 +1014,11 @@
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
-        <translation>웹 UI 사용자 이름은 최소한 3 문자 이상이어야 합니다.</translation>
+        <translation type="vanished">웹 UI 사용자 이름은 최소한 3 문자 이상이어야 합니다.</translation>
     </message>
     <message>
         <source>The Web UI password must be at least 6 characters long.</source>
-        <translation>웹 UI 비밀번호는 적어도 6자 이상이어야 합니다.</translation>
+        <translation type="vanished">웹 UI 비밀번호는 적어도 6자 이상이어야 합니다.</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -1026,15 +1030,15 @@
     </message>
     <message>
         <source>Enable clickjacking protection</source>
-        <translation>클릭 가로채기 방지 활성화하기</translation>
+        <translation>클릭 가로채기 방지 활성화</translation>
     </message>
     <message>
         <source>Enable Cross-Site Request Forgery (CSRF) protection</source>
-        <translation>교차-사이트 요청 위조 (CSRF) 보호 활성화하기</translation>
+        <translation>교차-사이트 요청 위조 (CSRF) 보호 활성화</translation>
     </message>
     <message>
         <source>Delete .torrent files afterwards</source>
-        <translation>내려받은 후 .torrent 파일 삭제하기</translation>
+        <translation>내려받은 후 .torrent 파일 삭제</translation>
     </message>
     <message>
         <source>Download rate threshold:</source>
@@ -1054,7 +1058,7 @@
     </message>
     <message>
         <source>Use alternative Web UI</source>
-        <translation>대체 웹 UI 사용하기</translation>
+        <translation type="vanished">대체 웹 UI 사용</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
@@ -1062,7 +1066,7 @@
     </message>
     <message>
         <source>The alternative Web UI files location cannot be blank.</source>
-        <translation>대체 웹 UI 파일 위치는 꼭 입력해야 합니다.</translation>
+        <translation type="vanished">대체 웹 UI 파일 위치는 꼭 입력해야 합니다.</translation>
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1098,7 +1102,7 @@
     </message>
     <message>
         <source>Enable Host header validation</source>
-        <translation>호스트 헤더 유효성 검사 활성화하기</translation>
+        <translation>호스트 헤더 유효성 검사 활성화</translation>
     </message>
     <message>
         <source>Security</source>
@@ -1150,7 +1154,7 @@
     </message>
     <message>
         <source>%G: Tags (separated by comma)</source>
-        <translation>%G: 태그(쉼표로 구분)</translation>
+        <translation>%G: 태그 (쉼표로 구분됨)</translation>
     </message>
     <message>
         <source>Socket backlog size:</source>
@@ -1158,7 +1162,7 @@
     </message>
     <message>
         <source>Enable super seeding for torrent</source>
-        <translation>토렌트에 대해 초도 배포 활성화하기</translation>
+        <translation>토렌트에 대해 초도 배포 활성화</translation>
     </message>
     <message>
         <source>Prefer TCP</source>
@@ -1175,10 +1179,6 @@
     <message>
         <source>When ratio reaches</source>
         <translation>비율에 도달했을 때</translation>
-    </message>
-    <message>
-        <source>When seeding time reaches</source>
-        <translation>배포 시간 제한:</translation>
     </message>
     <message>
         <source>Allow multiple connections from the same IP address:</source>
@@ -1210,7 +1210,7 @@
     </message>
     <message>
         <source>Remove torrent and its files</source>
-        <translation>토렌트 및 파일 제거하기</translation>
+        <translation>토렌트 및 파일 제거</translation>
     </message>
     <message>
         <source>qBittorrent Section</source>
@@ -1223,10 +1223,6 @@
     <message>
         <source>libtorrent Section</source>
         <translation>libtorrent 부분</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation type="vanished">나가는 포트 (최소) [0: 비활성화됨]:</translation>
     </message>
     <message>
         <source>Recheck torrents on completion:</source>
@@ -1242,15 +1238,11 @@
     </message>
     <message>
         <source>Enable embedded tracker:</source>
-        <translation>자체 트래커 활성화하기:</translation>
+        <translation>자체 트래커 활성화:</translation>
     </message>
     <message>
         <source>Remove torrent</source>
-        <translation>토렌트 제거하기</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation type="vanished">나가는 포트 (최대) [0: 비활성화됨]:</translation>
+        <translation>토렌트 제거</translation>
     </message>
     <message>
         <source>Asynchronous I/O threads:</source>
@@ -1329,20 +1321,12 @@
         <translation>금지할 시간:</translation>
     </message>
     <message>
-        <source>Stop tracker timeout:</source>
-        <translation type="vanished">중지 트래커 만료시간:</translation>
-    </message>
-    <message>
         <source>Ban client after consecutive failures:</source>
         <translation>클라이언트를 금지할 연속 시도 횟수:</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
-        <translation>쿠키 보안 플래그 활성화하기 (HTTPS 필요)</translation>
-    </message>
-    <message>
-        <source>UPnP lease duration [0: Permanent lease]:</source>
-        <translation type="vanished">UPnP 임대 기간 [0: 영구 임대]</translation>
+        <translation>쿠키 보안 플래그 활성화 (HTTPS 필요)</translation>
     </message>
     <message>
         <source>Header: value pairs, one per line</source>
@@ -1350,7 +1334,7 @@
     </message>
     <message>
         <source>Add custom HTTP headers</source>
-        <translation>사용자 지정 HTTP 헤더 추가하기</translation>
+        <translation>사용자 지정 HTTP 헤더 추가</translation>
     </message>
     <message>
         <source>Filters:</source>
@@ -1358,15 +1342,7 @@
     </message>
     <message>
         <source>Enable fetching RSS feeds</source>
-        <translation>RSS 피드 가져오기 활성화하기</translation>
-    </message>
-    <message>
-        <source>Hashing threads (requires libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">해싱 쓰레드(libtorrent &gt;= 2.0 필요):</translation>
-    </message>
-    <message>
-        <source>Coalesce reads &amp; writes (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">통합 읽기/쓰기(libtorrent &lt; 2.0 필요)</translation>
+        <translation>RSS 피드 가져오기 활성화</translation>
     </message>
     <message>
         <source>Peer turnover threshold percentage:</source>
@@ -1390,7 +1366,7 @@
     </message>
     <message>
         <source>Edit auto downloading rules...</source>
-        <translation>자동 내려받기 규칙 편집하기…</translation>
+        <translation>자동 내려받기 규칙 편집…</translation>
     </message>
     <message>
         <source>Download REPACK/PROPER episodes</source>
@@ -1426,19 +1402,11 @@
     </message>
     <message>
         <source>Enable auto downloading of RSS torrents</source>
-        <translation>RSS 토렌트 자동 내려받기 활성화하기</translation>
+        <translation>RSS 토렌트 자동 내려받기 활성화</translation>
     </message>
     <message>
         <source>RSS Smart Episode Filter</source>
         <translation>RSS 스마트 에피소드 필터</translation>
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">디스크 캐시(libtorrent &lt; 2.0 필요)</translation>
-    </message>
-    <message>
-        <source>Disk cache expiry interval (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">디스크 캐시 만료 간격 (libtorrent &lt; 2.0 필요)</translation>
     </message>
     <message>
         <source>Validate HTTPS tracker certificate:</source>
@@ -1490,7 +1458,7 @@
     </message>
     <message>
         <source>Enable reverse proxy support</source>
-        <translation>역방향 프록시 지원 활성화하기</translation>
+        <translation>역방향 프록시 지원 활성화</translation>
     </message>
     <message>
         <source>%J: Info hash v2</source>
@@ -1545,14 +1513,6 @@
         <translation>이 옵션은 Linux에서 별로 권장하지 않습니다</translation>
     </message>
     <message>
-        <source>Disk IO type (libtorrent &gt;= 2.0; requires restart):</source>
-        <translation type="vanished">디스크 IO 유형 (libtorrent &gt;= 2.0; 다시 시작 필요):</translation>
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &gt;= 2.0.6)</source>
-        <translation type="vanished">연속 기입 (libtorrent &gt;= 2.0.6 필요)</translation>
-    </message>
-    <message>
         <source>It controls the internal state update interval which in turn will affect UI updates</source>
         <translation>내부 상태 업데이트 간격을 제어하여 UI 업데이트에 영향을 미칩니다.</translation>
     </message>
@@ -1562,7 +1522,7 @@
     </message>
     <message>
         <source>Disable OS cache</source>
-        <translation>OS 캐시 비활성화하기</translation>
+        <translation>OS 캐시 비활성화</translation>
     </message>
     <message>
         <source>Disk IO write mode:</source>
@@ -1570,23 +1530,19 @@
     </message>
     <message>
         <source>Use piece extent affinity:</source>
-        <translation>조각 크기 선호도 사용하기:</translation>
+        <translation>조각 크기 선호도 사용:</translation>
     </message>
     <message>
         <source>Max concurrent HTTP announces:</source>
-        <translation>최대 동시 HTTP 공지하기:</translation>
+        <translation>최대 동시 HTTP 공지:</translation>
     </message>
     <message>
         <source>Enable OS cache</source>
-        <translation>OS 캐시 활성화하기</translation>
+        <translation>OS 캐시 활성화</translation>
     </message>
     <message>
         <source>Refresh interval:</source>
         <translation>새로고침 간격:</translation>
-    </message>
-    <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">물리 메모리(RAM) 사용 제한 (libtorrent &gt;= 2.0인 경우 적용됨):</translation>
     </message>
     <message>
         <source>ms</source>
@@ -1598,7 +1554,7 @@
     </message>
     <message>
         <source>Support internationalized domain name (IDN):</source>
-        <translation>국제화 도메인 네임(IDN) 지원하기:</translation>
+        <translation>국제화 도메인 네임(IDN) 지원:</translation>
     </message>
     <message>
         <source>Run external program on torrent finished</source>
@@ -1634,7 +1590,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Run external program</source>
-        <translation>외부 프로그램 실행하기</translation>
+        <translation>외부 프로그램 실행</translation>
     </message>
     <message>
         <source>Files checked</source>
@@ -1647,10 +1603,6 @@ DNS 재결합 공격을 방어하기 위해
     <message>
         <source>If checked, hostname lookups are done via the proxy.</source>
         <translation>이 옵션을 선택하면, 프록시를 통해 호스트 이름 검색이 수행됩니다.</translation>
-    </message>
-    <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation>호스트 이름 조회에 프록시 사용하기</translation>
     </message>
     <message>
         <source>Metadata received</source>
@@ -1682,110 +1634,274 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <translation>다음 크기 이후 로그 파일 백업:</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished" />
+        <translation>일</translation>
     </message>
     <message>
         <source>Log file</source>
-        <translation type="unfinished" />
+        <translation>로그 파일</translation>
     </message>
     <message>
         <source>Behavior</source>
-        <translation type="unfinished" />
+        <translation>동작</translation>
     </message>
     <message>
         <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
+        <translation>다음 기간보다 오래된 백업 로그 삭제:</translation>
     </message>
     <message>
         <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
+        <translation>BitTorrent 용도로 프록시 사용</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished" />
+        <translation>년</translation>
     </message>
     <message>
         <source>Save path:</source>
-        <translation type="unfinished" />
+        <translation>저장 경로:</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished" />
+        <translation>월</translation>
     </message>
     <message>
         <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
+        <translation>다중 이름 바꾸기 설정 기억</translation>
     </message>
     <message>
         <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
+        <translation>일반적인 용도로 프록시 사용</translation>
     </message>
     <message>
         <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
+        <translation>RSS 용도로 프록시 사용</translation>
     </message>
     <message>
         <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">디스크 캐시 만료 주기 (libtorrent 2.0 필요):</translation>
     </message>
     <message>
         <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">물리적 메모리(RAM) 사용량 제한 (libtorrent &amp;gt;= 2.0인 경우 적용됨):</translation>
     </message>
     <message>
         <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">디스크 캐시 (libtorrent &amp;lt; 2.0 필요):</translation>
     </message>
     <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>소켓 전송 버퍼 크기 [0: 시스템 기본값]:</translation>
     </message>
     <message>
         <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">읽기 &amp;amp; 쓰기 통합 (libtorrent &amp;lt; 2.0 필요):</translation>
     </message>
     <message>
         <source>Outgoing ports (Max) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>나가는 포트 (최대) [0: 비활성화됨]:</translation>
     </message>
     <message>
         <source>Socket receive buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>소켓 수신 버퍼 크기 [0: 시스템 기본값]:</translation>
     </message>
     <message>
         <source>Use Subcategories</source>
-        <translation type="unfinished" />
+        <translation>하위 범주 사용</translation>
     </message>
     <message>
         <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">디스크 IO 유형 (libtorrent &amp;gt;= 2.0; 다시 시작해야 함):</translation>
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
+        <translation>대기열 맨 위에 추가</translation>
     </message>
     <message>
         <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
-        <translation type="unfinished" />
+        <translation type="vanished">연속 기입 (libtorrent &amp;gt;= 2.0.6 필요)</translation>
     </message>
     <message>
         <source>Stop tracker timeout [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>중지 트래커 만료시간 [0: 비활성화됨]:</translation>
     </message>
     <message>
         <source>Outgoing ports (Min) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>나가는 포트 (최소) [0: 비활성화됨]:</translation>
     </message>
     <message>
         <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">해싱 쓰레드 (libtorrent &amp;gt;= 2.0 필요):</translation>
     </message>
     <message>
         <source>UPnP lease duration [0: permanent lease]:</source>
+        <translation>UPnP 임대 기간 [0: 영구 임대]:</translation>
+    </message>
+    <message>
+        <source>Bdecode depth limit:</source>
+        <translation>Bdecode 깊이 제한:</translation>
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation>Bdecode 토큰 제한:</translation>
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation>총 시딩 시간에 도달한 경우</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(없음)</translation>
+    </message>
+    <message>
+        <source>I2P inbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P 인바운드 길이 (libtorrent &amp;gt;= 2.0 필요):</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation>Python 실행 파일 경로 (다시 시작해야 할 수 있음):</translation>
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation>비어 있는 경우 기본값으로 재설정</translation>
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation>프록시를 통한 호스트 이름 조회 수행</translation>
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation>"혼합 모드"인 경우 활성화되면 I2P 토렌트는 트래커가 아닌 다른 소스에서 피어를 가져오고 익명화를 제공하지 않고 일반 IP에 연결할 수도 있습니다. 이는 사용자가 I2P의 익명화에 관심이 없지만 여전히 I2P 피어에 연결할 수 있기를 원하는 경우 유용할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>I2P inbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P 인바운드 수량 (libtorrent &amp;gt;= 2.0 필요):</translation>
+    </message>
+    <message>
+        <source>I2P outbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P 아웃바운드 길이 (libtorrent &amp;gt;= 2.0 필요):</translation>
+    </message>
+    <message>
+        <source>I2P outbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P 아웃바운드 수량 (libtorrent &amp;gt;= 2.0 필요):</translation>
+    </message>
+    <message>
+        <source>I2P (Experimental) (requires libtorrent &amp;gt;= 2.0)</source>
+        <translation type="vanished">I2P (실험적) (libtorrent &amp;gt;= 2.0 필요)</translation>
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation>DHT 부트스트랩 노드:</translation>
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation>비활성 시딩 시간에 도달한 경우</translation>
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation>혼합 모드</translation>
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation>.torrent 파일 크기 제한:</translation>
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation>(비어있는 경우 자동 감지)</translation>
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation>선택하지 않은 파일을 ".unwanted" 폴더에 보관하기</translation>
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation>내려받은 파일에 대해 MOTW(Mark-of-the-Web)를 활성화합니다 (macOS 또는 Windows 필요).</translation>
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1849,7 +1965,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Ban peer permanently</source>
-        <translation>영구적으로 피어 차단하기</translation>
+        <translation>영구적으로 피어 차단</translation>
     </message>
     <message>
         <source>Are you sure you want to permanently ban the selected peers?</source>
@@ -1857,7 +1973,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Copy IP:port</source>
-        <translation>IP:포트 복사하기</translation>
+        <translation>IP:포트 복사</translation>
     </message>
     <message>
         <source>Country/Region</source>
@@ -1865,7 +1981,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Add peers...</source>
-        <translation>피어 추가하기…</translation>
+        <translation>피어 추가…</translation>
     </message>
     <message>
         <source>Peer ID Client</source>
@@ -2094,63 +2210,63 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished" />
+        <translation>정규표현식 사용</translation>
     </message>
     <message>
         <source>Filename</source>
-        <translation type="unfinished" />
+        <translation>파일이름</translation>
     </message>
     <message>
         <source>Filename + Extension</source>
-        <translation type="unfinished" />
+        <translation>파일이름 + 확장자</translation>
     </message>
     <message>
         <source>Enumerate Files</source>
-        <translation type="unfinished" />
+        <translation>파일 열거</translation>
     </message>
     <message>
         <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
+        <translation>이름 바꾸기 실패: 파일 또는 폴더가 이미 존재합니다.</translation>
     </message>
     <message>
         <source>Toggle Selection</source>
-        <translation type="unfinished" />
+        <translation>선택 항목 전환</translation>
     </message>
     <message>
         <source>Replacement Input</source>
-        <translation type="unfinished" />
+        <translation>교체 입력</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished" />
+        <translation>바꾸기</translation>
     </message>
     <message>
         <source>Extension</source>
-        <translation type="unfinished" />
+        <translation>확장자</translation>
     </message>
     <message>
         <source>Replace All</source>
-        <translation type="unfinished" />
+        <translation>모두 바꾸기</translation>
     </message>
     <message>
         <source>Include files</source>
-        <translation type="unfinished" />
+        <translation>파일 포함</translation>
     </message>
     <message>
         <source>Include folders</source>
-        <translation type="unfinished" />
+        <translation>폴더 포함</translation>
     </message>
     <message>
         <source>Search Files</source>
-        <translation type="unfinished" />
+        <translation>파일 검색</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation type="unfinished" />
+        <translation>대/소문자 구분</translation>
+    </message>
+    <message>
+        <source>Match all occurrences</source>
+        <translation>모든 항목 일치</translation>
     </message>
 </context>
 <context>
@@ -2368,6 +2484,14 @@ DNS 재결합 공격을 방어하기 위해
         <source>Checking (0)</source>
         <translation>확인 중 (0)</translation>
     </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation>이동 중 (%1)</translation>
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation>이동 중 (0)</translation>
+    </message>
 </context>
 <context>
     <name>TorrentContentModel</name>
@@ -2520,6 +2644,10 @@ DNS 재결합 공격을 방어하기 위해
         <source>Availability</source>
         <translation>가용성</translation>
     </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation>재공지</translation>
+    </message>
 </context>
 <context>
     <name>TrackerListWidget</name>
@@ -2573,11 +2701,11 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Copy tracker URL</source>
-        <translation>트래커 URL 복사하기</translation>
+        <translation>트래커 URL 복사</translation>
     </message>
     <message>
         <source>Edit tracker URL...</source>
-        <translation>트래커 URL 편집하기…</translation>
+        <translation>트래커 URL 편집…</translation>
     </message>
     <message>
         <source>Tracker editing</source>
@@ -2589,7 +2717,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Remove tracker</source>
-        <translation>트래커 제거하기</translation>
+        <translation>트래커 제거</translation>
     </message>
     <message>
         <source>Remaining</source>
@@ -2625,15 +2753,15 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Add trackers...</source>
-        <translation>트래커 추가하기…</translation>
+        <translation>트래커 추가…</translation>
     </message>
     <message>
         <source>Renamed</source>
-        <translation type="unfinished" />
+        <translation>이름 바뀜</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>원본</translation>
     </message>
 </context>
 <context>
@@ -2644,7 +2772,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Add trackers</source>
-        <translation>트래커 추가하기</translation>
+        <translation>트래커 추가</translation>
     </message>
 </context>
 <context>
@@ -2743,7 +2871,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Collapse/expand</source>
-        <translation type="unfinished" />
+        <translation>접기/펼치기</translation>
     </message>
 </context>
 <context>
@@ -2790,22 +2918,22 @@ DNS 재결합 공격을 방어하기 위해
     <message>
         <source>Move up</source>
         <comment>i.e. move up in the queue</comment>
-        <translation>위로 이동하기</translation>
+        <translation>위로 이동</translation>
     </message>
     <message>
         <source>Move down</source>
         <comment>i.e. Move down in the queue</comment>
-        <translation>아래로 이동하기</translation>
+        <translation>아래로 이동</translation>
     </message>
     <message>
         <source>Move to top</source>
         <comment>i.e. Move to top of the queue</comment>
-        <translation>맨 위로 이동하기</translation>
+        <translation>맨 위로 이동</translation>
     </message>
     <message>
         <source>Move to bottom</source>
         <comment>i.e. Move to bottom of the queue</comment>
-        <translation>맨 아래로 이동하기</translation>
+        <translation>맨 아래로 이동</translation>
     </message>
     <message>
         <source>Set location...</source>
@@ -2863,7 +2991,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Set location</source>
-        <translation>위치 설정하기</translation>
+        <translation>위치 설정</translation>
     </message>
     <message>
         <source>Force reannounce</source>
@@ -2871,7 +2999,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Edit Category</source>
-        <translation>범주 편집하기</translation>
+        <translation>범주 편집</translation>
     </message>
     <message>
         <source>Save path</source>
@@ -2879,11 +3007,11 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Comma-separated tags:</source>
-        <translation>태그 (쉼표로 분리):</translation>
+        <translation>쉼표로 구분된 태그:</translation>
     </message>
     <message>
         <source>Add Tags</source>
-        <translation>태그 추가하기</translation>
+        <translation>태그 추가</translation>
     </message>
     <message>
         <source>Tags</source>
@@ -2895,7 +3023,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Remove All</source>
-        <translation>모두 제거하기</translation>
+        <translation>모두 제거</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2903,7 +3031,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Copy</source>
-        <translation>복사하기</translation>
+        <translation>복사</translation>
     </message>
     <message>
         <source>Queue</source>
@@ -2911,7 +3039,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Add...</source>
-        <translation>추가하기…</translation>
+        <translation>추가…</translation>
     </message>
     <message>
         <source>Info hash v1</source>
@@ -2931,15 +3059,19 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Remove</source>
-        <translation>제거하기</translation>
+        <translation>제거</translation>
     </message>
     <message>
         <source>Rename Files...</source>
-        <translation type="unfinished" />
+        <translation>파일 이름 바꾸기…</translation>
     </message>
     <message>
         <source>Renaming</source>
-        <translation type="unfinished" />
+        <translation>이름 바꾸는 중</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation>주석</translation>
     </message>
 </context>
 <context>
@@ -2950,23 +3082,27 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Use global share limit</source>
-        <translation>전역 공유 제한 사용하기</translation>
+        <translation>전역 공유 제한 사용</translation>
     </message>
     <message>
         <source>Set no share limit</source>
-        <translation>공유 제한 없음 설정하기</translation>
+        <translation>공유 제한 없음 설정</translation>
     </message>
     <message>
         <source>Set share limit to</source>
-        <translation>공유 제한 설정하기</translation>
+        <translation>공유 제한 설정</translation>
     </message>
     <message>
         <source>ratio</source>
         <translation>비율</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation>분</translation>
+        <source>total minutes</source>
+        <translation>총 시간(분)</translation>
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation>활동하지 않는 시간(분)</translation>
     </message>
 </context>
 <context>
@@ -2980,7 +3116,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Remove torrent(s)</source>
-        <translation>토렌트 제거하기</translation>
+        <translation>토렌트 제거</translation>
     </message>
 </context>
 <context>
@@ -2995,7 +3131,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Add Torrent Links</source>
-        <translation>토렌트 링크 추가하기</translation>
+        <translation>토렌트 링크 추가</translation>
     </message>
 </context>
 <context>
@@ -3081,7 +3217,7 @@ DNS 재결합 공격을 방어하기 위해
     <name>PluginSourceDlg</name>
     <message>
         <source>Cancel</source>
-        <translation>취소하기</translation>
+        <translation>취소</translation>
     </message>
     <message>
         <source>Plugin path:</source>
@@ -3276,11 +3412,11 @@ DNS 재결합 공격을 방어하기 위해
     <name>PeersAdditionDialog</name>
     <message>
         <source>Cancel</source>
-        <translation>취소하기</translation>
+        <translation>취소</translation>
     </message>
     <message>
         <source>Add Peers</source>
-        <translation>피어 추가하기</translation>
+        <translation>피어 추가</translation>
     </message>
     <message>
         <source>List of peers to add (one IP per line):</source>
@@ -3303,7 +3439,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Add tag...</source>
-        <translation>태그 추가하기…</translation>
+        <translation>태그 추가…</translation>
     </message>
     <message>
         <source>Tag:</source>
@@ -3319,7 +3455,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Remove unused tags</source>
-        <translation>사용하지 않는 태그 제거하기</translation>
+        <translation>미사용 태그 제거</translation>
     </message>
     <message>
         <source>Invalid tag name</source>
@@ -3327,11 +3463,11 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Remove tag</source>
-        <translation>태그 제거하기</translation>
+        <translation>태그 제거</translation>
     </message>
     <message>
         <source>Remove torrents</source>
-        <translation>토렌트 제거하기</translation>
+        <translation>토렌트 제거</translation>
     </message>
 </context>
 <context>
@@ -3451,7 +3587,7 @@ DNS 재결합 공격을 방어하기 위해
     <name>SearchJobWidget</name>
     <message>
         <source>Copy</source>
-        <translation>복사하기</translation>
+        <translation>복사</translation>
     </message>
     <message>
         <source>Download</source>
@@ -3484,10 +3620,6 @@ DNS 재결합 공격을 방어하기 위해
         <source>New name:</source>
         <translation>새 이름:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3513,7 +3645,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Delete</source>
-        <translation>삭제하기</translation>
+        <translation>삭제</translation>
     </message>
     <message>
         <source>RSS Downloader...</source>
@@ -3529,7 +3661,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Copy feed URL</source>
-        <translation>피드 URL 복사하기</translation>
+        <translation>피드 URL 복사</translation>
     </message>
     <message>
         <source>Torrents: (double-click to download)</source>
@@ -3596,7 +3728,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Matching RSS Articles</source>
-        <translation>RSS 규약 일치</translation>
+        <translation>일치하는 RSS 규약</translation>
     </message>
     <message>
         <source>* to match zero or more of any characters</source>
@@ -3624,7 +3756,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Use Regular Expressions</source>
-        <translation>정규식 사용하기</translation>
+        <translation>정규식 사용</translation>
     </message>
     <message>
         <source>New rule name</source>
@@ -3648,7 +3780,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Regex mode: use Perl-compatible regular expressions</source>
-        <translation>정규식 모드: Perl 호환 정규식 사용하기</translation>
+        <translation>정규식 모드: Perl 호환 정규식 사용</translation>
     </message>
     <message>
         <source>| is used as OR operator</source>
@@ -3672,7 +3804,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Add new rule...</source>
-        <translation>새 규칙 추가하기…</translation>
+        <translation>새 규칙 추가…</translation>
     </message>
     <message>
         <source>Are you sure you want to clear the list of downloaded episodes for the selected rule?</source>
@@ -3688,7 +3820,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Save to a Different Directory</source>
-        <translation>다른 디렉터리에 저장하기</translation>
+        <translation>다른 디렉터리에 저장</translation>
     </message>
     <message>
         <source>Must Not Contain:</source>
@@ -3708,7 +3840,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Use global settings</source>
-        <translation>전역 설정 사용하기</translation>
+        <translation>전역 설정 사용</translation>
     </message>
     <message>
         <source>Normal range: &lt;b&gt;1x25-40;&lt;/b&gt; matches episodes 25 through 40 of season one</source>
@@ -3768,7 +3900,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Use Smart Episode Filter</source>
-        <translation>스마트 에피소드 필터 사용하기</translation>
+        <translation>스마트 에피소드 필터 사용</translation>
     </message>
     <message>
         <source>If word order is important use * instead of whitespace.</source>
@@ -3776,7 +3908,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Add Paused:</source>
-        <translation>일시정지해서 추가하기:</translation>
+        <translation>일시정지해서 추가:</translation>
     </message>
     <message>
         <source>Please type the name of the new download rule.</source>
@@ -3792,11 +3924,11 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Delete rule</source>
-        <translation>규칙 삭제하기</translation>
+        <translation>규칙 삭제</translation>
     </message>
     <message>
         <source>Ignore Subsequent Matches for (0 to Disable)</source>
-        <translation>다음 일치 항목 무시하기 (비활성화하려면 0)</translation>
+        <translation>다음 일치 항목 무시 (0은 비활성화)</translation>
     </message>
     <message>
         <source>Rename rule...</source>
@@ -3832,6 +3964,10 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <source>Don't create subfolder</source>
         <translation>하위폴더 만들지 않기</translation>
     </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation>태그 추가:</translation>
+    </message>
 </context>
 <context>
     <name>TrackerFiltersList</name>
@@ -3853,7 +3989,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Remove torrents</source>
-        <translation>토렌트 제거하기</translation>
+        <translation>토렌트 제거</translation>
     </message>
 </context>
 <context>
@@ -3891,11 +4027,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Copy</source>
-        <translation>복사하기</translation>
+        <translation>복사</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation>모두 선택하기</translation>
+        <translation>모두 선택</translation>
     </message>
     <message>
         <source>ID</source>
@@ -3971,7 +4107,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Normal Messages</source>
-        <translation>정상 메시지</translation>
+        <translation>일반 메시지</translation>
     </message>
     <message>
         <source>Critical</source>
@@ -3999,7 +4135,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Choose a log level...</source>
-        <translation>로그 레벨 선정하기...</translation>
+        <translation>로그 레벨 선정...</translation>
     </message>
 </context>
 </TS>

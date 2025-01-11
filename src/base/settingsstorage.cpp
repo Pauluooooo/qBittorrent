@@ -46,7 +46,7 @@ using namespace std::chrono_literals;
 SettingsStorage *SettingsStorage::m_instance = nullptr;
 
 SettingsStorage::SettingsStorage()
-    : m_nativeSettingsName {u"qBittorrent"_qs}
+    : m_nativeSettingsName {u"qBittorrent"_s}
 {
     readNativeSettings();
 
@@ -79,8 +79,10 @@ SettingsStorage *SettingsStorage::instance()
 
 bool SettingsStorage::save()
 {
+    // return `true` only when settings is different AND is saved successfully
+
     const QWriteLocker locker(&m_lock);  // guard for `m_dirty` too
-    if (!m_dirty) return true;
+    if (!m_dirty) return false;
 
     if (!writeNativeSettings())
     {
@@ -210,11 +212,7 @@ bool SettingsStorage::writeNativeSettings() const
 void SettingsStorage::removeValue(const QString &key)
 {
     const QWriteLocker locker(&m_lock);
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
     if (m_data.remove(key))
-#else
-    if (m_data.remove(key) > 0)
-#endif
     {
         m_dirty = true;
         m_timer.start();
@@ -225,4 +223,10 @@ bool SettingsStorage::hasKey(const QString &key) const
 {
     const QReadLocker locker {&m_lock};
     return m_data.contains(key);
+}
+
+bool SettingsStorage::isEmpty() const
+{
+    const QReadLocker locker {&m_lock};
+    return m_data.isEmpty();
 }

@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2023  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2023-2024  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2019, 2021  Prince Gupta <jagannatharjun11@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
@@ -30,9 +30,12 @@
 
 #include "uithememanager.h"
 
+#include <QApplication>
 #include <QPalette>
 #include <QPixmapCache>
 #include <QResource>
+#include <QStyle>
+#include <QStyleHints>
 
 #include "base/global.h"
 #include "base/logger.h"
@@ -66,17 +69,35 @@ void UIThemeManager::initInstance()
 
 UIThemeManager::UIThemeManager()
     : m_useCustomTheme {Preferences::instance()->useCustomUITheme()}
+#ifdef QBT_HAS_COLORSCHEME_OPTION
+    , m_colorSchemeSetting {u"Appearance/ColorScheme"_s}
+#endif
 #if (defined(Q_OS_UNIX) && !defined(Q_OS_MACOS))
     , m_useSystemIcons {Preferences::instance()->useSystemIcons()}
 #endif
 {
+#ifdef Q_OS_WIN
+    if (const QString styleName = Preferences::instance()->getStyle(); styleName.compare(u"system", Qt::CaseInsensitive) != 0)
+    {
+        if (!QApplication::setStyle(styleName.isEmpty() ? u"Fusion"_s : styleName))
+            LogMsg(tr("Set app style failed. Unknown style: \"%1\"").arg(styleName), Log::WARNING);
+    }
+#endif
+
+#ifdef QBT_HAS_COLORSCHEME_OPTION
+    applyColorScheme();
+#endif
+
+    // NOTE: Qt::QueuedConnection can be omitted as soon as support for Qt 6.5 is dropped
+    connect(QApplication::styleHints(), &QStyleHints::colorSchemeChanged, this, &UIThemeManager::onColorSchemeChanged, Qt::QueuedConnection);
+
     if (m_useCustomTheme)
     {
         const Path themePath = Preferences::instance()->customUIThemePath();
 
-        if (themePath.hasExtension(u".qbtheme"_qs))
+        if (themePath.hasExtension(u".qbtheme"_s))
         {
-            if (QResource::registerResource(themePath.data(), u"/uitheme"_qs))
+            if (QResource::registerResource(themePath.data(), u"/uitheme"_s))
                 m_themeSource = std::make_unique<QRCThemeSource>();
             else
                 LogMsg(tr("Failed to load UI theme from file: \"%1\"").arg(themePath.toString()), Log::WARNING);
@@ -102,9 +123,49 @@ UIThemeManager *UIThemeManager::instance()
     return m_instance;
 }
 
+#ifdef QBT_HAS_COLORSCHEME_OPTION
+ColorScheme UIThemeManager::colorScheme() const
+{
+    return m_colorSchemeSetting.get(ColorScheme::System);
+}
+
+void UIThemeManager::setColorScheme(const ColorScheme value)
+{
+    if (value == colorScheme())
+        return;
+
+    m_colorSchemeSetting = value;
+}
+
+void UIThemeManager::applyColorScheme() const
+{
+    switch (colorScheme())
+    {
+    case ColorScheme::System:
+    default:
+        qApp->styleHints()->unsetColorScheme();
+        break;
+    case ColorScheme::Light:
+        qApp->styleHints()->setColorScheme(Qt::ColorScheme::Light);
+        break;
+    case ColorScheme::Dark:
+        qApp->styleHints()->setColorScheme(Qt::ColorScheme::Dark);
+        break;
+    }
+}
+#endif
+
 void UIThemeManager::applyStyleSheet() const
 {
     qApp->setStyleSheet(QString::fromUtf8(m_themeSource->readStyleSheet()));
+}
+
+void UIThemeManager::onColorSchemeChanged()
+{
+    emit themeChanged();
+
+    // workaround to refresh styled controls once color scheme is changed
+    QApplication::setStyle(QApplication::style()->name());
 }
 
 QIcon UIThemeManager::getIcon(const QString &iconId, [[maybe_unused]] const QString &fallback) const
@@ -169,8 +230,6 @@ QPixmap UIThemeManager::getScaledPixmap(const QString &iconId, const int height)
 QColor UIThemeManager::getColor(const QString &id) const
 {
     const QColor color = m_themeSource->getColor(id, (isDarkTheme() ? ColorMode::Dark : ColorMode::Light));
-    Q_ASSERT(color.isValid());
-
     return color;
 }
 
@@ -185,31 +244,31 @@ void UIThemeManager::applyPalette() const
 
     const ColorDescriptor paletteColorDescriptors[] =
     {
-        {u"Palette.Window"_qs, QPalette::Window, QPalette::Normal},
-        {u"Palette.WindowText"_qs, QPalette::WindowText, QPalette::Normal},
-        {u"Palette.Base"_qs, QPalette::Base, QPalette::Normal},
-        {u"Palette.AlternateBase"_qs, QPalette::AlternateBase, QPalette::Normal},
-        {u"Palette.Text"_qs, QPalette::Text, QPalette::Normal},
-        {u"Palette.ToolTipBase"_qs, QPalette::ToolTipBase, QPalette::Normal},
-        {u"Palette.ToolTipText"_qs, QPalette::ToolTipText, QPalette::Normal},
-        {u"Palette.BrightText"_qs, QPalette::BrightText, QPalette::Normal},
-        {u"Palette.Highlight"_qs, QPalette::Highlight, QPalette::Normal},
-        {u"Palette.HighlightedText"_qs, QPalette::HighlightedText, QPalette::Normal},
-        {u"Palette.Button"_qs, QPalette::Button, QPalette::Normal},
-        {u"Palette.ButtonText"_qs, QPalette::ButtonText, QPalette::Normal},
-        {u"Palette.Link"_qs, QPalette::Link, QPalette::Normal},
-        {u"Palette.LinkVisited"_qs, QPalette::LinkVisited, QPalette::Normal},
-        {u"Palette.Light"_qs, QPalette::Light, QPalette::Normal},
-        {u"Palette.Midlight"_qs, QPalette::Midlight, QPalette::Normal},
-        {u"Palette.Mid"_qs, QPalette::Mid, QPalette::Normal},
-        {u"Palette.Dark"_qs, QPalette::Dark, QPalette::Normal},
-        {u"Palette.Shadow"_qs, QPalette::Shadow, QPalette::Normal},
-        {u"Palette.WindowTextDisabled"_qs, QPalette::WindowText, QPalette::Disabled},
-        {u"Palette.TextDisabled"_qs, QPalette::Text, QPalette::Disabled},
-        {u"Palette.ToolTipTextDisabled"_qs, QPalette::ToolTipText, QPalette::Disabled},
-        {u"Palette.BrightTextDisabled"_qs, QPalette::BrightText, QPalette::Disabled},
-        {u"Palette.HighlightedTextDisabled"_qs, QPalette::HighlightedText, QPalette::Disabled},
-        {u"Palette.ButtonTextDisabled"_qs, QPalette::ButtonText, QPalette::Disabled}
+        {u"Palette.Window"_s, QPalette::Window, QPalette::Normal},
+        {u"Palette.WindowText"_s, QPalette::WindowText, QPalette::Normal},
+        {u"Palette.Base"_s, QPalette::Base, QPalette::Normal},
+        {u"Palette.AlternateBase"_s, QPalette::AlternateBase, QPalette::Normal},
+        {u"Palette.Text"_s, QPalette::Text, QPalette::Normal},
+        {u"Palette.ToolTipBase"_s, QPalette::ToolTipBase, QPalette::Normal},
+        {u"Palette.ToolTipText"_s, QPalette::ToolTipText, QPalette::Normal},
+        {u"Palette.BrightText"_s, QPalette::BrightText, QPalette::Normal},
+        {u"Palette.Highlight"_s, QPalette::Highlight, QPalette::Normal},
+        {u"Palette.HighlightedText"_s, QPalette::HighlightedText, QPalette::Normal},
+        {u"Palette.Button"_s, QPalette::Button, QPalette::Normal},
+        {u"Palette.ButtonText"_s, QPalette::ButtonText, QPalette::Normal},
+        {u"Palette.Link"_s, QPalette::Link, QPalette::Normal},
+        {u"Palette.LinkVisited"_s, QPalette::LinkVisited, QPalette::Normal},
+        {u"Palette.Light"_s, QPalette::Light, QPalette::Normal},
+        {u"Palette.Midlight"_s, QPalette::Midlight, QPalette::Normal},
+        {u"Palette.Mid"_s, QPalette::Mid, QPalette::Normal},
+        {u"Palette.Dark"_s, QPalette::Dark, QPalette::Normal},
+        {u"Palette.Shadow"_s, QPalette::Shadow, QPalette::Normal},
+        {u"Palette.WindowTextDisabled"_s, QPalette::WindowText, QPalette::Disabled},
+        {u"Palette.TextDisabled"_s, QPalette::Text, QPalette::Disabled},
+        {u"Palette.ToolTipTextDisabled"_s, QPalette::ToolTipText, QPalette::Disabled},
+        {u"Palette.BrightTextDisabled"_s, QPalette::BrightText, QPalette::Disabled},
+        {u"Palette.HighlightedTextDisabled"_s, QPalette::HighlightedText, QPalette::Disabled},
+        {u"Palette.ButtonTextDisabled"_s, QPalette::ButtonText, QPalette::Disabled}
     };
 
     QPalette palette = qApp->palette();

@@ -30,13 +30,14 @@
 #pragma once
 
 #include <QAbstractItemModel>
-#include <QVector>
+#include <QList>
 
 #include "base/indexrange.h"
 #include "base/pathfwd.h"
 #include "torrentcontentmodelitem.h"
 
 class QFileIconProvider;
+class QMimeData;
 class QModelIndex;
 class QVariant;
 
@@ -66,7 +67,7 @@ public:
 
     void refresh();
 
-    QVector<BitTorrent::DownloadPriority> getFilePriorities() const;
+    QList<BitTorrent::DownloadPriority> getFilePriorities() const;
     TorrentContentModelItem::ItemType itemType(const QModelIndex &index) const;
     int getFileIndex(const QModelIndex &index) const;
     Path getItemPath(const QModelIndex &index) const;
@@ -86,15 +87,17 @@ signals:
 private:
     using ColumnInterval = IndexInterval<int>;
 
+    QMimeData *mimeData(const QModelIndexList &indexes) const override;
+    QStringList mimeTypes() const override;
     void populate();
     void updateFilesProgress();
     void updateFilesPriorities();
     void updateFilesAvailability();
     bool setItemPriority(const QModelIndex &index, BitTorrent::DownloadPriority priority);
-    void notifySubtreeUpdated(const QModelIndex &index, const QVector<ColumnInterval> &columns);
+    void notifySubtreeUpdated(const QModelIndex &index, const QList<ColumnInterval> &columns);
 
     BitTorrent::TorrentContentHandler *m_contentHandler = nullptr;
     TorrentContentModelFolder *m_rootItem = nullptr;
-    QVector<TorrentContentModelFile *> m_filesIndex;
+    QList<TorrentContentModelFile *> m_filesIndex;
     QFileIconProvider *m_fileIconProvider = nullptr;
 };

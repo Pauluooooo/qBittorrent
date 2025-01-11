@@ -1,5 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
+ * Copyright (C) 2023-2024  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2006  Christophe Dumez <chris@qbittorrent.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -41,7 +42,7 @@ class AdvancedSettings;
 // actions on double-click on torrents
 enum DoubleClickAction
 {
-    TOGGLE_PAUSE = 0,
+    TOGGLE_STOP = 0,
     OPEN_DEST = 1,
     PREVIEW_FILE = 2,
     NO_ACTION = 3,
@@ -58,7 +59,7 @@ namespace Ui
     class OptionsDialog;
 }
 
-class OptionsDialog final : public QDialog, public GUIApplicationComponent
+class OptionsDialog final : public GUIApplicationComponent<QDialog>
 {
     Q_OBJECT
     Q_DISABLE_COPY_MOVE(OptionsDialog)
@@ -88,7 +89,6 @@ private slots:
     void adjustProxyOptions();
     void on_buttonBox_accepted();
     void on_buttonBox_rejected();
-    void applySettings();
     void enableApplyButton();
     void toggleComboRatioLimitAct();
     void changePage(QListWidgetItem *, QListWidgetItem *);
@@ -115,6 +115,7 @@ private:
     void showEvent(QShowEvent *e) override;
 
     // Methods
+    bool applySettings();
     void saveOptions() const;
 
     void loadBehaviorTabOptions();
@@ -142,6 +143,8 @@ private:
 
     // General options
     void initializeLanguageCombo();
+    void initializeStyleCombo();
+    void initializeColorSchemeOptions();
     QString getLocale() const;
     bool isSplashScreenDisabled() const;
 #ifdef Q_OS_WIN
@@ -150,7 +153,7 @@ private:
     // Downloads
     bool preAllocateAllFiles() const;
     bool useAdditionDialog() const;
-    bool addTorrentsInPause() const;
+    bool addTorrentsStopped() const;
     Path getTorrentExportDir() const;
     Path getFinishedTorrentExportDir() const;
     // Connection options
@@ -166,6 +169,7 @@ private:
     int getEncryptionSetting() const;
     qreal getMaxRatio() const;
     int getMaxSeedingMinutes() const;
+    int getMaxInactiveSeedingMinutes() const;
     // Proxy options
     bool isProxyEnabled() const;
     QString getProxyIp() const;
@@ -183,9 +187,9 @@ private:
     int getMaxActiveTorrents() const;
     // WebUI
 #ifndef DISABLE_WEBUI
-    bool isWebUiEnabled() const;
-    QString webUiUsername() const;
-    QString webUiPassword() const;
+    bool isWebUIEnabled() const;
+    QString webUIUsername() const;
+    QString webUIPassword() const;
     bool webUIAuthenticationOk();
     bool isAlternativeWebUIPathValid();
 #endif

@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2015, 2018  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2015-2024  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2006  Christophe Dumez <chris@qbittorrent.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -36,6 +36,7 @@
 #include <QDomDocument>
 #include <QDomElement>
 #include <QDomNode>
+#include <QFile>
 #include <QPointer>
 #include <QProcess>
 #include <QUrl>
@@ -73,12 +74,11 @@ namespace
             }
 
             // python 2: remove "*.pyc" files
-            const QStringList files = QDir(dir.data()).entryList(QDir::Files);
-            for (const QString &file : files)
+            QDirIterator it {dir.data(), {u"*.pyc"_s}, QDir::Files};
+            while (it.hasNext())
             {
-                const Path path {file};
-                if (path.hasExtension(u".pyc"_qs))
-                    Utils::Fs::removeFile(path);
+                const QString filePath = it.next();
+                Utils::Fs::removeFile(Path(filePath));
             }
         }
     }
@@ -87,7 +87,7 @@ namespace
 QPointer<SearchPluginManager> SearchPluginManager::m_instance = nullptr;
 
 SearchPluginManager::SearchPluginManager()
-    : m_updateUrl(u"https://searchplugins.qbittorrent.org/nova3/engines/"_qs)
+    : m_updateUrl(u"https://searchplugins.qbittorrent.org/nova3/engines/"_s)
 {
     Q_ASSERT(!m_instance); // only one instance is allowed
     m_instance = this;
@@ -181,6 +181,17 @@ PluginInfo *SearchPluginManager::pluginInfo(const QString &name) const
     return m_plugins.value(name);
 }
 
+QString SearchPluginManager::pluginNameBySiteURL(const QString &siteURL) const
+{
+    for (const PluginInfo *plugin : asConst(m_plugins))
+    {
+        if (plugin->url == siteURL)
+            return plugin->name;
+    }
+
+    return {};
+}
+
 void SearchPluginManager::enablePlugin(const QString &name, const bool enabled)
 {
     PluginInfo *plugin = m_plugins.value(name, nullptr);
@@ -203,7 +214,7 @@ void SearchPluginManager::enablePlugin(const QString &name, const bool enabled)
 // Updates shipped plugin
 void SearchPluginManager::updatePlugin(const QString &name)
 {
-    installPlugin(u"%1%2.py"_qs.arg(m_updateUrl, name));
+    installPlugin(u"%1%2.py"_s.arg(m_updateUrl, name));
 }
 
 // Install or update plugin from file or url
@@ -297,11 +308,13 @@ bool SearchPluginManager::uninstallPlugin(const QString &name)
     clearPythonCache(engineLocation());
 
     // remove it from hard drive
-    const Path pluginsPath = pluginsLocation();
-    const QStringList filters {name + u".*"};
-    const QStringList files = QDir(pluginsPath.data()).entryList(filters, QDir::Files, QDir::Unsorted);
-    for (const QString &file : files)
-        Utils::Fs::removeFile(pluginsPath / Path(file));
+    QDirIterator iter {pluginsLocation().data(), {name + u".*"}, QDir::Files};
+    while (iter.hasNext())
+    {
+        const QString filePath = iter.next();
+        Utils::Fs::removeFile(Path(filePath));
+    }
+
     // Remove it from supported engines
     delete m_plugins.take(name);
 
@@ -336,9 +349,9 @@ void SearchPluginManager::checkForUpdates()
             , this, &SearchPluginManager::versionInfoDownloadFinished);
 }
 
-SearchDownloadHandler *SearchPluginManager::downloadTorrent(const QString &siteUrl, const QString &url)
+SearchDownloadHandler *SearchPluginManager::downloadTorrent(const QString &pluginName, const QString &url)
 {
-    return new SearchDownloadHandler {siteUrl, url, this};
+    return new SearchDownloadHandler(pluginName, url, this);
 }
 
 SearchHandler *SearchPluginManager::startSearch(const QString &pattern, const QString &category, const QStringList &usedPlugins)
@@ -346,34 +359,34 @@ SearchHandler *SearchPluginManager::startSearch(const QString &pattern, const QS
     // No search pattern entered
     Q_ASSERT(!pattern.isEmpty());
 
-    return new SearchHandler {pattern, category, usedPlugins, this};
+    return new SearchHandler(pattern, category, usedPlugins, this);
 }
 
 QString SearchPluginManager::categoryFullName(const QString &categoryName)
 {
     const QHash<QString, QString> categoryTable
     {
-        {u"all"_qs, tr("All categories")},
-        {u"movies"_qs, tr("Movies")},
-        {u"tv"_qs, tr("TV shows")},
-        {u"music"_qs, tr("Music")},
-        {u"games"_qs, tr("Games")},
-        {u"anime"_qs, tr("Anime")},
-        {u"software"_qs, tr("Software")},
-        {u"pictures"_qs, tr("Pictures")},
-        {u"books"_qs, tr("Books")}
+        {u"all"_s, tr("All categories")},
+        {u"anime"_s, tr("Anime")},
+        {u"books"_s, tr("Books")},
+        {u"games"_s, tr("Games")},
+        {u"movies"_s, tr("Movies")},
+        {u"music"_s, tr("Music")},
+        {u"pictures"_s, tr("Pictures")},
+        {u"software"_s, tr("Software")},
+        {u"tv"_s, tr("TV shows")}
     };
     return categoryTable.value(categoryName);
 }
 
-QString SearchPluginManager::pluginFullName(const QString &pluginName)
+QString SearchPluginManager::pluginFullName(const QString &pluginName) const
 {
     return pluginInfo(pluginName) ? pluginInfo(pluginName)->fullName : QString();
 }
 
 Path SearchPluginManager::pluginsLocation()
 {
-    return (engineLocation() / Path(u"engines"_qs));
+    return (engineLocation() / Path(u"engines"_s));
 }
 
 Path SearchPluginManager::engineLocation()
@@ -381,7 +394,7 @@ Path SearchPluginManager::engineLocation()
     static Path location;
     if (location.isEmpty())
     {
-        location = specialFolderLocation(SpecialFolder::Data) / Path(u"nova3"_qs);
+        location = specialFolderLocation(SpecialFolder::Data) / Path(u"nova3"_s);
         Utils::Fs::mkpath(location);
     }
 
@@ -395,31 +408,31 @@ void SearchPluginManager::applyProxySettings()
 
     // Define environment variables for urllib in search engine plugins
     QString proxyStrHTTP, proxyStrSOCK;
-    if (Preferences::instance()->useProxyForGeneralPurposes())
+    if ((proxyConfig.type != Net::ProxyType::None) && Preferences::instance()->useProxyForGeneralPurposes())
     {
         switch (proxyConfig.type)
         {
         case Net::ProxyType::HTTP:
             if (proxyConfig.authEnabled)
             {
-                proxyStrHTTP = u"http://%1:%2@%3:%4"_qs.arg(proxyConfig.username
+                proxyStrHTTP = u"http://%1:%2@%3:%4"_s.arg(proxyConfig.username
                         , proxyConfig.password, proxyConfig.ip, QString::number(proxyConfig.port));
             }
             else
             {
-                proxyStrHTTP = u"http://%1:%2"_qs.arg(proxyConfig.ip, QString::number(proxyConfig.port));
+                proxyStrHTTP = u"http://%1:%2"_s.arg(proxyConfig.ip, QString::number(proxyConfig.port));
             }
             break;
 
         case Net::ProxyType::SOCKS5:
             if (proxyConfig.authEnabled)
             {
-                proxyStrSOCK = u"%1:%2@%3:%4"_qs.arg(proxyConfig.username
+                proxyStrSOCK = u"%1:%2@%3:%4"_s.arg(proxyConfig.username
                     , proxyConfig.password, proxyConfig.ip, QString::number(proxyConfig.port));
             }
             else
             {
-                proxyStrSOCK = u"%1:%2"_qs.arg(proxyConfig.ip, QString::number(proxyConfig.port));
+                proxyStrSOCK = u"%1:%2"_s.arg(proxyConfig.ip, QString::number(proxyConfig.port));
             }
             break;
 
@@ -458,7 +471,7 @@ void SearchPluginManager::pluginDownloadFinished(const Net::DownloadResult &resu
     {
         const QString url = result.url;
         QString pluginName = url.mid(url.lastIndexOf(u'/') + 1);
-        pluginName.replace(u".py"_qs, u""_qs, Qt::CaseInsensitive);
+        pluginName.replace(u".py"_s, u""_s, Qt::CaseInsensitive);
 
         if (pluginInfo(pluginName))
             emit pluginUpdateFailed(pluginName, tr("Failed to download the plugin file. %1").arg(result.errorString));
@@ -473,20 +486,20 @@ void SearchPluginManager::updateNova()
     // create nova directory if necessary
     const Path enginePath = engineLocation();
 
-    QFile packageFile {(enginePath / Path(u"__init__.py"_qs)).data()};
+    QFile packageFile {(enginePath / Path(u"__init__.py"_s)).data()};
     packageFile.open(QIODevice::WriteOnly);
     packageFile.close();
 
-    Utils::Fs::mkdir(enginePath / Path(u"engines"_qs));
+    Utils::Fs::mkdir(enginePath / Path(u"engines"_s));
 
-    QFile packageFile2 {(enginePath / Path(u"engines/__init__.py"_qs)).data()};
+    QFile packageFile2 {(enginePath / Path(u"engines/__init__.py"_s)).data()};
     packageFile2.open(QIODevice::WriteOnly);
     packageFile2.close();
 
     // Copy search plugin files (if necessary)
     const auto updateFile = [&enginePath](const Path &filename, const bool compareVersion)
     {
-        const Path filePathBundled = Path(u":/searchengine/nova3"_qs) / filename;
+        const Path filePathBundled = Path(u":/searchengine/nova3"_s) / filename;
         const Path filePathDisk = enginePath / filename;
 
         if (compareVersion && (getPluginVersion(filePathBundled) <= getPluginVersion(filePathDisk)))
@@ -496,12 +509,11 @@ void SearchPluginManager::updateNova()
         Utils::Fs::copyFile(filePathBundled, filePathDisk);
     };
 
-    updateFile(Path(u"helpers.py"_qs), true);
-    updateFile(Path(u"nova2.py"_qs), true);
-    updateFile(Path(u"nova2dl.py"_qs), true);
-    updateFile(Path(u"novaprinter.py"_qs), true);
-    updateFile(Path(u"sgmllib3.py"_qs), false);
-    updateFile(Path(u"socks.py"_qs), false);
+    updateFile(Path(u"helpers.py"_s), true);
+    updateFile(Path(u"nova2.py"_s), true);
+    updateFile(Path(u"nova2dl.py"_s), true);
+    updateFile(Path(u"novaprinter.py"_s), true);
+    updateFile(Path(u"socks.py"_s), false);
 }
 
 void SearchPluginManager::update()
@@ -509,11 +521,16 @@ void SearchPluginManager::update()
     QProcess nova;
     nova.setProcessEnvironment(QProcessEnvironment::systemEnvironment());
 
-    const QStringList params {(engineLocation() / Path(u"/nova2.py"_qs)).toString(), u"--capabilities"_qs};
+    const QStringList params
+    {
+        Utils::ForeignApps::PYTHON_ISOLATE_MODE_FLAG,
+        (engineLocation() / Path(u"/nova2.py"_s)).toString(),
+        u"--capabilities"_s
+    };
     nova.start(Utils::ForeignApps::pythonInfo().executableName, params, QIODevice::ReadOnly);
     nova.waitForFinished();
 
-    const auto capabilities = QString::fromUtf8(nova.readAll());
+    const auto capabilities = QString::fromUtf8(nova.readAllStandardOutput());
     QDomDocument xmlDoc;
     if (!xmlDoc.setContent(capabilities))
     {
@@ -539,10 +556,10 @@ void SearchPluginManager::update()
             auto plugin = std::make_unique<PluginInfo>();
             plugin->name = pluginName;
             plugin->version = getPluginVersion(pluginPath(pluginName));
-            plugin->fullName = engineElem.elementsByTagName(u"name"_qs).at(0).toElement().text();
-            plugin->url = engineElem.elementsByTagName(u"url"_qs).at(0).toElement().text();
+            plugin->fullName = engineElem.elementsByTagName(u"name"_s).at(0).toElement().text();
+            plugin->url = engineElem.elementsByTagName(u"url"_s).at(0).toElement().text();
 
-            const QStringList categories = engineElem.elementsByTagName(u"categories"_qs).at(0).toElement().text().split(u' ');
+            const QStringList categories = engineElem.elementsByTagName(u"categories"_s).at(0).toElement().text().split(u' ');
             for (QString cat : categories)
             {
                 cat = cat.trimmed();
@@ -575,14 +592,14 @@ void SearchPluginManager::parseVersionInfo(const QByteArray &info)
     QHash<QString, PluginVersion> updateInfo;
     int numCorrectData = 0;
 
-    const QVector<QByteArray> lines = Utils::ByteArray::splitToViews(info, "\n", Qt::SkipEmptyParts);
-    for (QByteArray line : lines)
+    const QList<QByteArrayView> lines = Utils::ByteArray::splitToViews(info, "\n", Qt::SkipEmptyParts);
+    for (QByteArrayView line : lines)
     {
         line = line.trimmed();
         if (line.isEmpty()) continue;
         if (line.startsWith('#')) continue;
 
-        const QVector<QByteArray> list = Utils::ByteArray::splitToViews(line, ":", Qt::SkipEmptyParts);
+        const QList<QByteArrayView> list = Utils::ByteArray::splitToViews(line, ":", Qt::SkipEmptyParts);
         if (list.size() != 2) continue;
 
         const auto pluginName = QString::fromUtf8(list.first().trimmed());
@@ -625,13 +642,15 @@ Path SearchPluginManager::pluginPath(const QString &name)
 
 PluginVersion SearchPluginManager::getPluginVersion(const Path &filePath)
 {
+    const int lineMaxLength = 16;
+
     QFile pluginFile {filePath.data()};
     if (!pluginFile.open(QIODevice::ReadOnly | QIODevice::Text))
         return {};
 
     while (!pluginFile.atEnd())
     {
-        const auto line = QString::fromUtf8(pluginFile.readLine()).remove(u' ');
+        const auto line = QString::fromUtf8(pluginFile.readLine(lineMaxLength)).remove(u' ');
         if (!line.startsWith(u"#VERSION:", Qt::CaseInsensitive)) continue;
 
         const QString versionStr = line.mid(9);

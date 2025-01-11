@@ -68,7 +68,7 @@
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
+        <translation>Bovenaan wachtrij toevoegen</translation>
     </message>
 </context>
 <context>
@@ -118,7 +118,7 @@
     </message>
     <message>
         <source>Add subcategory...</source>
-        <translation type="unfinished" />
+        <translation>Subcategorie toevoegen...</translation>
     </message>
 </context>
 <context>
@@ -189,27 +189,27 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>De poort gebruikt voor de Web-UI moet liggen tussen 1 en 65535.</translation>
+        <translation type="vanished">De poort gebruikt voor de Web-UI moet liggen tussen 1 en 65535.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>Kan niet inloggen, qBittorrent is waarschijnlijk onbereikbaar.</translation>
+        <translation type="vanished">Kan niet inloggen, qBittorrent is waarschijnlijk onbereikbaar.</translation>
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>Ongeldige gebruikersnaam of wachtwoord.</translation>
+        <translation type="vanished">Ongeldige gebruikersnaam of wachtwoord.</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Gebruikersnaam</translation>
+        <translation type="vanished">Gebruikersnaam</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Wachtwoord</translation>
+        <translation type="vanished">Wachtwoord</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Login</translation>
+        <translation type="vanished">Login</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -349,7 +349,7 @@
     </message>
     <message>
         <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent werd afgesloten</translation>
+        <translation type="vanished">qBittorrent werd afgesloten</translation>
     </message>
     <message>
         <source>Open documentation</source>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>JavaScript vereist! U moet JavaScript inschakelen om de WebUI goed te laten werken</translation>
+        <translation type="vanished">JavaScript vereist! U moet JavaScript inschakelen om de WebUI goed te laten werken</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -394,6 +394,18 @@
     <message>
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
         <translation>Weet u zeker dat u de geselecteerde torrents wilt verwijderen uit de overdrachtlijst?</translation>
+    </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -497,7 +509,7 @@
     <message>
         <source>[D: %1, U: %2] qBittorrent %3</source>
         <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[D: %1, U: %2] qBittorrent %3</translation>
+        <translation type="vanished">[D: %1, U: %2] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -576,10 +588,6 @@
         <translation>Pictogram downloadsnelheid</translation>
     </message>
     <message>
-        <source>Connection status</source>
-        <translation>Verbindingsstatus</translation>
-    </message>
-    <message>
         <source>Alternative speed limits: On</source>
         <translation>Alternatieve snelheidsbegrenzing: aan</translation>
     </message>
@@ -627,6 +635,10 @@
         <source>Log</source>
         <translation>Log</translation>
     </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -652,7 +664,7 @@
     </message>
     <message>
         <source>Web UI</source>
-        <translation>Web-UI</translation>
+        <translation type="vanished">Web-UI</translation>
     </message>
     <message>
         <source>Language</source>
@@ -799,10 +811,6 @@
         <translation>Type:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Geen)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -825,10 +833,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Proxy gebruiken voor peer-verbindingen</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Proxy alleen voor torrents gebruiken</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1010,11 +1014,11 @@
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
-        <translation>De Web-UI-gebruikersnaam moet minstens 3 tekens lang zijn.</translation>
+        <translation type="vanished">De Web-UI-gebruikersnaam moet minstens 3 tekens lang zijn.</translation>
     </message>
     <message>
         <source>The Web UI password must be at least 6 characters long.</source>
-        <translation>Het Web-UI-wachtwoord moet minstens 6 tekens lang zijn.</translation>
+        <translation type="vanished">Het Web-UI-wachtwoord moet minstens 6 tekens lang zijn.</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -1054,7 +1058,7 @@
     </message>
     <message>
         <source>Use alternative Web UI</source>
-        <translation>Alternatieve web-UI gebruiken</translation>
+        <translation type="vanished">Alternatieve web-UI gebruiken</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
@@ -1062,7 +1066,7 @@
     </message>
     <message>
         <source>The alternative Web UI files location cannot be blank.</source>
-        <translation>De alternatieve locatie van Web-UI-bestanden mag niet leeg zijn.</translation>
+        <translation type="vanished">De alternatieve locatie van Web-UI-bestanden mag niet leeg zijn.</translation>
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1177,10 +1181,6 @@
         <translation>Wanneer verhouding bereikt wordt van</translation>
     </message>
     <message>
-        <source>When seeding time reaches</source>
-        <translation>Wanneer een seed-tijd bereikt wordt van</translation>
-    </message>
-    <message>
         <source>Allow multiple connections from the same IP address:</source>
         <translation>Meerdere verbindingen van hetzelfde IP-adres toestaan:</translation>
     </message>
@@ -1225,10 +1225,6 @@
         <translation>libtorrent-sectie</translation>
     </message>
     <message>
-        <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation type="vanished">Uitgaande poorten (min) [0: uitgeschakeld]:</translation>
-    </message>
-    <message>
         <source>Recheck torrents on completion:</source>
         <translation>Torrents opnieuw controleren bij voltooiing:</translation>
     </message>
@@ -1247,10 +1243,6 @@
     <message>
         <source>Remove torrent</source>
         <translation>Torrent verwijderen</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation type="vanished">Uitgaande poorten (max) [0: uitgeschakeld]:</translation>
     </message>
     <message>
         <source>Asynchronous I/O threads:</source>
@@ -1329,20 +1321,12 @@
         <translation>verbannen voor:</translation>
     </message>
     <message>
-        <source>Stop tracker timeout:</source>
-        <translation type="vanished">Timeout voor stoppen van tracker:</translation>
-    </message>
-    <message>
         <source>Ban client after consecutive failures:</source>
         <translation>Cliënt verbannen na opeenvolgende fouten:</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
         <translation>Secure-flag van cookie inschakelen (vereist https)</translation>
-    </message>
-    <message>
-        <source>UPnP lease duration [0: Permanent lease]:</source>
-        <translation type="vanished">UPnP-leaseduur [0: permanente lease]:</translation>
     </message>
     <message>
         <source>Header: value pairs, one per line</source>
@@ -1359,14 +1343,6 @@
     <message>
         <source>Enable fetching RSS feeds</source>
         <translation>Ophalen van RSS-feeds inschakelen</translation>
-    </message>
-    <message>
-        <source>Hashing threads (requires libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">Hashing-threads (vereist libtorrent &gt;= 2.0):</translation>
-    </message>
-    <message>
-        <source>Coalesce reads &amp; writes (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Lezen en schrijven combineren (vereist libtorrent &lt; 2.0):</translation>
     </message>
     <message>
         <source>Peer turnover threshold percentage:</source>
@@ -1431,14 +1407,6 @@
     <message>
         <source>RSS Smart Episode Filter</source>
         <translation>RSS slimme afleveringsfilter</translation>
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Schijfbuffer (vereist libtorrent &lt; 2.0):</translation>
-    </message>
-    <message>
-        <source>Disk cache expiry interval (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Interval voor verstrijken van schijfbuffer (vereist libtorrent &lt; 2.0):</translation>
     </message>
     <message>
         <source>Validate HTTPS tracker certificate:</source>
@@ -1545,14 +1513,6 @@
         <translation>Deze optie is minder effectief op Linux</translation>
     </message>
     <message>
-        <source>Disk IO type (libtorrent &gt;= 2.0; requires restart):</source>
-        <translation type="vanished">Type schijf-IO (libtorrent &gt;= 2.0; opnieuw starten vereist)</translation>
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &gt;= 2.0.6)</source>
-        <translation type="vanished">Write-through (vereist libtorrent &gt;= 2.0.6)</translation>
-    </message>
-    <message>
         <source>It controls the internal state update interval which in turn will affect UI updates</source>
         <translation>Het regelt het update-interval van de interne status, dat op zijn beurt UI-updates zal beïnvloeden</translation>
     </message>
@@ -1583,10 +1543,6 @@
     <message>
         <source>Refresh interval:</source>
         <translation>Vernieuwinterval:</translation>
-    </message>
-    <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">Beperking op het gebruik van fysiek geheugen (RAM) (toegepast als libtorrent &gt;= 2.0):</translation>
     </message>
     <message>
         <source>ms</source>
@@ -1649,10 +1605,6 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <translation>Indien aangevinkt, worden hostnamen opgezocht via de proxy.</translation>
     </message>
     <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation>Proxy gebruiken voor opzoeken van hostnamen</translation>
-    </message>
-    <message>
         <source>Metadata received</source>
         <translation>Metadata ontvangen</translation>
     </message>
@@ -1682,110 +1634,274 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     </message>
     <message>
         <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <translation>Back-up maken van logbestand na:</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished" />
+        <translation>dagen</translation>
     </message>
     <message>
         <source>Log file</source>
-        <translation type="unfinished" />
+        <translation>Logbestand</translation>
     </message>
     <message>
         <source>Behavior</source>
-        <translation type="unfinished" />
+        <translation>Gedrag</translation>
     </message>
     <message>
         <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
+        <translation>Back-up-logs verwijderen die ouder zijn dan:</translation>
     </message>
     <message>
         <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
+        <translation>Proxy gebruiken voor BitTorrent-doeleinden</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished" />
+        <translation>jaar</translation>
     </message>
     <message>
         <source>Save path:</source>
-        <translation type="unfinished" />
+        <translation>Opslagpad:</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished" />
+        <translation>maand</translation>
     </message>
     <message>
         <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
+        <translation>Instellingen voor meervoudig hernoemen onthouden</translation>
     </message>
     <message>
         <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
+        <translation>Proxy gebruiken voor algemene doeleinden</translation>
     </message>
     <message>
         <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
+        <translation>Proxy gebruiken voor RSS-doeleinden</translation>
     </message>
     <message>
         <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Interval voor verstrijken van schijfbuffer (vereist libtorrent &amp;lt; 2.0):</translation>
     </message>
     <message>
         <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Beperking op het gebruik van fysiek geheugen (RAM) (toegepast als libtorrent &amp;gt;= 2.0):</translation>
     </message>
     <message>
         <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Schijfbuffer (vereist libtorrent &amp;lt; 2.0):</translation>
     </message>
     <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>Socket-verzendbuffergrootte [0: systeemstandaard]:</translation>
     </message>
     <message>
         <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Lezen en schrijven combineren (vereist libtorrent &amp;lt; 2.0):</translation>
     </message>
     <message>
         <source>Outgoing ports (Max) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Uitgaande poorten (max) [0: uitgeschakeld]:</translation>
     </message>
     <message>
         <source>Socket receive buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>Socket-ontvangstbuffergrootte [0: systeemstandaard]:</translation>
     </message>
     <message>
         <source>Use Subcategories</source>
-        <translation type="unfinished" />
+        <translation>Subcategorieën gebruiken</translation>
     </message>
     <message>
         <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Type schijf-IO (libtorrent &amp;gt;= 2.0; opnieuw starten vereist)</translation>
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
+        <translation>Bovenaan wachtrij toevoegen</translation>
     </message>
     <message>
         <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Write-through (vereist libtorrent &amp;gt;= 2.0.6)</translation>
     </message>
     <message>
         <source>Stop tracker timeout [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Timeout voor stoppen van tracker [0: uitgeschakeld]:</translation>
     </message>
     <message>
         <source>Outgoing ports (Min) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Uitgaande poorten (min) [0: uitgeschakeld]:</translation>
     </message>
     <message>
         <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Hashing-threads (vereist libtorrent &amp;gt;= 2.0):</translation>
     </message>
     <message>
         <source>UPnP lease duration [0: permanent lease]:</source>
+        <translation>UPnP-leaseduur [0: permanente lease]:</translation>
+    </message>
+    <message>
+        <source>Bdecode depth limit:</source>
+        <translation>Limiet Bdecode-diepte:</translation>
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation>Limiet Bdecode-token:</translation>
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation>Wanneer een totale seed-tijd bereikt wordt van</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Geen)</translation>
+    </message>
+    <message>
+        <source>I2P inbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P inkomende lengte (vereist libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation>Pad naar python-executable (kan herstart vereisen):</translation>
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation>Wordt teruggezet op standaard als deze leeg is</translation>
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation>Opzoeken van hostnamen uitvoeren via proxy</translation>
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation>Als &amp;quot;gemengde modus&amp;quot; is ingeschakeld, kunnen I2P-torrents ook peers krijgen van andere bronnen dan de tracker, en verbinding maken met gewone IP's, zonder enige anonimisering. Dit kan nuttig zijn als de gebruiker niet geïnteresseerd is in de anonimisering van I2P, maar toch wil kunnen verbinden met I2P-peers.</translation>
+    </message>
+    <message>
+        <source>I2P inbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P inkomende hoeveelheid (vereist libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P outbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P uitgaande lengte (vereist libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P outbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P uitgaande hoeveelheid (vereist libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P (Experimental) (requires libtorrent &amp;gt;= 2.0)</source>
+        <translation type="vanished">I2P (experimenteel) (vereist libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation>DHT-bootstrap-nodes:</translation>
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation>Wanneer een niet-actieve seed-tijd bereikt wordt van</translation>
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation>Gemengde modus</translation>
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation>Limiet .torrent-bestandsgrootte:</translation>
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation>(automatisch detecteren wanneer leeg)</translation>
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation>Niet-geselecteerde bestanden in ".unwanted"-map houden</translation>
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation>Mark-of-the-Web (MOTW) voor gedownloade bestanden inschakelen (vereist macOS of Windows):</translation>
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2094,63 +2210,63 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished" />
+        <translation>Reguliere expressies gebruiken</translation>
     </message>
     <message>
         <source>Filename</source>
-        <translation type="unfinished" />
+        <translation>Bestandsnaam</translation>
     </message>
     <message>
         <source>Filename + Extension</source>
-        <translation type="unfinished" />
+        <translation>Bestandsnaam + extensie</translation>
     </message>
     <message>
         <source>Enumerate Files</source>
-        <translation type="unfinished" />
+        <translation>Bestanden opsommen</translation>
     </message>
     <message>
         <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
+        <translation>Naam wijzigen mislukt: bestand of map bestaat al</translation>
     </message>
     <message>
         <source>Toggle Selection</source>
-        <translation type="unfinished" />
+        <translation>Selectie aan/uit</translation>
     </message>
     <message>
         <source>Replacement Input</source>
-        <translation type="unfinished" />
+        <translation>Vervanging-invoer</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished" />
+        <translation>Vervangen</translation>
     </message>
     <message>
         <source>Extension</source>
-        <translation type="unfinished" />
+        <translation>Extensie</translation>
     </message>
     <message>
         <source>Replace All</source>
-        <translation type="unfinished" />
+        <translation>Alles vervangen</translation>
     </message>
     <message>
         <source>Include files</source>
-        <translation type="unfinished" />
+        <translation>Bestanden opnemen</translation>
     </message>
     <message>
         <source>Include folders</source>
-        <translation type="unfinished" />
+        <translation>Mappen opnemen</translation>
     </message>
     <message>
         <source>Search Files</source>
-        <translation type="unfinished" />
+        <translation>Bestanden zoeken</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation type="unfinished" />
+        <translation>Hoofdlettergevoelig</translation>
+    </message>
+    <message>
+        <source>Match all occurrences</source>
+        <translation>Overeenkomen met alle resultaten</translation>
     </message>
 </context>
 <context>
@@ -2368,6 +2484,14 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <source>Checking (0)</source>
         <translation>Controleren (0)</translation>
     </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation>Verplaatsen (%1)</translation>
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation>Verplaatsen (0)</translation>
+    </message>
 </context>
 <context>
     <name>TorrentContentModel</name>
@@ -2520,6 +2644,10 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <source>Availability</source>
         <translation>Beschikbaarheid</translation>
     </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation>Opnieuw aankondigen over</translation>
+    </message>
 </context>
 <context>
     <name>TrackerListWidget</name>
@@ -2629,11 +2757,11 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     </message>
     <message>
         <source>Renamed</source>
-        <translation type="unfinished" />
+        <translation>Naam gewijzigd</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>Oorspronkelijk</translation>
     </message>
 </context>
 <context>
@@ -2743,7 +2871,7 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     </message>
     <message>
         <source>Collapse/expand</source>
-        <translation type="unfinished" />
+        <translation>Samenvouwen/uitvouwen</translation>
     </message>
 </context>
 <context>
@@ -2935,11 +3063,15 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     </message>
     <message>
         <source>Rename Files...</source>
-        <translation type="unfinished" />
+        <translation>Naam van bestanden wijzigen...</translation>
     </message>
     <message>
         <source>Renaming</source>
-        <translation type="unfinished" />
+        <translation>Naam wijzigen</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation>Opmerking</translation>
     </message>
 </context>
 <context>
@@ -2965,8 +3097,12 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <translation>verhouding</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation>minuten</translation>
+        <source>total minutes</source>
+        <translation>totaal aantal minuten</translation>
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation>aantal minuten niet actief</translation>
     </message>
 </context>
 <context>
@@ -3484,10 +3620,6 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <source>New name:</source>
         <translation>Nieuwe naam:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3831,6 +3963,10 @@ Ondersteunt de formaten:  S01E01, 1x1, 2017.12.31 en 31.12.2017 (datumformaten o
     <message>
         <source>Don't create subfolder</source>
         <translation>Geen submap aanmaken</translation>
+    </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation>Labels toevoegen:</translation>
     </message>
 </context>
 <context>

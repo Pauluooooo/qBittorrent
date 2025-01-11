@@ -39,6 +39,7 @@
 #include <QRegularExpression>
 #include <QStringView>
 
+#include "base/concepts/stringable.h"
 #include "base/global.h"
 
 #if defined(Q_OS_WIN)
@@ -63,11 +64,14 @@ namespace
 #ifdef Q_OS_WIN
     bool hasDriveLetter(const QStringView path)
     {
-        const QRegularExpression driveLetterRegex {u"^[A-Za-z]:/"_qs};
+        const QRegularExpression driveLetterRegex {u"^[A-Za-z]:/"_s};
         return driveLetterRegex.match(path).hasMatch();
     }
 #endif
 }
+
+// `Path` should satisfy `Stringable` concept in order to be stored in settings as string
+static_assert(Stringable<Path>);
 
 Path::Path(const QString &pathStr)
     : m_pathStr {cleanPath(pathStr)}
@@ -93,12 +97,12 @@ bool Path::isValid() const
         view = view.mid(3);
 
     // \\37 is using base-8 number system
-    const QRegularExpression regex {u"[\\0-\\37:?\"*<>|]"_qs};
+    const QRegularExpression regex {u"[\\0-\\37:?\"*<>|]"_s};
     return !regex.match(view).hasMatch();
 #elif defined(Q_OS_MACOS)
-    const QRegularExpression regex {u"[\\0:]"_qs};
+    const QRegularExpression regex {u"[\\0:]"_s};
 #else
-    const QRegularExpression regex {u"\\0"_qs};
+    const QRegularExpression regex {u"\\0"_s};
 #endif
     return !m_pathStr.contains(regex);
 }
@@ -138,7 +142,7 @@ Path Path::rootItem() const
         return *this;
 
     if (slashIndex == 0) // *nix absolute path
-        return createUnchecked(u"/"_qs);
+        return createUnchecked(u"/"_s);
 
 #ifdef Q_OS_WIN
     // should be `c:/` instead of `c:`
@@ -157,7 +161,7 @@ Path Path::parentPath() const
         return {};
 
     if (slashIndex == 0) // *nix absolute path
-        return (m_pathStr.size() == 1) ? Path() : createUnchecked(u"/"_qs);
+        return (m_pathStr.size() == 1) ? Path() : createUnchecked(u"/"_s);
 
 #ifdef Q_OS_WIN
     // should be `c:/` instead of `c:`
@@ -318,7 +322,7 @@ void Path::stripRootFolder(PathList &filePaths)
         return;
 
     for (Path &filePath : filePaths)
-        filePath.m_pathStr = filePath.m_pathStr.mid(commonRootFolder.m_pathStr.size() + 1);
+        filePath.m_pathStr.remove(0, (commonRootFolder.m_pathStr.size() + 1));
 }
 
 void Path::addRootFolder(PathList &filePaths, const Path &rootFolder)
@@ -340,11 +344,6 @@ Path Path::createUnchecked(const QString &pathStr)
 bool operator==(const Path &lhs, const Path &rhs)
 {
     return (lhs.data().compare(rhs.data(), CASE_SENSITIVITY) == 0);
-}
-
-bool operator!=(const Path &lhs, const Path &rhs)
-{
-    return !(lhs == rhs);
 }
 
 Path operator/(const Path &lhs, const Path &rhs)
@@ -377,11 +376,7 @@ QDataStream &operator>>(QDataStream &in, Path &path)
     return in;
 }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 std::size_t qHash(const Path &key, const std::size_t seed)
-#else
-uint qHash(const Path &key, const uint seed)
-#endif
 {
     return ::qHash(key.data(), seed);
 }
