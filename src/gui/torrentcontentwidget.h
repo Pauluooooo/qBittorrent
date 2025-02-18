@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2022  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2022-2024  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2014  Ivan Sorokin <vanyacpp@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
@@ -33,6 +33,9 @@
 
 #include "base/bittorrent/downloadpriority.h"
 #include "base/pathfwd.h"
+#include "filterpatternformat.h"
+
+class QShortcut;
 
 namespace BitTorrent
 {
@@ -78,6 +81,9 @@ public:
     BitTorrent::TorrentContentHandler *contentHandler() const;
     void refresh();
 
+    bool openByEnterKey() const;
+    void setOpenByEnterKey(bool value);
+
     DoubleClickAction doubleClickAction() const;
     void setDoubleClickAction(DoubleClickAction action);
 
@@ -87,7 +93,7 @@ public:
     int getFileIndex(const QModelIndex &index) const;
     Path getItemPath(const QModelIndex &index) const;
 
-    void setFilterPattern(const QString &patternText);
+    void setFilterPattern(const QString &patternText, FilterPatternFormat format = FilterPatternFormat::Wildcards);
 
     void checkAll();
     void checkNone();
@@ -118,4 +124,6 @@ private:
     TorrentContentFilterModel *m_filterModel;
     DoubleClickAction m_doubleClickAction = DoubleClickAction::Rename;
     ColumnsVisibilityMode m_columnsVisibilityMode = ColumnsVisibilityMode::Editable;
+    QShortcut *m_openFileHotkeyEnter = nullptr;
+    QShortcut *m_openFileHotkeyReturn = nullptr;
 };

@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2021  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2021-2024  Vladimir Golovnev <glassez@yandex.ru>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -34,6 +34,8 @@
 
 #include "base/path.h"
 #include "base/tagset.h"
+#include "sharelimitaction.h"
+#include "sslparameters.h"
 #include "torrent.h"
 #include "torrentcontentlayout.h"
 
@@ -54,11 +56,15 @@ namespace BitTorrent
         bool firstLastPiecePriority = false;
         bool hasFinishedStatus = false;
         bool stopped = false;
-        Torrent::StopCondition stopCondition;
+        Torrent::StopCondition stopCondition = Torrent::StopCondition::None;
 
         bool addToQueueTop = false; // only for new torrents
 
         qreal ratioLimit = Torrent::USE_GLOBAL_RATIO;
         int seedingTimeLimit = Torrent::USE_GLOBAL_SEEDING_TIME;
+        int inactiveSeedingTimeLimit = Torrent::USE_GLOBAL_INACTIVE_SEEDING_TIME;
+        ShareLimitAction shareLimitAction = ShareLimitAction::Default;
+
+        SSLParameters sslParameters;
     };
 }

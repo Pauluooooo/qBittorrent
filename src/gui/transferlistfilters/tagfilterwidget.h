@@ -1,5 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
+ * Copyright (C) 2023  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2017  Tony Gregerson <tony.gregerson@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
@@ -30,6 +31,8 @@
 
 #include <QTreeView>
 
+class Tag;
+
 class TagFilterWidget final : public QTreeView
 {
     Q_OBJECT
@@ -38,12 +41,12 @@ class TagFilterWidget final : public QTreeView
 public:
     explicit TagFilterWidget(QWidget *parent = nullptr);
 
-    QString currentTag() const;
+    std::optional<Tag> currentTag() const;
 
 signals:
-    void tagChanged(const QString &tag);
-    void actionResumeTorrentsTriggered();
-    void actionPauseTorrentsTriggered();
+    void tagChanged(const std::optional<Tag> &tag);
+    void actionStartTorrentsTriggered();
+    void actionStopTorrentsTriggered();
     void actionDeleteTorrentsTriggered();
 
 private slots:
@@ -58,5 +61,5 @@ private:
     QSize sizeHint() const override;
     QSize minimumSizeHint() const override;
     void rowsInserted(const QModelIndex &parent, int start, int end) override;
-    QString askTagName();
+    Tag askTagName();
 };

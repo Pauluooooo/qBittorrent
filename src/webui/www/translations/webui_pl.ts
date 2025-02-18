@@ -68,6 +68,22 @@
     </message>
     <message>
         <source>Add to top of queue</source>
+        <translation>Dodaj na początek kolejki</translation>
+    </message>
+    <message>
+        <source>One link per line (HTTP links, Magnet links and info-hashes are supported)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add torrent links</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Select .torrent files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Torrent options</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -98,11 +114,11 @@
     </message>
     <message>
         <source>Resume torrents</source>
-        <translation>Wznów torrenty</translation>
+        <translation type="vanished">Wznów torrenty</translation>
     </message>
     <message>
         <source>Pause torrents</source>
-        <translation>Wstrzymaj torrenty</translation>
+        <translation type="vanished">Wstrzymaj torrenty</translation>
     </message>
     <message>
         <source>New Category</source>
@@ -118,6 +134,14 @@
     </message>
     <message>
         <source>Add subcategory...</source>
+        <translation>Dodaj podkategorię...</translation>
+    </message>
+    <message>
+        <source>Start torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrents</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -129,7 +153,7 @@
     </message>
     <message>
         <source>Only one link per line</source>
-        <translation>W jednym wierszu można podać tylko jeden odnośnik</translation>
+        <translation type="vanished">Tylko jeden odnośnik w wierszu</translation>
     </message>
     <message>
         <source>Global upload rate limit must be greater than 0 or disabled.</source>
@@ -188,30 +212,6 @@
         <translation>Limit czasu seedowania musi zawierać się w przedziale między 0 a 525600 minut.</translation>
     </message>
     <message>
-        <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>Port, na którym działa interfejs WWW, musi być pomiędzy 1 a 65535.</translation>
-    </message>
-    <message>
-        <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>Nie można się zalogować, qBittorrent jest prawdopodobnie nieosiągalny.</translation>
-    </message>
-    <message>
-        <source>Invalid Username or Password.</source>
-        <translation>Nieprawidłowa nazwa użytkownika lub hasło.</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Nazwa użytkownika</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Hasło</translation>
-    </message>
-    <message>
-        <source>Login</source>
-        <translation>Login</translation>
-    </message>
-    <message>
         <source>Apply</source>
         <translation>Zastosuj</translation>
     </message>
@@ -230,7 +230,7 @@
     </message>
     <message>
         <source>Cookie:</source>
-        <translation>Ciasteczko:</translation>
+        <translation type="vanished">Ciasteczko:</translation>
     </message>
     <message>
         <source>More information</source>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>Download Torrents from their URLs or Magnet links</source>
-        <translation>Pobierz torrenty z ich adresów URL albo odnośników magnet</translation>
+        <translation type="vanished">Pobierz torrenty z ich adresów URL albo odnośników magnet</translation>
     </message>
     <message>
         <source>Upload local torrent</source>
@@ -321,7 +321,7 @@
     </message>
     <message>
         <source>Unable to create category</source>
-        <translation>Nie można utworzyć kategorii</translation>
+        <translation type="vanished">Nie można utworzyć kategorii</translation>
     </message>
     <message>
         <source>Upload rate threshold must be greater than 0.</source>
@@ -348,10 +348,6 @@
         <translation>Próg prędkości pobierania musi być większy niż 0.</translation>
     </message>
     <message>
-        <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent został zamknięty</translation>
-    </message>
-    <message>
         <source>Open documentation</source>
         <translation>Otwórz dokumentację</translation>
     </message>
@@ -362,10 +358,6 @@
     <message>
         <source>Unable to add peers. Please ensure you are adhering to the IP:port format.</source>
         <translation>Nie można dodać partnerów. Upewnij się, że przestrzegasz formatu IP:port.</translation>
-    </message>
-    <message>
-        <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>Wymagany JavaScript! Musisz włączyć obsługę JavaScript, aby interfejs WWW działał poprawnie</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -393,7 +385,91 @@
     </message>
     <message>
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
-        <translation>Czy na pewno usunąć wybrane pliki torrent z listy transferów?</translation>
+        <translation type="vanished">Czy na pewno usunąć wybrane pliki torrent z listy transferów?</translation>
+    </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation>Port, na którym działa interfejs WWW, musi być pomiędzy 1 a 65535.</translation>
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation>%1 został zamknięty</translation>
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation>Wymagany JavaScript! Musisz włączyć obsługę JavaScript, aby interfejs WWW działał poprawnie</translation>
+    </message>
+    <message>
+        <source>External IP: N/A</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Reverse proxy setup examples</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Could not contact qBittorrent</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remember choice</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Are you sure you want to remove these %1 torrents from the transfer list?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to delete torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>External IP: %1%2</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Edit web seed</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Are you sure you want to remove %1 from the transfer list?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to set Auto Torrent Management for the selected torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to stop torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to download file</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>External IPs: %1, %2</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to recheck torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>List of web seeds to add (one per line):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to start torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add web seeds</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -424,7 +500,7 @@
     </message>
     <message>
         <source>Resume</source>
-        <translation>Wznów</translation>
+        <translation type="vanished">Wznów</translation>
     </message>
     <message>
         <source>Top Toolbar</source>
@@ -444,7 +520,7 @@
     </message>
     <message>
         <source>Resume All</source>
-        <translation>Wznów wszystkie</translation>
+        <translation type="vanished">Wznów wszystkie</translation>
     </message>
     <message>
         <source>Statistics</source>
@@ -456,11 +532,11 @@
     </message>
     <message>
         <source>Pause</source>
-        <translation>Wstrzymaj</translation>
+        <translation type="vanished">Wstrzymaj</translation>
     </message>
     <message>
         <source>Pause All</source>
-        <translation>Wstrzymaj wszystkie</translation>
+        <translation type="vanished">Wstrzymaj wszystkie</translation>
     </message>
     <message>
         <source>Add Torrent File...</source>
@@ -493,11 +569,6 @@
     <message>
         <source>Are you sure you want to quit qBittorrent?</source>
         <translation>Czy na pewno chcesz zamknąć qBittorrent?</translation>
-    </message>
-    <message>
-        <source>[D: %1, U: %2] qBittorrent %3</source>
-        <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[P: %1, W: %2] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -561,11 +632,11 @@
     </message>
     <message>
         <source>Connection status: Firewalled</source>
-        <translation>Status połączenia: za zaporą</translation>
+        <translation>Stan połączenia: za zaporą</translation>
     </message>
     <message>
         <source>Connection status: Connected</source>
-        <translation>Status połączenia: połączony</translation>
+        <translation>Stan połączenia: połączony</translation>
     </message>
     <message>
         <source>Alternative speed limits: Off</source>
@@ -574,10 +645,6 @@
     <message>
         <source>Download speed icon</source>
         <translation>Ikona prędkości pobierania</translation>
-    </message>
-    <message>
-        <source>Connection status</source>
-        <translation>Status połączenia</translation>
     </message>
     <message>
         <source>Alternative speed limits: On</source>
@@ -589,7 +656,7 @@
     </message>
     <message>
         <source>Connection status: Disconnected</source>
-        <translation>Status połączenia: rozłączony</translation>
+        <translation>Stan połączenia: rozłączony</translation>
     </message>
     <message>
         <source>RSS Reader</source>
@@ -613,11 +680,11 @@
     </message>
     <message>
         <source>Would you like to resume all torrents?</source>
-        <translation>Czy chcesz wznowić wszystkie torrenty?</translation>
+        <translation type="vanished">Czy chcesz wznowić wszystkie torrenty?</translation>
     </message>
     <message>
         <source>Would you like to pause all torrents?</source>
-        <translation>Czy chcesz wstrzymać wszystkie torrenty?</translation>
+        <translation type="vanished">Czy chcesz wstrzymać wszystkie torrenty?</translation>
     </message>
     <message>
         <source>Execution Log</source>
@@ -626,6 +693,58 @@
     <message>
         <source>Log</source>
         <translation>Dziennik</translation>
+    </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
+        <translation>[P: %1, W: %2]</translation>
+    </message>
+    <message>
+        <source>Filter by:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Save Path</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use regular expression</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Would you like to start all torrents?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Manage Cookies...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to export torrent file</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Would you like to stop all torrents?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start All</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop All</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -651,16 +770,12 @@
         <translation>BitTorrent</translation>
     </message>
     <message>
-        <source>Web UI</source>
-        <translation>Interfejs WWW</translation>
-    </message>
-    <message>
         <source>Language</source>
         <translation>Język</translation>
     </message>
     <message>
         <source>User Interface Language:</source>
-        <translation>Język interfejsu:</translation>
+        <translation type="vanished">Język interfejsu:</translation>
     </message>
     <message>
         <source>Email notification upon download completion</source>
@@ -680,7 +795,7 @@
     </message>
     <message>
         <source>Automatically add these trackers to new downloads:</source>
-        <translation>Automatycznie dodaj te trackery do nowych pobierań:</translation>
+        <translation type="vanished">Automatycznie dodaj te trackery do nowych pobierań:</translation>
     </message>
     <message>
         <source>Web User Interface (Remote control)</source>
@@ -799,10 +914,6 @@
         <translation>Typ:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Żaden)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -825,10 +936,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Używaj proxy do połączeń z partnerami</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Używaj proxy tylko do torrentów</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1009,14 +1116,6 @@
         <translation>Wskazówka: otocz parametr cudzysłowem, aby uniknąć odcięcia tekstu (np. "%N")</translation>
     </message>
     <message>
-        <source>The Web UI username must be at least 3 characters long.</source>
-        <translation>Nazwa użytkownika interfejsu WWW musi składać się z co najmniej 3 znaków.</translation>
-    </message>
-    <message>
-        <source>The Web UI password must be at least 6 characters long.</source>
-        <translation>Hasło interfejsu WWW musi składać się z co najmniej 6 znaków.</translation>
-    </message>
-    <message>
         <source>minutes</source>
         <translation>minut</translation>
     </message>
@@ -1053,16 +1152,8 @@
         <translation>Automatyczny</translation>
     </message>
     <message>
-        <source>Use alternative Web UI</source>
-        <translation>Używaj alternatywnego interfejsu WWW</translation>
-    </message>
-    <message>
         <source>Default Save Path:</source>
         <translation>Domyślna ścieżka zapisu:</translation>
-    </message>
-    <message>
-        <source>The alternative Web UI files location cannot be blank.</source>
-        <translation>Lokalizacja plików alternatywnego interfejsu WWW nie może być pusta.</translation>
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1177,10 +1268,6 @@
         <translation>Gdy współczynnik udziału osiągnie</translation>
     </message>
     <message>
-        <source>When seeding time reaches</source>
-        <translation>Gdy czas seedowania osiągnie</translation>
-    </message>
-    <message>
         <source>Allow multiple connections from the same IP address:</source>
         <translation>Zezwalaj na wiele połączeń z tego samego adresu IP:</translation>
     </message>
@@ -1206,7 +1293,7 @@
     </message>
     <message>
         <source>Pause torrent</source>
-        <translation>Wstrzymaj torrent</translation>
+        <translation type="vanished">Wstrzymaj torrent</translation>
     </message>
     <message>
         <source>Remove torrent and its files</source>
@@ -1223,10 +1310,6 @@
     <message>
         <source>libtorrent Section</source>
         <translation>Sekcja libtorrent</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation type="vanished">Porty wychodzące (min.) [0: wyłączone]:</translation>
     </message>
     <message>
         <source>Recheck torrents on completion:</source>
@@ -1247,10 +1330,6 @@
     <message>
         <source>Remove torrent</source>
         <translation>Usuń torrent</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation type="vanished">Porty wychodzące (maks.) [0: wyłączone]</translation>
     </message>
     <message>
         <source>Asynchronous I/O threads:</source>
@@ -1329,20 +1408,12 @@
         <translation>ban na:</translation>
     </message>
     <message>
-        <source>Stop tracker timeout:</source>
-        <translation type="vanished">Limit czasu zatrzymania trackera:</translation>
-    </message>
-    <message>
         <source>Ban client after consecutive failures:</source>
         <translation>Zbanuj klienta po kolejnych niepowodzeniach:</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
-        <translation>Włącz flagę bezpieczeństwa ciasteczka (wymaga HTTPS)</translation>
-    </message>
-    <message>
-        <source>UPnP lease duration [0: Permanent lease]:</source>
-        <translation type="vanished">Okres dzierżawy UPnP [0: dzierżawa stała]:</translation>
+        <translation type="vanished">Włącz flagę bezpieczeństwa ciasteczka (wymaga HTTPS)</translation>
     </message>
     <message>
         <source>Header: value pairs, one per line</source>
@@ -1359,14 +1430,6 @@
     <message>
         <source>Enable fetching RSS feeds</source>
         <translation>Włącz pobieranie kanałów RSS</translation>
-    </message>
-    <message>
-        <source>Hashing threads (requires libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">Wątki hashujące (wymaga libtorrent &gt;= 2.0):</translation>
-    </message>
-    <message>
-        <source>Coalesce reads &amp; writes (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Połączone odczyty i zapisy (wymaga libtorrent &lt; 2.0):</translation>
     </message>
     <message>
         <source>Peer turnover threshold percentage:</source>
@@ -1431,14 +1494,6 @@
     <message>
         <source>RSS Smart Episode Filter</source>
         <translation>Inteligentny filtr odcinków RSS</translation>
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Pamięć podręczna dysku (wymaga libtorrent &lt; 2.0):</translation>
-    </message>
-    <message>
-        <source>Disk cache expiry interval (requires libtorrent &lt; 2.0):</source>
-        <translation type="vanished">Okres ważności pamięci podręcznej dysku (wymaga libtorrent &lt; 2.0):</translation>
     </message>
     <message>
         <source>Validate HTTPS tracker certificate:</source>
@@ -1545,14 +1600,6 @@
         <translation>Ta opcja jest mniej efektywna w systemie Linux</translation>
     </message>
     <message>
-        <source>Disk IO type (libtorrent &gt;= 2.0; requires restart):</source>
-        <translation type="vanished">Typ we/wy dysku (libtorrent &gt;= 2.0; wymaga ponownego uruchomienia):</translation>
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &gt;= 2.0.6)</source>
-        <translation type="vanished">Bez buforowania zapisu (wymaga libtorrent &gt;= 2.0.6)</translation>
-    </message>
-    <message>
         <source>It controls the internal state update interval which in turn will affect UI updates</source>
         <translation>Kontroluje częstotliwość aktualizacji stanu wewnętrznego, co z kolei wpłynie na aktualizacje interfejsu użytkownika</translation>
     </message>
@@ -1585,10 +1632,6 @@
         <translation>Częstotliwość odświeżania:</translation>
     </message>
     <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &gt;= 2.0):</source>
-        <translation type="vanished">Limit wykorzystania pamięci fizycznej (RAM) (stosowany, jeśli libtorrent &gt;= 2.0):</translation>
-    </message>
-    <message>
         <source>ms</source>
         <translation>ms</translation>
     </message>
@@ -1602,7 +1645,7 @@
     </message>
     <message>
         <source>Run external program on torrent finished</source>
-        <translation>Uruchom zewnętrzny program po ukończeniu torrenta</translation>
+        <translation type="vanished">Uruchom zewnętrzny program po ukończeniu torrenta</translation>
     </message>
     <message>
         <source>Whitelist for filtering HTTP Host header values.
@@ -1618,7 +1661,7 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Run external program on torrent added</source>
-        <translation>Uruchom zewnętrzny program po dodaniu torrenta</translation>
+        <translation type="vanished">Uruchom zewnętrzny program po dodaniu torrenta</translation>
     </message>
     <message>
         <source>HTTPS certificate should not be empty</source>
@@ -1647,10 +1690,6 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     <message>
         <source>If checked, hostname lookups are done via the proxy.</source>
         <translation>Jeśli zaznaczono, wyszukiwanie nazw hostów odbywa się za pośrednictwem proxy.</translation>
-    </message>
-    <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation>Użyj proxy do wyszukiwania nazwy hosta</translation>
     </message>
     <message>
         <source>Metadata received</source>
@@ -1682,110 +1721,406 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <translation>Stwórz kopię pliku dziennika po:</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished" />
+        <translation>dni</translation>
     </message>
     <message>
         <source>Log file</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Plik dziennika</translation>
     </message>
     <message>
         <source>Behavior</source>
-        <translation type="unfinished" />
+        <translation>Zachowanie</translation>
     </message>
     <message>
         <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
+        <translation>Usuń kopie dzienników starszych niż:</translation>
     </message>
     <message>
         <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
+        <translation>Użyj proxy do celów BitTorrenta</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished" />
+        <translation>lat</translation>
     </message>
     <message>
         <source>Save path:</source>
-        <translation type="unfinished" />
+        <translation>Ścieżka zapisu:</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished" />
+        <translation>miesięcy</translation>
     </message>
     <message>
         <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
+        <translation>Zapamiętaj ustawienia wielokrotnego zmieniania nazw</translation>
     </message>
     <message>
         <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
+        <translation>Użyj proxy do celów ogólnych</translation>
     </message>
     <message>
         <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation>Użyj proxy do celów RSS</translation>
     </message>
     <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
+        <translation>Rozmiar bufora wysyłania gniazda [0: domyślne systemowe]:</translation>
     </message>
     <message>
         <source>Outgoing ports (Max) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Porty wychodzące (maks.) [0: wyłączone]:</translation>
     </message>
     <message>
         <source>Socket receive buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>Rozmiar bufora odbierania gniazda [0: domyślne systemowe]:</translation>
     </message>
     <message>
         <source>Use Subcategories</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
-        <translation type="unfinished" />
+        <translation>Użyj podkategorii</translation>
     </message>
     <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
-        <translation type="unfinished" />
+        <translation>Dodaj na początek kolejki</translation>
     </message>
     <message>
         <source>Stop tracker timeout [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Limit czasu zatrzymania trackera [0: wyłączone]:</translation>
     </message>
     <message>
         <source>Outgoing ports (Min) [0: disabled]:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation>Porty wychodzące (min.) [0: wyłączone]:</translation>
     </message>
     <message>
         <source>UPnP lease duration [0: permanent lease]:</source>
+        <translation>Okres dzierżawy UPnP [0: dzierżawa stała]:</translation>
+    </message>
+    <message>
+        <source>Bdecode depth limit:</source>
+        <translation>Limit głębi bdecode:</translation>
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation>Limit tokena bdecode:</translation>
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation>Gdy całkowity czas seedowania osiągnie</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Żaden)</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation>Ścieżka pliku wykonywalnego Pythona (może wymagać ponownego uruchomienia):</translation>
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation>Resetuje do ustawień domyślnych, jeśli puste</translation>
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation>Wykonaj wyszukiwanie nazwy hosta przez serwer proxy</translation>
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation>Jeśli &amp;quot;tryb mieszany&amp;quot; jest włączony, torrenty I2P mogą również uzyskiwać połączenia równorzędne z innych źródeł niż trackery i łączyć się ze zwykłymi adresami IP, nie zapewniając żadnej anonimizacji. Może to być przydatne, jeśli użytkownik nie jest zainteresowany anonimizacją I2P, ale nadal chce mieć możliwość łączenia się z partnerami I2P.</translation>
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation>Węzły bootstrap DHT:</translation>
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation>Gdy nieaktywny czas seedowania osiągnie</translation>
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation>Tryb mieszany</translation>
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation>Limit rozmiaru pliku .torrent:</translation>
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation>(Autowykrywanie, jeśli puste)</translation>
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation>Zachowaj niewybrane pliki w folderze ".unwanted"</translation>
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation>Włącz Mark-of-the-Web (MOTW) dla pobranych plików (wymaga systemu macOS lub Windows):</translation>
+    </message>
+    <message>
+        <source> sec</source>
+        <translation> s</translation>
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation>Ilość ruchu wychodzącego I2P:</translation>
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation>Ilość ruchu przychodzącego I2P:</translation>
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation>Wątki hashujące:</translation>
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit:</source>
+        <translation>Limit wykorzystania pamięci fizycznej (RAM):</translation>
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation>Używaj alternatywnego interfejsu WWW</translation>
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation>Okres ważności pamięci podręcznej:</translation>
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation>Długość ruchu wychodzącego I2P:</translation>
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation>I2P (eksperymentalne)</translation>
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation>Typ we/wy dysku (wymaga ponownego uruchomienia):</translation>
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation>Lokalizacja plików alternatywnego interfejsu WWW nie może być pusta.</translation>
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation>Pamięć podręczna dysku:</translation>
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation>Bez buforowania zapisu</translation>
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation>Interfejs WWW</translation>
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation>Hasło interfejsu WWW musi składać się z co najmniej 6 znaków.</translation>
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation>Połączone odczyty i zapisy:</translation>
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation>Długość ruchu przychodzącego I2P:</translation>
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation>Dołącza tekst do tytułu okna, aby pomóc rozróżnić instancje qBittorent</translation>
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation>Nazwa użytkownika interfejsu WWW musi składać się z co najmniej 3 znaków.</translation>
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation>Opóźnienie żądania tego samego hosta:</translation>
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
+        <translation>Dostosuj nazwę instancji aplikacji:</translation>
+    </message>
+    <message>
+        <source>Color scheme:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Show external IP in status bar</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Fetched trackers</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Confirm when deleting torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Ignore SSL errors:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Delete files permanently</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternating row colors</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Display full announce URL in the Tracker column</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>URL:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Transfer list</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The announce port must be between 0 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Light</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Automatically append these trackers to new downloads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Downloading torrents:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start / stop torrent</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Send test email</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Completed torrents:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enable cookie Secure flag (requires HTTPS or localhost connection)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When duplicate torrent is being added</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Action on double-click</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Save statistics interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Shows a confirmation dialog upon torrent deletion</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Run on torrent finished:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Attempted to send email. Check your inbox to confirm success</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Automatically append trackers from URL to new downloads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Torrent content removing mode:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Move files to trash (if possible)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrent</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use Category paths in Manual Mode</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>List of alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Run on torrent added:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Port reported to trackers (requires restart) [0: listening port]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>User interface language:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Merge trackers to existing torrent</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Confirm torrent recheck:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Custom WebUI settings</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Following settings are WebUI only</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Simple pread/pwrite</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Resolve relative Save Path against appropriate Category path instead of Default one</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>No action</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Auto hide zero status filters</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Log Files</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2094,62 +2429,114 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished" />
+        <translation>Użyj wyrażeń regularnych</translation>
     </message>
     <message>
         <source>Filename</source>
-        <translation type="unfinished" />
+        <translation>Nazwa pliku</translation>
     </message>
     <message>
         <source>Filename + Extension</source>
-        <translation type="unfinished" />
+        <translation>Nazwa pliku + rozszerzenie</translation>
     </message>
     <message>
         <source>Enumerate Files</source>
-        <translation type="unfinished" />
+        <translation>Wylicz pliki</translation>
     </message>
     <message>
         <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
+        <translation>Zmiana nazwy nie powiodła się: plik lub folder już istnieje</translation>
     </message>
     <message>
         <source>Toggle Selection</source>
-        <translation type="unfinished" />
+        <translation>Przełącz wybór</translation>
     </message>
     <message>
         <source>Replacement Input</source>
-        <translation type="unfinished" />
+        <translation>Wejście zamieniania</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished" />
+        <translation>Zamień</translation>
     </message>
     <message>
         <source>Extension</source>
-        <translation type="unfinished" />
+        <translation>Rozszerzenie</translation>
     </message>
     <message>
         <source>Replace All</source>
-        <translation type="unfinished" />
+        <translation>Zamień wszystko</translation>
     </message>
     <message>
         <source>Include files</source>
-        <translation type="unfinished" />
+        <translation>Dołącz pliki</translation>
     </message>
     <message>
         <source>Include folders</source>
-        <translation type="unfinished" />
+        <translation>Dołącz foldery</translation>
     </message>
     <message>
         <source>Search Files</source>
-        <translation type="unfinished" />
+        <translation>Wyszukaj pliki</translation>
     </message>
     <message>
         <source>Case sensitive</source>
+        <translation>Rozróżnianie wielkości liter</translation>
+    </message>
+    <message>
+        <source>Match all occurrences</source>
+        <translation>Dopasuj wszystkie wystąpienia</translation>
+    </message>
+    <message>
+        <source>Copy web seed URL</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Replace option</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Edit web seed URL...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Web seed URL:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Ratio / Time Active (in months), indicates how popular the torrent is</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Popularity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Apply to which filename part</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove web seed</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Web seed editing</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add web seeds...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Private:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2282,11 +2669,11 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Resumed (0)</source>
-        <translation>Wznowione (0)</translation>
+        <translation type="vanished">Wznowione (0)</translation>
     </message>
     <message>
         <source>Paused (0)</source>
-        <translation>Wstrzymane (0)</translation>
+        <translation type="vanished">Wstrzymane (0)</translation>
     </message>
     <message>
         <source>Active (0)</source>
@@ -2318,11 +2705,11 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Paused (%1)</source>
-        <translation>Wstrzymane (%1)</translation>
+        <translation type="vanished">Wstrzymane (%1)</translation>
     </message>
     <message>
         <source>Resumed (%1)</source>
-        <translation>Wznowione (%1)</translation>
+        <translation type="vanished">Wznowione (%1)</translation>
     </message>
     <message>
         <source>Active (%1)</source>
@@ -2368,6 +2755,42 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
         <source>Checking (0)</source>
         <translation>Sprawdzanie (0)</translation>
     </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation>Przenoszenie (%1)</translation>
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation>Przenoszenie (0)</translation>
+    </message>
+    <message>
+        <source>Running (0)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stopped (0)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stopped (%1)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Running (%1)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrents</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TorrentContentModel</name>
@@ -2387,12 +2810,12 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     <message>
         <source>Done</source>
         <comment>% Done</comment>
-        <translation>Ukończono</translation>
+        <translation type="vanished">Ukończono</translation>
     </message>
     <message>
         <source>Status</source>
         <comment>Torrent status (e.g. downloading, seeding, paused)</comment>
-        <translation>Status</translation>
+        <translation>Stan</translation>
     </message>
     <message>
         <source>Seeds</source>
@@ -2520,6 +2943,38 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
         <source>Availability</source>
         <translation>Dostępność</translation>
     </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation>Rozgłoszenie za</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Info Hash v2</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Info Hash v1</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Incomplete Save Path</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Popularity</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Status Icon</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TrackerListWidget</name>
@@ -2529,7 +2984,7 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Status</source>
-        <translation>Status</translation>
+        <translation>Stan</translation>
     </message>
     <message>
         <source>Peers</source>
@@ -2629,11 +3084,11 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Renamed</source>
-        <translation type="unfinished" />
+        <translation>Zmieniono nazwę</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>Pierwotna</translation>
     </message>
 </context>
 <context>
@@ -2656,7 +3111,7 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Paused</source>
-        <translation>Wstrzymano</translation>
+        <translation type="vanished">Wstrzymano</translation>
     </message>
     <message>
         <source>Completed</source>
@@ -2722,12 +3177,20 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
         <source>[F] Downloading metadata</source>
         <translation>[W] Pobieranie metadanych</translation>
     </message>
+    <message>
+        <source>Stopped</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>N/A</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TransferListFiltersWidget</name>
     <message>
         <source>Status</source>
-        <translation>Status</translation>
+        <translation>Stan</translation>
     </message>
     <message>
         <source>Categories</source>
@@ -2743,6 +3206,10 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Collapse/expand</source>
+        <translation>Zwiń/rozwiń</translation>
+    </message>
+    <message>
+        <source>Collapse/expand category</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2763,17 +3230,17 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     <message>
         <source>Resume</source>
         <comment>Resume/start the torrent</comment>
-        <translation>Wznów</translation>
+        <translation type="vanished">Wznów</translation>
     </message>
     <message>
         <source>Force Resume</source>
         <comment>Force Resume/start the torrent</comment>
-        <translation>Wymuś wznowienie</translation>
+        <translation type="vanished">Wymuś wznowienie</translation>
     </message>
     <message>
         <source>Pause</source>
         <comment>Pause the torrent</comment>
-        <translation>Wstrzymaj</translation>
+        <translation type="vanished">Wstrzymaj</translation>
     </message>
     <message>
         <source>Limit share ratio...</source>
@@ -2855,11 +3322,11 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Location</source>
-        <translation>Błąd położenia</translation>
+        <translation type="vanished">Błąd położenia</translation>
     </message>
     <message>
         <source>New name</source>
-        <translation>Nowa nazwa</translation>
+        <translation type="vanished">Nowa nazwa</translation>
     </message>
     <message>
         <source>Set location</source>
@@ -2875,7 +3342,7 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Save path</source>
-        <translation>Ścieżka zapisu</translation>
+        <translation type="vanished">Ścieżka zapisu</translation>
     </message>
     <message>
         <source>Comma-separated tags:</source>
@@ -2883,7 +3350,7 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Add Tags</source>
-        <translation>Dodaj znaczniki</translation>
+        <translation type="vanished">Dodaj znaczniki</translation>
     </message>
     <message>
         <source>Tags</source>
@@ -2935,10 +3402,50 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Rename Files...</source>
-        <translation type="unfinished" />
+        <translation>Zmień nazwy plików...</translation>
     </message>
     <message>
         <source>Renaming</source>
+        <translation>Zmiana nazwy</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation>Komentarz</translation>
+    </message>
+    <message>
+        <source>Force Start</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Save path:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Automatic mode means that various torrent properties(eg save path) will be decided by the associated category</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>New name:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add tags</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Category:</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2965,8 +3472,12 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
         <translation>udział</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation>minuty</translation>
+        <source>total minutes</source>
+        <translation>łączne minuty</translation>
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation>nieaktywne minuty</translation>
     </message>
 </context>
 <context>
@@ -2976,11 +3487,19 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     <name>confirmDeletionDlg</name>
     <message>
         <source>Also permanently delete the files</source>
-        <translation>Również trwale usuń pliki</translation>
+        <translation type="vanished">Również trwale usuń pliki</translation>
     </message>
     <message>
         <source>Remove torrent(s)</source>
         <translation>Usuń torrent(y)</translation>
+    </message>
+    <message>
+        <source>Also remove the content files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove tracker</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3182,6 +3701,26 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
         <source>There aren't any search plugins installed.</source>
         <translation>Nie ma zainstalowanych żadnych wtyczek wyszukiwania.</translation>
     </message>
+    <message>
+        <source>Select category</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Min size prefix</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start a search above.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Max size prefix</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Select plugins</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>PluginSelectDlg</name>
@@ -3238,11 +3777,23 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Search engine</source>
-        <translation>Wyszukiwarka</translation>
+        <translation type="vanished">Wyszukiwarka</translation>
     </message>
     <message>
         <source>Seeders</source>
         <translation>Seedujący</translation>
+    </message>
+    <message>
+        <source>Published On</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Engine URL</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3311,11 +3862,11 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Pause torrents</source>
-        <translation>Wstrzymaj torrenty</translation>
+        <translation type="vanished">Wstrzymaj torrenty</translation>
     </message>
     <message>
         <source>Resume torrents</source>
-        <translation>Wznów torrenty</translation>
+        <translation type="vanished">Wznów torrenty</translation>
     </message>
     <message>
         <source>Remove unused tags</source>
@@ -3332,6 +3883,14 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     <message>
         <source>Remove torrents</source>
         <translation>Usuń torrenty</translation>
+    </message>
+    <message>
+        <source>Start torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrents</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3473,6 +4032,30 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
         <source>Download link</source>
         <translation>Odnośnik pobierania</translation>
     </message>
+    <message>
+        <source>Search has finished</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>An error occurred during search...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Close tab</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Search aborted</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Close all tabs</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TorrentContentTreeView</name>
@@ -3483,10 +4066,6 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     <message>
         <source>New name:</source>
         <translation>Nowa nazwa:</translation>
-    </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3586,6 +4165,22 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     <message>
         <source>Download torrent</source>
         <translation>Pobierz torrent</translation>
+    </message>
+    <message>
+        <source>Edit feed URL...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to update URL</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>URL is unchanged</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>URL cannot be empty</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3776,7 +4371,7 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     </message>
     <message>
         <source>Add Paused:</source>
-        <translation>Dodaj wstrzymane:</translation>
+        <translation type="vanished">Dodaj wstrzymane:</translation>
     </message>
     <message>
         <source>Please type the name of the new download rule.</source>
@@ -3832,28 +4427,64 @@ Obsługuje formaty: S01E01, 1x1, 2017.12.31 oraz 31.12.2017 (Formaty daty równi
         <source>Don't create subfolder</source>
         <translation>Nie twórz podfolderu</translation>
     </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation>Dodaj znaczniki:</translation>
+    </message>
+    <message>
+        <source>Remove rule</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add rule</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add Stopped:</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TrackerFiltersList</name>
     <message>
         <source>Resume torrents</source>
-        <translation>Wznów torrenty</translation>
+        <translation type="vanished">Wznów torrenty</translation>
     </message>
     <message>
         <source>All (%1)</source>
-        <translation>Wszystkie (%1)</translation>
+        <translation type="vanished">Wszystkie (%1)</translation>
     </message>
     <message>
         <source>Trackerless (%1)</source>
-        <translation>Bez trackera (%1)</translation>
+        <translation type="vanished">Bez trackera (%1)</translation>
     </message>
     <message>
         <source>Pause torrents</source>
-        <translation>Wstrzymaj torrenty</translation>
+        <translation type="vanished">Wstrzymaj torrenty</translation>
     </message>
     <message>
         <source>Remove torrents</source>
         <translation>Usuń torrenty</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Trackerless</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove tracker</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrents</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3935,7 +4566,7 @@ Obsługuje formaty: S01E01, 1x1, 2017.12.31 oraz 31.12.2017 (Formaty daty równi
     </message>
     <message>
         <source>Status</source>
-        <translation>Status</translation>
+        <translation>Stan</translation>
     </message>
     <message>
         <source>Timestamp</source>
@@ -4000,6 +4631,131 @@ Obsługuje formaty: S01E01, 1x1, 2017.12.31 oraz 31.12.2017 (Formaty daty równi
     <message>
         <source>Choose a log level...</source>
         <translation>Wybierz poziom dziennika...</translation>
+    </message>
+</context>
+<context>
+    <name>TrackersFilterWidget</name>
+    <message>
+        <source>Are you sure you want to remove tracker %1 from all torrents?</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>Category</name>
+    <message>
+        <source>Unable to edit category</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to create category</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to set category</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>CookiesDialog</name>
+    <message>
+        <source>Domain</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Manage Cookies</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add Cookie</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Expiration Date</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Path</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>confirmAutoTMMDialog</name>
+    <message>
+        <source>Enable automatic torrent management</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Are you sure you want to enable Automatic Torrent Management for the selected torrent(s)? They may be relocated.</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>confirmRecheckDialog</name>
+    <message>
+        <source>Are you sure you want to recheck the selected torrent(s)?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Recheck confirmation</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>SearchWidget</name>
+    <message>
+        <source>Close tab</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>Login</name>
+    <message>
+        <source>qBittorrent WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Server response:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to log in, server is probably unreachable.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Invalid Username or Password.</source>
+        <translation type="unfinished" />
     </message>
 </context>
 </TS>

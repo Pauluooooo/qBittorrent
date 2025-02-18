@@ -31,9 +31,6 @@
 
 #include <functional>
 #include <set>
-#include <type_traits>
-
-#include "algorithm.h"
 
 template <typename T, typename Compare = std::less<T>>
 class OrderedSet : public std::set<T, Compare>
@@ -51,13 +48,6 @@ public:
 
     // The following are custom functions that are in line with Qt API interface, such as `QSet`
 
-#if __cplusplus < 202002L
-    bool contains(const key_type &value) const
-    {
-        return (BaseType::find(value) != BaseType::cend());
-    }
-#endif
-
     int count() const
     {
         return static_cast<int>(BaseType::size());
@@ -65,7 +55,7 @@ public:
 
     ThisType &intersect(const ThisType &other)
     {
-        Algorithm::removeIf(*this, [&other](const value_type &value) -> bool
+        std::erase_if(*this, [&other](const value_type &value) -> bool
         {
             return !other.contains(value);
         });
@@ -75,25 +65,6 @@ public:
     bool isEmpty() const
     {
         return BaseType::empty();
-    }
-
-    template <typename std::enable_if_t<std::is_same_v<value_type, QString>, int> = 0>
-    QString join(const QString &separator) const
-    {
-        auto iter = BaseType::cbegin();
-        if (iter == BaseType::cend())
-            return {};
-
-        QString ret = *iter;
-        ++iter;
-
-        while (iter != BaseType::cend())
-        {
-            ret.push_back(separator + *iter);
-            ++iter;
-        }
-
-        return ret;
     }
 
     bool remove(const key_type &value)

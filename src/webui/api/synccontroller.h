@@ -28,21 +28,17 @@
 
 #pragma once
 
-#include <QElapsedTimer>
-#include <QVariantMap>
 #include <QSet>
+#include <QVariantMap>
 
 #include "base/bittorrent/infohash.h"
+#include "base/tag.h"
 #include "apicontroller.h"
-
-class QThread;
 
 namespace BitTorrent
 {
     class Torrent;
 }
-
-class FreeDiskSpaceChecker;
 
 class SyncController : public APIController
 {
@@ -54,14 +50,14 @@ public:
 
     explicit SyncController(IApplication *app, QObject *parent = nullptr);
 
+public slots:
+    void updateFreeDiskSpace(qint64 freeDiskSpace);
+
 private slots:
     void maindataAction();
     void torrentPeersAction();
 
 private:
-    qint64 getFreeDiskSpace();
-    void invokeChecker();
-
     void makeMaindataSnapshot();
     QJsonObject generateMaindataSyncData(int id, bool fullUpdate);
 
@@ -69,24 +65,22 @@ private:
     void onCategoryRemoved(const QString &categoryName);
     void onCategoryOptionsChanged(const QString &categoryName);
     void onSubcategoriesSupportChanged();
-    void onTagAdded(const QString &tag);
-    void onTagRemoved(const QString &tag);
+    void onTagAdded(const Tag &tag);
+    void onTagRemoved(const Tag &tag);
     void onTorrentAdded(BitTorrent::Torrent *torrent);
     void onTorrentAboutToBeRemoved(BitTorrent::Torrent *torrent);
     void onTorrentCategoryChanged(BitTorrent::Torrent *torrent, const QString &oldCategory);
     void onTorrentMetadataReceived(BitTorrent::Torrent *torrent);
-    void onTorrentPaused(BitTorrent::Torrent *torrent);
-    void onTorrentResumed(BitTorrent::Torrent *torrent);
+    void onTorrentStopped(BitTorrent::Torrent *torrent);
+    void onTorrentStarted(BitTorrent::Torrent *torrent);
     void onTorrentSavePathChanged(BitTorrent::Torrent *torrent);
     void onTorrentSavingModeChanged(BitTorrent::Torrent *torrent);
-    void onTorrentTagAdded(BitTorrent::Torrent *torrent, const QString &tag);
-    void onTorrentTagRemoved(BitTorrent::Torrent *torrent, const QString &tag);
-    void onTorrentsUpdated(const QVector<BitTorrent::Torrent *> &torrents);
+    void onTorrentTagAdded(BitTorrent::Torrent *torrent, const Tag &tag);
+    void onTorrentTagRemoved(BitTorrent::Torrent *torrent, const Tag &tag);
+    void onTorrentsUpdated(const QList<BitTorrent::Torrent *> &torrents);
     void onTorrentTrackersChanged(BitTorrent::Torrent *torrent);
 
     qint64 m_freeDiskSpace = 0;
-    QElapsedTimer m_freeDiskSpaceElapsedTimer;
-    bool m_isFreeDiskSpaceCheckerRunning = false;
 
     QVariantMap m_lastPeersResponse;
     QVariantMap m_lastAcceptedPeersResponse;

@@ -70,6 +70,22 @@
         <source>Add to top of queue</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>One link per line (HTTP links, Magnet links and info-hashes are supported)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add torrent links</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Select .torrent files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Torrent options</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>CategoryFilterModel</name>
@@ -98,11 +114,11 @@
     </message>
     <message>
         <source>Resume torrents</source>
-        <translation>Торрентуудыг үргэлжлүүлэх</translation>
+        <translation type="vanished">Торрентуудыг үргэлжлүүлэх</translation>
     </message>
     <message>
         <source>Pause torrents</source>
-        <translation>Торрентуудыг зогсоох</translation>
+        <translation type="vanished">Торрентуудыг зогсоох</translation>
     </message>
     <message>
         <source>New Category</source>
@@ -120,6 +136,14 @@
         <source>Add subcategory...</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Start torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrents</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>HttpServer</name>
@@ -129,7 +153,7 @@
     </message>
     <message>
         <source>Only one link per line</source>
-        <translation>1 мөрөнд 1 холбоос</translation>
+        <translation type="vanished">1 мөрөнд 1 холбоос</translation>
     </message>
     <message>
         <source>Global upload rate limit must be greater than 0 or disabled.</source>
@@ -188,30 +212,6 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>Веб ХИ-д хэрэглэгдэх оролт нь 1, 65535 хооронд байх ёстой.</translation>
-    </message>
-    <message>
-        <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>Нэвтэрч чадсангүй, qBittorrent-н хандалт таслалдсан байж болно.</translation>
-    </message>
-    <message>
-        <source>Invalid Username or Password.</source>
-        <translation>Хэрэглэгчийн нэр эсвэл нууц үг тохирохгүй байна.</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Хэрэглэгчийн нэр</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Нууц үг</translation>
-    </message>
-    <message>
-        <source>Login</source>
-        <translation>Нэвтрэх</translation>
-    </message>
-    <message>
         <source>Apply</source>
         <translation>Батлах</translation>
     </message>
@@ -230,7 +230,7 @@
     </message>
     <message>
         <source>Cookie:</source>
-        <translation>Күүкий:</translation>
+        <translation type="vanished">Күүкий:</translation>
     </message>
     <message>
         <source>More information</source>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>Download Torrents from their URLs or Magnet links</source>
-        <translation>Торрентуудыг тэдний URL-р эсвэл соронзон холбоосоор татах</translation>
+        <translation type="vanished">Торрентуудыг тэдний URL-р эсвэл соронзон холбоосоор татах</translation>
     </message>
     <message>
         <source>Upload local torrent</source>
@@ -321,7 +321,7 @@
     </message>
     <message>
         <source>Unable to create category</source>
-        <translation>Ангилал үүсгэж чадсангүй</translation>
+        <translation type="vanished">Ангилал үүсгэж чадсангүй</translation>
     </message>
     <message>
         <source>Upload rate threshold must be greater than 0.</source>
@@ -348,10 +348,6 @@
         <translation>Таталтын зэргийн босго 0-ээс илүү байх шаардлагатай.</translation>
     </message>
     <message>
-        <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent хаагдлаа</translation>
-    </message>
-    <message>
         <source>Open documentation</source>
         <translation>Бичиг баримтыг нээх</translation>
     </message>
@@ -362,10 +358,6 @@
     <message>
         <source>Unable to add peers. Please ensure you are adhering to the IP:port format.</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>JavaScript шаардлагатай! Веб ХИ-ийг алдаагүй ажиллуулахын тулд JavaScript-ээ идэвхжүүлнэ үү</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -389,10 +381,90 @@
     </message>
     <message>
         <source>Original author</source>
+        <translation>Анхны зохиогч</translation>
+    </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>External IP: N/A</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Reverse proxy setup examples</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Could not contact qBittorrent</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remember choice</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Are you sure you want to remove these %1 torrents from the transfer list?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to delete torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>External IP: %1%2</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Edit web seed</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Are you sure you want to remove %1 from the transfer list?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to set Auto Torrent Management for the selected torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to stop torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to download file</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>External IPs: %1, %2</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to recheck torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>List of web seeds to add (one per line):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to start torrents.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add web seeds</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -424,7 +496,7 @@
     </message>
     <message>
         <source>Resume</source>
-        <translation>Үргэлжлүүлэх</translation>
+        <translation type="vanished">Үргэлжлүүлэх</translation>
     </message>
     <message>
         <source>Top Toolbar</source>
@@ -444,7 +516,7 @@
     </message>
     <message>
         <source>Resume All</source>
-        <translation>Бүгдийг үргэлжлүүлэх</translation>
+        <translation type="vanished">Бүгдийг үргэлжлүүлэх</translation>
     </message>
     <message>
         <source>Statistics</source>
@@ -456,11 +528,11 @@
     </message>
     <message>
         <source>Pause</source>
-        <translation>Түр зогсоох</translation>
+        <translation type="vanished">Түр зогсоох</translation>
     </message>
     <message>
         <source>Pause All</source>
-        <translation>Бүгдийг түр зогсоох</translation>
+        <translation type="vanished">Бүгдийг түр зогсоох</translation>
     </message>
     <message>
         <source>Add Torrent File...</source>
@@ -493,11 +565,6 @@
     <message>
         <source>Are you sure you want to quit qBittorrent?</source>
         <translation>qBittorrent-ийг хаахдаа итгэлтэй байна уу?</translation>
-    </message>
-    <message>
-        <source>[D: %1, U: %2] qBittorrent %3</source>
-        <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[Т: %1, И: %2] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -576,10 +643,6 @@
         <translation>Таталтын хурдны дүрс</translation>
     </message>
     <message>
-        <source>Connection status</source>
-        <translation>Холболтын төлөв</translation>
-    </message>
-    <message>
         <source>Alternative speed limits: On</source>
         <translation>Ялгаатай хурдны хязгаарлалт: Идэвхтэй</translation>
     </message>
@@ -605,26 +668,70 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation>Цуцлах</translation>
     </message>
     <message>
         <source>Remove</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Would you like to resume all torrents?</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Would you like to pause all torrents?</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Execution Log</source>
-        <translation type="unfinished" />
+        <translation>Гүйцэтгэх Нэвтрэх</translation>
     </message>
     <message>
         <source>Log</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Filter by:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Save Path</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use regular expression</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Would you like to start all torrents?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Manage Cookies...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to export torrent file</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Would you like to stop all torrents?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start All</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop All</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -651,16 +758,12 @@
         <translation>BitTorrent</translation>
     </message>
     <message>
-        <source>Web UI</source>
-        <translation>Веб ХИ</translation>
-    </message>
-    <message>
         <source>Language</source>
         <translation>Хэл</translation>
     </message>
     <message>
         <source>User Interface Language:</source>
-        <translation>Хэрэглэгчид харагдах хэл:</translation>
+        <translation type="vanished">Хэрэглэгчид харагдах хэл:</translation>
     </message>
     <message>
         <source>Email notification upon download completion</source>
@@ -677,10 +780,6 @@
     <message>
         <source>Torrent Queueing</source>
         <translation>Торрентийн дараалал</translation>
-    </message>
-    <message>
-        <source>Automatically add these trackers to new downloads:</source>
-        <translation type="unfinished" />
     </message>
     <message>
         <source>Web User Interface (Remote control)</source>
@@ -799,10 +898,6 @@
         <translation>Төрөл:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Хоосон)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -825,10 +920,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Проксиг зөвхөн торрентууд дээр л хэрэглэх</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1009,14 +1100,6 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <source>The Web UI username must be at least 3 characters long.</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>The Web UI password must be at least 6 characters long.</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>minutes</source>
         <translation type="unfinished" />
     </message>
@@ -1050,18 +1133,10 @@
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use alternative Web UI</source>
-        <translation type="unfinished" />
+        <translation>Шууд</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>The alternative Web UI files location cannot be blank.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1122,7 +1197,7 @@
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished" />
+        <translation>Гараар</translation>
     </message>
     <message>
         <source>Torrent inactivity timer:</source>
@@ -1162,7 +1237,7 @@
     </message>
     <message>
         <source>Prefer TCP</source>
-        <translation type="unfinished" />
+        <translation>TCP-г илүүд үзэх</translation>
     </message>
     <message>
         <source>Outstanding memory when checking torrents:</source>
@@ -1177,10 +1252,6 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <source>When seeding time reaches</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Allow multiple connections from the same IP address:</source>
         <translation type="unfinished" />
     </message>
@@ -1190,7 +1261,7 @@
     </message>
     <message>
         <source>Any interface</source>
-        <translation type="unfinished" />
+        <translation>Ямар ч үзэмж</translation>
     </message>
     <message>
         <source>Always announce to all tiers:</source>
@@ -1202,11 +1273,7 @@
     </message>
     <message>
         <source>Fastest upload</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Pause torrent</source>
-        <translation type="unfinished" />
+        <translation>Дээд хурд</translation>
     </message>
     <message>
         <source>Remove torrent and its files</source>
@@ -1214,7 +1281,7 @@
     </message>
     <message>
         <source>qBittorrent Section</source>
-        <translation type="unfinished" />
+        <translation>qBittorrent Хэсэг</translation>
     </message>
     <message>
         <source>Send buffer watermark factor:</source>
@@ -1222,7 +1289,7 @@
     </message>
     <message>
         <source>libtorrent Section</source>
-        <translation type="unfinished" />
+        <translation>libtorrent Хэсэг</translation>
     </message>
     <message>
         <source>Recheck torrents on completion:</source>
@@ -1325,10 +1392,6 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Enable cookie Secure flag (requires HTTPS)</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Header: value pairs, one per line</source>
         <translation type="unfinished" />
     </message>
@@ -1354,7 +1417,7 @@
     </message>
     <message>
         <source>RSS</source>
-        <translation type="unfinished" />
+        <translation>RSS</translation>
     </message>
     <message>
         <source>Network interface:</source>
@@ -1362,7 +1425,7 @@
     </message>
     <message>
         <source>RSS Reader</source>
-        <translation type="unfinished" />
+        <translation>RSS Уншигч</translation>
     </message>
     <message>
         <source>Edit auto downloading rules...</source>
@@ -1386,7 +1449,7 @@
     </message>
     <message>
         <source> min</source>
-        <translation type="unfinished" />
+        <translation>минут</translation>
     </message>
     <message>
         <source>Peer turnover disconnect interval:</source>
@@ -1418,19 +1481,19 @@
     </message>
     <message>
         <source>Torrent content layout:</source>
-        <translation type="unfinished" />
+        <translation>Торрентийн контент төлөвлөлт:</translation>
     </message>
     <message>
         <source>Create subfolder</source>
-        <translation type="unfinished" />
+        <translation>Дэд хавтас үүсгэх</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>Анхны загвар</translation>
     </message>
     <message>
         <source>Don't create subfolder</source>
-        <translation type="unfinished" />
+        <translation>Дэд хавтас үүсгэхгүй</translation>
     </message>
     <message>
         <source>Type of service (ToS) for connections to peers</source>
@@ -1538,7 +1601,7 @@
     </message>
     <message>
         <source>Enable OS cache</source>
-        <translation type="unfinished" />
+        <translation>Үйлдлийн системийн кэшийг идэвхжүүлэх</translation>
     </message>
     <message>
         <source>Refresh interval:</source>
@@ -1557,19 +1620,11 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Run external program on torrent finished</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Whitelist for filtering HTTP Host header values.
 In order to defend against DNS rebinding attack,
 you should put in domain names used by WebUI server.
 
 Use ';' to split multiple entries. Can use wildcard '*'.</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Run external program on torrent added</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1598,10 +1653,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>If checked, hostname lookups are done via the proxy.</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for hostname lookup</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1641,10 +1692,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Log file</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Behavior</source>
         <translation type="unfinished" />
     </message>
@@ -1681,23 +1728,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1713,15 +1744,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Add to top of queue</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -1733,11 +1756,331 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
+        <source>UPnP lease duration [0: permanent lease]:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>UPnP lease duration [0: permanent lease]:</source>
+        <source>Bdecode depth limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Хоосон)</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Color scheme:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Show external IP in status bar</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Fetched trackers</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Confirm when deleting torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Ignore SSL errors:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Delete files permanently</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternating row colors</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Display full announce URL in the Tracker column</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>URL:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Transfer list</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The announce port must be between 0 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Light</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Automatically append these trackers to new downloads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Downloading torrents:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start / stop torrent</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Send test email</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Completed torrents:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enable cookie Secure flag (requires HTTPS or localhost connection)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When duplicate torrent is being added</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Action on double-click</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Save statistics interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Shows a confirmation dialog upon torrent deletion</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Run on torrent finished:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Attempted to send email. Check your inbox to confirm success</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Automatically append trackers from URL to new downloads:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Torrent content removing mode:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Move files to trash (if possible)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrent</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use Category paths in Manual Mode</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>List of alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Run on torrent added:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Port reported to trackers (requires restart) [0: listening port]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>User interface language:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Merge trackers to existing torrent</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Confirm torrent recheck:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Custom WebUI settings</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Following settings are WebUI only</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Simple pread/pwrite</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Resolve relative Save Path against appropriate Category path instead of Default one</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>No action</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Auto hide zero status filters</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Log Files</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1829,17 +2172,17 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>Normal</source>
         <comment>Normal (priority)</comment>
-        <translation type="unfinished" />
+        <translation>Хэвийн</translation>
     </message>
     <message>
         <source>High</source>
         <comment>High (priority)</comment>
-        <translation type="unfinished" />
+        <translation>Их</translation>
     </message>
     <message>
         <source>Maximum</source>
         <comment>Maximum (priority)</comment>
-        <translation type="unfinished" />
+        <translation>Маш их</translation>
     </message>
     <message>
         <source>Mixed</source>
@@ -1847,14 +2190,14 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Do not download</source>
-        <translation type="unfinished" />
+        <translation>Бүү тат</translation>
     </message>
 </context>
 <context>
     <name>PropTabBar</name>
     <message>
         <source>General</source>
-        <translation type="unfinished" />
+        <translation>Үндсэн</translation>
     </message>
     <message>
         <source>Trackers</source>
@@ -1930,11 +2273,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished" />
+        <translation>Мэдээлэл</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished" />
+        <translation>Сэтгэгдэл:</translation>
     </message>
     <message>
         <source>Share Ratio:</source>
@@ -1978,7 +2321,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished" />
+        <translation>Үгүй</translation>
     </message>
     <message>
         <source>%1 x %2 (have %3)</source>
@@ -2014,7 +2357,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Priority</source>
-        <translation type="unfinished" />
+        <translation>Ээлж</translation>
     </message>
     <message>
         <source>Filter files...</source>
@@ -2022,7 +2365,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Rename...</source>
-        <translation type="unfinished" />
+        <translation>Нэр солих...</translation>
     </message>
     <message>
         <source>%1 (seeded for %2)</source>
@@ -2046,7 +2389,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished" />
+        <translation>Тогтмол хэллэг ашиглах</translation>
     </message>
     <message>
         <source>Filename</source>
@@ -2062,10 +2405,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2104,6 +2443,62 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Case sensitive</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Match all occurrences</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Copy web seed URL</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Replace option</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Edit web seed URL...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Web seed URL:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Ratio / Time Active (in months), indicates how popular the torrent is</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Popularity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Apply to which filename part</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove web seed</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Web seed editing</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add web seeds...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Private:</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>ScanFoldersModel</name>
@@ -2125,11 +2520,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Other...</source>
-        <translation type="unfinished" />
+        <translation>Бусад...</translation>
     </message>
     <message>
         <source>Type folder here</source>
-        <translation type="unfinished" />
+        <translation>Хавтсыг энд бичнэ үү</translation>
     </message>
 </context>
 <context>
@@ -2143,7 +2538,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <name>StatsDialog</name>
     <message>
         <source>Statistics</source>
-        <translation type="unfinished" />
+        <translation>Үзүүлэлтүүд</translation>
     </message>
     <message>
         <source>User statistics</source>
@@ -2218,7 +2613,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>All (0)</source>
         <comment>this is for the status filter</comment>
-        <translation type="unfinished" />
+        <translation>Бүгд (0)</translation>
     </message>
     <message>
         <source>Downloading (0)</source>
@@ -2230,14 +2625,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Completed (0)</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Resumed (0)</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Paused (0)</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2254,7 +2641,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>All (%1)</source>
-        <translation type="unfinished" />
+        <translation>Бүгд (%1)</translation>
     </message>
     <message>
         <source>Downloading (%1)</source>
@@ -2266,14 +2653,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Completed (%1)</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Paused (%1)</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Resumed (%1)</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2320,6 +2699,42 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Checking (0)</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Running (0)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stopped (0)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stopped (%1)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Running (%1)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrents</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TorrentContentModel</name>
@@ -2334,11 +2749,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>Size</source>
         <comment>i.e: torrent size</comment>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Done</source>
-        <comment>% Done</comment>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2359,12 +2769,12 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>Down Speed</source>
         <comment>i.e: Download speed</comment>
-        <translation type="unfinished" />
+        <translation>Татах хурд</translation>
     </message>
     <message>
         <source>Up Speed</source>
         <comment>i.e: Upload speed</comment>
-        <translation type="unfinished" />
+        <translation>Түгээх хурд</translation>
     </message>
     <message>
         <source>Ratio</source>
@@ -2411,12 +2821,12 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>Downloaded</source>
         <comment>Amount of data downloaded (e.g. in MB)</comment>
-        <translation type="unfinished" />
+        <translation>Татагдсан</translation>
     </message>
     <message>
         <source>Uploaded</source>
         <comment>Amount of data uploaded (e.g. in MB)</comment>
-        <translation type="unfinished" />
+        <translation>Түгээсэн</translation>
     </message>
     <message>
         <source>Session Download</source>
@@ -2472,6 +2882,38 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Availability</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Private</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Info Hash v2</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Info Hash v1</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Incomplete Save Path</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Popularity</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Status Icon</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TrackerListWidget</name>
@@ -2505,7 +2947,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished" />
+        <translation>Идэвхгүй</translation>
     </message>
     <message>
         <source>Not contacted yet</source>
@@ -2565,7 +3007,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished" />
+        <translation>Явц</translation>
     </message>
     <message>
         <source>Total Size</source>
@@ -2585,7 +3027,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>Анхны загвар</translation>
     </message>
 </context>
 <context>
@@ -2604,10 +3046,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>%1 ago</source>
         <comment>e.g.: 1h 20m ago</comment>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Paused</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2674,6 +3112,14 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>[F] Downloading metadata</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Stopped</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>N/A</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TransferListFiltersWidget</name>
@@ -2697,6 +3143,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Collapse/expand</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Collapse/expand category</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TransferListWidget</name>
@@ -2715,17 +3165,12 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>Resume</source>
         <comment>Resume/start the torrent</comment>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Force Resume</source>
-        <comment>Force Resume/start the torrent</comment>
-        <translation type="unfinished" />
+        <translation type="vanished">Үргэлжлүүлэх</translation>
     </message>
     <message>
         <source>Pause</source>
         <comment>Pause the torrent</comment>
-        <translation type="unfinished" />
+        <translation type="vanished">Түр зогсоох</translation>
     </message>
     <message>
         <source>Limit share ratio...</source>
@@ -2765,7 +3210,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Download first and last pieces first</source>
-        <translation type="unfinished" />
+        <translation>Эхний болон сүүлийн хэсгүүдийг эхэлж татах</translation>
     </message>
     <message>
         <source>Automatic Torrent Management</source>
@@ -2795,27 +3240,19 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Rename...</source>
-        <translation type="unfinished" />
+        <translation>Нэр солих...</translation>
     </message>
     <message>
         <source>Download in sequential order</source>
-        <translation type="unfinished" />
+        <translation>Дарааллаар нь татах</translation>
     </message>
     <message>
         <source>New Category</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Location</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>New name</source>
-        <translation type="unfinished" />
+        <translation>Шинэ Ангилал</translation>
     </message>
     <message>
         <source>Set location</source>
-        <translation type="unfinished" />
+        <translation>Байршлыг тодорхойлох</translation>
     </message>
     <message>
         <source>Force reannounce</source>
@@ -2826,15 +3263,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Save path</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <source>Comma-separated tags:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Add Tags</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -2843,7 +3272,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Magnet link</source>
-        <translation type="unfinished" />
+        <translation>Соронзон холбоос</translation>
     </message>
     <message>
         <source>Remove All</source>
@@ -2855,7 +3284,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation>Хуулбарлах</translation>
     </message>
     <message>
         <source>Queue</source>
@@ -2893,6 +3322,46 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Renaming</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Comment</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Force Start</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Save path:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Automatic mode means that various torrent properties(eg save path) will be decided by the associated category</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>New name:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add tags</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>UpDownRatioDialog</name>
@@ -2917,7 +3386,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>minutes</source>
+        <source>total minutes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>inactive minutes</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2927,11 +3400,15 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
 <context>
     <name>confirmDeletionDlg</name>
     <message>
-        <source>Also permanently delete the files</source>
+        <source>Remove torrent(s)</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Remove torrent(s)</source>
+        <source>Also remove the content files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove tracker</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2943,7 +3420,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished" />
+        <translation>Татах</translation>
     </message>
     <message>
         <source>Add Torrent Links</source>
@@ -2990,7 +3467,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>/s</source>
         <comment>per second</comment>
-        <translation type="unfinished" />
+        <translation>/s</translation>
     </message>
     <message>
         <source>%1h %2m</source>
@@ -3005,7 +3482,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <message>
         <source>Unknown</source>
         <comment>Unknown (size)</comment>
-        <translation type="unfinished" />
+        <translation>Тодорхойгүй</translation>
     </message>
     <message>
         <source>&lt; 1m</source>
@@ -3033,7 +3510,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <name>PluginSourceDlg</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation>Цуцлах</translation>
     </message>
     <message>
         <source>Plugin path:</source>
@@ -3064,7 +3541,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished" />
+        <translation>Хэмжээ:</translation>
     </message>
     <message>
         <source>Stop</source>
@@ -3072,7 +3549,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished" />
+        <translation>Хайх</translation>
     </message>
     <message>
         <source>Search plugins...</source>
@@ -3108,7 +3585,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation>Анхаар</translation>
     </message>
     <message>
         <source>Increase window width to display additional filters</source>
@@ -3132,6 +3609,26 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>There aren't any search plugins installed.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Select category</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Min size prefix</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start a search above.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Max size prefix</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Select plugins</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -3167,7 +3664,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation type="unfinished" />
+        <translation>Программын шинэчлэлийг шалгах</translation>
     </message>
     <message>
         <source>Search plugins</source>
@@ -3189,11 +3686,19 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Search engine</source>
+        <source>Seeders</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Seeders</source>
+        <source>Published On</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Engine URL</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Engine</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -3217,18 +3722,18 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation>Тийм</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished" />
+        <translation>Үгүй</translation>
     </message>
 </context>
 <context>
     <name>PeersAdditionDialog</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation>Цуцлах</translation>
     </message>
     <message>
         <source>Add Peers</source>
@@ -3263,11 +3768,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Pause torrents</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Торрентуудыг зогсоох</translation>
     </message>
     <message>
         <source>Resume torrents</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Торрентуудыг үргэлжлүүлэх</translation>
     </message>
     <message>
         <source>Remove unused tags</source>
@@ -3285,12 +3790,20 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Remove torrents</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Start torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrents</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TagFilterModel</name>
     <message>
         <source>All</source>
-        <translation type="unfinished" />
+        <translation>Бүгд</translation>
     </message>
     <message>
         <source>Untagged</source>
@@ -3388,26 +3901,26 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <name>OptionDialog</name>
     <message>
         <source>All addresses</source>
-        <translation type="unfinished" />
+        <translation>Бүх хаягууд</translation>
     </message>
     <message>
         <source>All IPv6 addresses</source>
-        <translation type="unfinished" />
+        <translation>Бүх IPv6 хаягууд</translation>
     </message>
     <message>
         <source>All IPv4 addresses</source>
-        <translation type="unfinished" />
+        <translation>Бүх IPv4 хаягууд</translation>
     </message>
 </context>
 <context>
     <name>SearchJobWidget</name>
     <message>
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation>Хуулбарлах</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished" />
+        <translation>Татах</translation>
     </message>
     <message>
         <source>Name</source>
@@ -3425,6 +3938,30 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Download link</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <source>Search has finished</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>An error occurred during search...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Close tab</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Search aborted</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Close all tabs</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TorrentContentTreeView</name>
@@ -3434,11 +3971,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>New name:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
+        <translation>Шинэ нэр:</translation>
     </message>
 </context>
 <context>
@@ -3465,7 +3998,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation>Устгах</translation>
     </message>
     <message>
         <source>RSS Downloader...</source>
@@ -3493,7 +4026,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Rename...</source>
-        <translation type="unfinished" />
+        <translation>Нэр солих...</translation>
     </message>
     <message>
         <source>Feed URL:</source>
@@ -3537,6 +4070,22 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Download torrent</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Edit feed URL...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to update URL</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>URL is unchanged</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>URL cannot be empty</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -3684,7 +4233,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source> will match 2, 5, 8 through 15, 30 and onward episodes of season one</source>
-        <translation type="unfinished" />
+        <translation>улиралд нэг нь 15, 30 -нд тохиолдох 2, 5, 8 тохирох болно</translation>
     </message>
     <message>
         <source>Rule deletion confirmation</source>
@@ -3728,7 +4277,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Add Paused:</source>
-        <translation>Завсарлага:</translation>
+        <translation type="vanished">Завсарлага:</translation>
     </message>
     <message>
         <source>Please type the name of the new download rule.</source>
@@ -3784,27 +4333,59 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <source>Don't create subfolder</source>
         <translation>Дэд хавтас үүсгэхгүй</translation>
     </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove rule</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add rule</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add Stopped:</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TrackerFiltersList</name>
     <message>
         <source>Resume torrents</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Торрентуудыг үргэлжлүүлэх</translation>
     </message>
     <message>
         <source>All (%1)</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Trackerless (%1)</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Бүгд (%1)</translation>
     </message>
     <message>
         <source>Pause torrents</source>
-        <translation type="unfinished" />
+        <translation type="vanished">Торрентуудыг зогсоох</translation>
     </message>
     <message>
         <source>Remove torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Trackerless</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Start torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove tracker</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop torrents</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -3823,7 +4404,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     <name>ExecutionLogWidget</name>
     <message>
         <source>General</source>
-        <translation type="unfinished" />
+        <translation>Үндсэн</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -3831,11 +4412,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished" />
+        <translation>Тодорхойгүй</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished" />
+        <translation>Бүгд</translation>
     </message>
     <message>
         <source>showing</source>
@@ -3843,7 +4424,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation>Хуулбарлах</translation>
     </message>
     <message>
         <source>Select All</source>
@@ -3859,11 +4440,11 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation>Цэвэрлэх</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation>Анхаар</translation>
     </message>
     <message>
         <source>Information Messages</source>
@@ -3879,7 +4460,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Blocked IPs</source>
-        <translation type="unfinished" />
+        <translation>Блоклогдсон IP</translation>
     </message>
     <message>
         <source>out of</source>
@@ -3915,7 +4496,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>IP</source>
-        <translation type="unfinished" />
+        <translation>IP</translation>
     </message>
     <message>
         <source>Banned</source>
@@ -3935,7 +4516,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Normal</source>
-        <translation type="unfinished" />
+        <translation>Хэвийн</translation>
     </message>
     <message>
         <source>items</source>
@@ -3951,6 +4532,131 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Choose a log level...</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>TrackersFilterWidget</name>
+    <message>
+        <source>Are you sure you want to remove tracker %1 from all torrents?</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>Category</name>
+    <message>
+        <source>Unable to edit category</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to create category</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to set category</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>CookiesDialog</name>
+    <message>
+        <source>Domain</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Manage Cookies</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add Cookie</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Expiration Date</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Path</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>confirmAutoTMMDialog</name>
+    <message>
+        <source>Enable automatic torrent management</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Are you sure you want to enable Automatic Torrent Management for the selected torrent(s)? They may be relocated.</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>confirmRecheckDialog</name>
+    <message>
+        <source>Are you sure you want to recheck the selected torrent(s)?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Recheck confirmation</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>SearchWidget</name>
+    <message>
+        <source>Close tab</source>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>Login</name>
+    <message>
+        <source>qBittorrent WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Server response:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unable to log in, server is probably unreachable.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Invalid Username or Password.</source>
         <translation type="unfinished" />
     </message>
 </context>

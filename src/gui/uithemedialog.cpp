@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2023  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2023-2024  Vladimir Golovnev <glassez@yandex.ru>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -30,7 +30,6 @@
 
 #include <QColor>
 #include <QColorDialog>
-#include <QFile>
 #include <QFileDialog>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -56,29 +55,32 @@ namespace
 {
     Path userConfigPath()
     {
-        return specialFolderLocation(SpecialFolder::Config) / Path(u"themes/default"_qs);
+        return specialFolderLocation(SpecialFolder::Config) / Path(u"themes/default"_s);
     }
 
     Path defaultIconPath(const QString &iconID, [[maybe_unused]] const ColorMode colorMode)
     {
-        return Path(u":icons"_qs) / Path(iconID + u".svg");
+        return Path(u":icons"_s) / Path(iconID + u".svg");
     }
 }
 
-class ColorWidget final : public QFrame
+class ColorWidget final : public QLabel
 {
     Q_DISABLE_COPY_MOVE(ColorWidget)
+    Q_DECLARE_TR_FUNCTIONS(ColorWidget)
 
 public:
     explicit ColorWidget(const QColor &currentColor, const QColor &defaultColor, QWidget *parent = nullptr)
-        : QFrame(parent)
+        : QLabel(parent)
         , m_defaultColor {defaultColor}
+        , m_currentColor {currentColor}
     {
-        setObjectName(u"colorWidget"_qs);
+        setObjectName("colorWidget");
         setFrameShape(QFrame::Box);
         setFrameShadow(QFrame::Plain);
+        setAlignment(Qt::AlignCenter);
 
-        setCurrentColor(currentColor);
+        applyColor(currentColor);
     }
 
     QColor currentColor() const
@@ -119,7 +121,16 @@ private:
 
     void applyColor(const QColor &color)
     {
-        setStyleSheet(u"#colorWidget { background-color: %1; }"_qs.arg(color.name()));
+        if (color.isValid())
+        {
+            setStyleSheet(u"#colorWidget { background-color: %1; }"_s.arg(color.name()));
+            setText({});
+        }
+        else
+        {
+            setStyleSheet({});
+            setText(tr("System"));
+        }
     }
 
     void showColorDialog()
@@ -141,13 +152,14 @@ private:
 class IconWidget final : public QLabel
 {
     Q_DISABLE_COPY_MOVE(IconWidget)
+    Q_DECLARE_TR_FUNCTIONS(IconWidget)
 
 public:
     explicit IconWidget(const Path &currentPath, const Path &defaultPath, QWidget *parent = nullptr)
         : QLabel(parent)
         , m_defaultPath {defaultPath}
     {
-        setObjectName(u"iconWidget"_qs);
+        setObjectName("iconWidget");
         setAlignment(Qt::AlignCenter);
 
         setCurrentPath(currentPath);
@@ -217,9 +229,12 @@ private:
 UIThemeDialog::UIThemeDialog(QWidget *parent)
     : QDialog(parent)
     , m_ui {new Ui::UIThemeDialog}
-    , m_storeDialogSize {SETTINGS_KEY(u"Size"_qs)}
+    , m_storeDialogSize {SETTINGS_KEY(u"Size"_s)}
 {
     m_ui->setupUi(this);
+
+    connect(m_ui->buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(m_ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
     loadColors();
     loadIcons();
@@ -258,6 +273,8 @@ void UIThemeDialog::loadColors()
     int row = 2;
     for (const QString &id : colorIDs)
     {
+        if (id == u"Log.Normal")
+            qDebug() << "!!!!!!!";
         m_ui->colorsLayout->addWidget(new QLabel(id), row, 0);
 
         const UIThemeColor &defaultColor = defaultColors.value(id);
@@ -348,7 +365,7 @@ bool UIThemeDialog::storeIcons()
         const QHash<QString, IconWidget *> &iconWidgets = (colorMode == ColorMode::Light)
                 ? m_lightIconWidgets : m_darkIconWidgets;
         const Path subdirPath = (colorMode == ColorMode::Light)
-                ? Path(u"icons/light"_qs) : Path(u"icons/dark"_qs);
+                ? Path(u"icons/light"_s) : Path(u"icons/dark"_s);
 
         for (auto it = iconWidgets.cbegin(); it != iconWidgets.cend(); ++it)
         {

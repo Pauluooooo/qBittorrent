@@ -11,39 +11,39 @@
 </div>
 
 <script>
-    'use strict';
+    "use strict";
 
-    (function() {
-        MochaUI.initializeTabs('aboutTabs');
+    (() => {
+        MochaUI.initializeTabs("aboutTabs");
 
-        $('aboutAboutLink').addEvent('click', function() {
-            $$('.aboutTabContent').addClass('invisible');
-            $('aboutAboutContent').removeClass('invisible');
+        $("aboutAboutLink").addEventListener("click", () => {
+            Array.prototype.forEach.call(document.querySelectorAll(".aboutTabContent"), (tab => tab.classList.add("invisible")));
+            $("aboutAboutContent").classList.remove("invisible");
         });
 
-        $('aboutAuthorLink').addEvent('click', function() {
-            $$('.aboutTabContent').addClass('invisible');
-            $('aboutAuthorContent').removeClass('invisible');
+        $("aboutAuthorLink").addEventListener("click", () => {
+            Array.prototype.forEach.call(document.querySelectorAll(".aboutTabContent"), (tab => tab.classList.add("invisible")));
+            $("aboutAuthorContent").classList.remove("invisible");
         });
 
-        $('aboutSpecialThanksLink').addEvent('click', function() {
-            $$('.aboutTabContent').addClass('invisible');
-            $('aboutSpecialThanksContent').removeClass('invisible');
+        $("aboutSpecialThanksLink").addEventListener("click", () => {
+            Array.prototype.forEach.call(document.querySelectorAll(".aboutTabContent"), (tab => tab.classList.add("invisible")));
+            $("aboutSpecialThanksContent").classList.remove("invisible");
         });
 
-        $('aboutTranslatorsLink').addEvent('click', function() {
-            $$('.aboutTabContent').addClass('invisible');
-            $('aboutTranslatorsContent').removeClass('invisible');
+        $("aboutTranslatorsLink").addEventListener("click", () => {
+            Array.prototype.forEach.call(document.querySelectorAll(".aboutTabContent"), (tab => tab.classList.add("invisible")));
+            $("aboutTranslatorsContent").classList.remove("invisible");
         });
 
-        $('aboutLicenseLink').addEvent('click', function() {
-            $$('.aboutTabContent').addClass('invisible');
-            $('aboutLicenseContent').removeClass('invisible');
+        $("aboutLicenseLink").addEventListener("click", () => {
+            Array.prototype.forEach.call(document.querySelectorAll(".aboutTabContent"), (tab => tab.classList.add("invisible")));
+            $("aboutLicenseContent").classList.remove("invisible");
         });
 
-        $('aboutSoftwareUsedLink').addEvent('click', function() {
-            $$('.aboutTabContent').addClass('invisible');
-            $('aboutSoftwareUsedContent').removeClass('invisible');
+        $("aboutSoftwareUsedLink").addEventListener("click", () => {
+            Array.prototype.forEach.call(document.querySelectorAll(".aboutTabContent"), (tab => tab.classList.add("invisible")));
+            $("aboutSoftwareUsedContent").classList.remove("invisible");
         });
     })();
 </script>

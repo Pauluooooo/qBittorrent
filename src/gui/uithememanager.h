@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2023  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2023-2024  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2019  Prince Gupta <jagannatharjun11@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
@@ -30,7 +30,8 @@
 
 #pragma once
 
-#include <QtGlobal>
+#include <QtSystemDetection>
+#include <QtVersionChecks>
 #include <QColor>
 #include <QHash>
 #include <QIcon>
@@ -38,8 +39,16 @@
 #include <QPixmap>
 #include <QString>
 
-#include "base/pathfwd.h"
 #include "uithemesource.h"
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)) && defined(Q_OS_WIN)
+#define QBT_HAS_COLORSCHEME_OPTION
+#endif
+
+#ifdef QBT_HAS_COLORSCHEME_OPTION
+#include "base/settingvalue.h"
+#include "colorscheme.h"
+#endif
 
 class UIThemeManager final : public QObject
 {
@@ -51,20 +60,36 @@ public:
     static void freeInstance();
     static UIThemeManager *instance();
 
+#ifdef QBT_HAS_COLORSCHEME_OPTION
+    ColorScheme colorScheme() const;
+    void setColorScheme(ColorScheme value);
+#endif
+
     QIcon getIcon(const QString &iconId, const QString &fallback = {}) const;
     QIcon getFlagIcon(const QString &countryIsoCode) const;
     QPixmap getScaledPixmap(const QString &iconId, int height) const;
 
     QColor getColor(const QString &id) const;
 
+signals:
+    void themeChanged();
+
 private:
     UIThemeManager(); // singleton class
 
     void applyPalette() const;
     void applyStyleSheet() const;
+    void onColorSchemeChanged();
+
+#ifdef QBT_HAS_COLORSCHEME_OPTION
+    void applyColorScheme() const;
+#endif
 
     static UIThemeManager *m_instance;
     const bool m_useCustomTheme;
+#ifdef QBT_HAS_COLORSCHEME_OPTION
+    SettingValue<ColorScheme> m_colorSchemeSetting;
+#endif
 #if (defined(Q_OS_UNIX) && !defined(Q_OS_MACOS))
     const bool m_useSystemIcons;
 #endif

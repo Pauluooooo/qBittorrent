@@ -41,7 +41,7 @@
 
 #include <QByteArray>
 #include <QDebug>
-#include <QFile>
+#include <QList>
 #include <QMutex>
 #include <QSet>
 #include <QSqlDatabase>
@@ -49,29 +49,30 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QThread>
-#include <QVector>
 #include <QWaitCondition>
 
 #include "base/exceptions.h"
 #include "base/global.h"
 #include "base/logger.h"
 #include "base/path.h"
+#include "base/preferences.h"
 #include "base/profile.h"
 #include "base/utils/fs.h"
+#include "base/utils/sslkey.h"
 #include "base/utils/string.h"
 #include "infohash.h"
 #include "loadtorrentparams.h"
 
 namespace
 {
-    const QString DB_CONNECTION_NAME = u"ResumeDataStorage"_qs;
+    const QString DB_CONNECTION_NAME = u"ResumeDataStorage"_s;
 
-    const int DB_VERSION = 4;
+    const int DB_VERSION = 8;
 
-    const QString DB_TABLE_META = u"meta"_qs;
-    const QString DB_TABLE_TORRENTS = u"torrents"_qs;
+    const QString DB_TABLE_META = u"meta"_s;
+    const QString DB_TABLE_TORRENTS = u"torrents"_s;
 
-    const QString META_VERSION = u"version"_qs;
+    const QString META_VERSION = u"version"_s;
 
     using namespace BitTorrent;
 
@@ -106,11 +107,11 @@ namespace
     class StoreQueueJob final : public Job
     {
     public:
-        explicit StoreQueueJob(const QVector<TorrentID> &queue);
+        explicit StoreQueueJob(const QList<TorrentID> &queue);
         void perform(QSqlDatabase db) override;
 
     private:
-        const QVector<TorrentID> m_queue;
+        const QList<TorrentID> m_queue;
     };
 
     struct Column
@@ -119,50 +120,54 @@ namespace
         QString placeholder;
     };
 
-    Column makeColumn(const char *columnName)
+    Column makeColumn(const QString &columnName)
     {
-        return {QString::fromLatin1(columnName), (u':' + QString::fromLatin1(columnName))};
+        return {.name = columnName, .placeholder = (u':' + columnName)};
     }
 
-    const Column DB_COLUMN_ID = makeColumn("id");
-    const Column DB_COLUMN_TORRENT_ID = makeColumn("torrent_id");
-    const Column DB_COLUMN_QUEUE_POSITION = makeColumn("queue_position");
-    const Column DB_COLUMN_NAME = makeColumn("name");
-    const Column DB_COLUMN_CATEGORY = makeColumn("category");
-    const Column DB_COLUMN_TAGS = makeColumn("tags");
-    const Column DB_COLUMN_TARGET_SAVE_PATH = makeColumn("target_save_path");
-    const Column DB_COLUMN_DOWNLOAD_PATH = makeColumn("download_path");
-    const Column DB_COLUMN_CONTENT_LAYOUT = makeColumn("content_layout");
-    const Column DB_COLUMN_RATIO_LIMIT = makeColumn("ratio_limit");
-    const Column DB_COLUMN_SEEDING_TIME_LIMIT = makeColumn("seeding_time_limit");
-    const Column DB_COLUMN_HAS_OUTER_PIECES_PRIORITY = makeColumn("has_outer_pieces_priority");
-    const Column DB_COLUMN_HAS_SEED_STATUS = makeColumn("has_seed_status");
-    const Column DB_COLUMN_OPERATING_MODE = makeColumn("operating_mode");
-    const Column DB_COLUMN_STOPPED = makeColumn("stopped");
-    const Column DB_COLUMN_STOP_CONDITION = makeColumn("stop_condition");
-    const Column DB_COLUMN_RESUMEDATA = makeColumn("libtorrent_resume_data");
-    const Column DB_COLUMN_METADATA = makeColumn("metadata");
-    const Column DB_COLUMN_VALUE = makeColumn("value");
+    const Column DB_COLUMN_ID = makeColumn(u"id"_s);
+    const Column DB_COLUMN_TORRENT_ID = makeColumn(u"torrent_id"_s);
+    const Column DB_COLUMN_QUEUE_POSITION = makeColumn(u"queue_position"_s);
+    const Column DB_COLUMN_NAME = makeColumn(u"name"_s);
+    const Column DB_COLUMN_CATEGORY = makeColumn(u"category"_s);
+    const Column DB_COLUMN_TAGS = makeColumn(u"tags"_s);
+    const Column DB_COLUMN_TARGET_SAVE_PATH = makeColumn(u"target_save_path"_s);
+    const Column DB_COLUMN_DOWNLOAD_PATH = makeColumn(u"download_path"_s);
+    const Column DB_COLUMN_CONTENT_LAYOUT = makeColumn(u"content_layout"_s);
+    const Column DB_COLUMN_RATIO_LIMIT = makeColumn(u"ratio_limit"_s);
+    const Column DB_COLUMN_SEEDING_TIME_LIMIT = makeColumn(u"seeding_time_limit"_s);
+    const Column DB_COLUMN_INACTIVE_SEEDING_TIME_LIMIT = makeColumn(u"inactive_seeding_time_limit"_s);
+    const Column DB_COLUMN_SHARE_LIMIT_ACTION = makeColumn(u"share_limit_action"_s);
+    const Column DB_COLUMN_HAS_OUTER_PIECES_PRIORITY = makeColumn(u"has_outer_pieces_priority"_s);
+    const Column DB_COLUMN_HAS_SEED_STATUS = makeColumn(u"has_seed_status"_s);
+    const Column DB_COLUMN_OPERATING_MODE = makeColumn(u"operating_mode"_s);
+    const Column DB_COLUMN_STOPPED = makeColumn(u"stopped"_s);
+    const Column DB_COLUMN_STOP_CONDITION = makeColumn(u"stop_condition"_s);
+    const Column DB_COLUMN_SSL_CERTIFICATE = makeColumn(u"ssl_certificate"_s);
+    const Column DB_COLUMN_SSL_PRIVATE_KEY = makeColumn(u"ssl_private_key"_s);
+    const Column DB_COLUMN_SSL_DH_PARAMS = makeColumn(u"ssl_dh_params"_s);
+    const Column DB_COLUMN_RESUMEDATA = makeColumn(u"libtorrent_resume_data"_s);
+    const Column DB_COLUMN_METADATA = makeColumn(u"metadata"_s);
+    const Column DB_COLUMN_VALUE = makeColumn(u"value"_s);
 
     template <typename LTStr>
     QString fromLTString(const LTStr &str)
     {
-        return QString::fromUtf8(str.data(), static_cast<int>(str.size()));
+        return QString::fromUtf8(str.data(), static_cast<qsizetype>(str.size()));
     }
 
     QString quoted(const QString &name)
     {
         const QChar quote = u'`';
-
         return (quote + name + quote);
     }
 
     QString makeCreateTableStatement(const QString &tableName, const QStringList &items)
     {
-        return u"CREATE TABLE %1 (%2)"_qs.arg(quoted(tableName), items.join(u','));
+        return u"CREATE TABLE %1 (%2)"_s.arg(quoted(tableName), items.join(u','));
     }
 
-    std::pair<QString, QString> joinColumns(const QVector<Column> &columns)
+    std::pair<QString, QString> joinColumns(const QList<Column> &columns)
     {
         int namesSize = columns.size();
         int valuesSize = columns.size();
@@ -187,30 +192,30 @@ namespace
         return std::make_pair(names, values);
     }
 
-    QString makeInsertStatement(const QString &tableName, const QVector<Column> &columns)
+    QString makeInsertStatement(const QString &tableName, const QList<Column> &columns)
     {
         const auto [names, values] = joinColumns(columns);
-        return u"INSERT INTO %1 (%2) VALUES (%3)"_qs
+        return u"INSERT INTO %1 (%2) VALUES (%3)"_s
                 .arg(quoted(tableName), names, values);
     }
 
-    QString makeUpdateStatement(const QString &tableName, const QVector<Column> &columns)
+    QString makeUpdateStatement(const QString &tableName, const QList<Column> &columns)
     {
         const auto [names, values] = joinColumns(columns);
-        return u"UPDATE %1 SET (%2) = (%3)"_qs
+        return u"UPDATE %1 SET (%2) = (%3)"_s
                 .arg(quoted(tableName), names, values);
     }
 
-    QString makeOnConflictUpdateStatement(const Column &constraint, const QVector<Column> &columns)
+    QString makeOnConflictUpdateStatement(const Column &constraint, const QList<Column> &columns)
     {
         const auto [names, values] = joinColumns(columns);
-        return u" ON CONFLICT (%1) DO UPDATE SET (%2) = (%3)"_qs
+        return u" ON CONFLICT (%1) DO UPDATE SET (%2) = (%3)"_s
                 .arg(quoted(constraint.name), names, values);
     }
 
-    QString makeColumnDefinition(const Column &column, const char *definition)
+    QString makeColumnDefinition(const Column &column, const QString &definition)
     {
-        return u"%1 %2"_qs.arg(quoted(column.name), QString::fromLatin1(definition));
+        return u"%1 %2"_s.arg(quoted(column.name), definition);
     }
 
     LoadTorrentParams parseQueryResultRow(const QSqlQuery &query)
@@ -228,13 +233,22 @@ namespace
         resumeData.firstLastPiecePriority = query.value(DB_COLUMN_HAS_OUTER_PIECES_PRIORITY.name).toBool();
         resumeData.ratioLimit = query.value(DB_COLUMN_RATIO_LIMIT.name).toInt() / 1000.0;
         resumeData.seedingTimeLimit = query.value(DB_COLUMN_SEEDING_TIME_LIMIT.name).toInt();
+        resumeData.inactiveSeedingTimeLimit = query.value(DB_COLUMN_INACTIVE_SEEDING_TIME_LIMIT.name).toInt();
+        resumeData.shareLimitAction = Utils::String::toEnum<ShareLimitAction>(
+                query.value(DB_COLUMN_SHARE_LIMIT_ACTION.name).toString(), ShareLimitAction::Default);
         resumeData.contentLayout = Utils::String::toEnum<TorrentContentLayout>(
-                    query.value(DB_COLUMN_CONTENT_LAYOUT.name).toString(), TorrentContentLayout::Original);
+                query.value(DB_COLUMN_CONTENT_LAYOUT.name).toString(), TorrentContentLayout::Original);
         resumeData.operatingMode = Utils::String::toEnum<TorrentOperatingMode>(
-                    query.value(DB_COLUMN_OPERATING_MODE.name).toString(), TorrentOperatingMode::AutoManaged);
+                query.value(DB_COLUMN_OPERATING_MODE.name).toString(), TorrentOperatingMode::AutoManaged);
         resumeData.stopped = query.value(DB_COLUMN_STOPPED.name).toBool();
         resumeData.stopCondition = Utils::String::toEnum(
-                    query.value(DB_COLUMN_STOP_CONDITION.name).toString(), Torrent::StopCondition::None);
+                query.value(DB_COLUMN_STOP_CONDITION.name).toString(), Torrent::StopCondition::None);
+        resumeData.sslParameters =
+        {
+            .certificate = QSslCertificate(query.value(DB_COLUMN_SSL_CERTIFICATE.name).toByteArray()),
+            .privateKey = Utils::SSLKey::load(query.value(DB_COLUMN_SSL_PRIVATE_KEY.name).toByteArray()),
+            .dhParams = query.value(DB_COLUMN_SSL_DH_PARAMS.name).toByteArray()
+        };
 
         resumeData.savePath = Profile::instance()->fromPortablePath(
                     Path(query.value(DB_COLUMN_TARGET_SAVE_PATH.name).toString()));
@@ -246,9 +260,13 @@ namespace
         }
 
         const QByteArray bencodedResumeData = query.value(DB_COLUMN_RESUMEDATA.name).toByteArray();
+        const auto *pref = Preferences::instance();
+        const int bdecodeDepthLimit = pref->getBdecodeDepthLimit();
+        const int bdecodeTokenLimit = pref->getBdecodeTokenLimit();
 
         lt::error_code ec;
-        const lt::bdecode_node resumeDataRoot = lt::bdecode(bencodedResumeData, ec);
+        const lt::bdecode_node resumeDataRoot = lt::bdecode(bencodedResumeData, ec
+                , nullptr, bdecodeDepthLimit, bdecodeTokenLimit);
 
         lt::add_torrent_params &p = resumeData.ltAddTorrentParams;
 
@@ -257,7 +275,8 @@ namespace
         if (const QByteArray bencodedMetadata = query.value(DB_COLUMN_METADATA.name).toByteArray()
                 ; !bencodedMetadata.isEmpty())
         {
-            const lt::bdecode_node torentInfoRoot = lt::bdecode(bencodedMetadata, ec);
+            const lt::bdecode_node torentInfoRoot = lt::bdecode(bencodedMetadata, ec
+                    , nullptr, bdecodeDepthLimit, bdecodeTokenLimit);
             p.ti = std::make_shared<lt::torrent_info>(torentInfoRoot, ec);
         }
 
@@ -281,19 +300,19 @@ namespace BitTorrent
         Q_DISABLE_COPY_MOVE(Worker)
 
     public:
-        Worker(const Path &dbPath, QReadWriteLock &dbLock);
+        Worker(const Path &dbPath, QReadWriteLock &dbLock, QObject *parent = nullptr);
 
         void run() override;
         void requestInterruption();
 
         void store(const TorrentID &id, const LoadTorrentParams &resumeData);
         void remove(const TorrentID &id);
-        void storeQueue(const QVector<TorrentID> &queue);
+        void storeQueue(const QList<TorrentID> &queue);
 
     private:
         void addJob(std::unique_ptr<Job> job);
 
-        const QString m_connectionName = u"ResumeDataStorageWorker"_qs;
+        const QString m_connectionName = u"ResumeDataStorageWorker"_s;
         const Path m_path;
         QReadWriteLock &m_dbLock;
 
@@ -305,11 +324,10 @@ namespace BitTorrent
 
 BitTorrent::DBResumeDataStorage::DBResumeDataStorage(const Path &dbPath, QObject *parent)
     : ResumeDataStorage(dbPath, parent)
-    , m_ioThread {new QThread}
 {
     const bool needCreateDB = !dbPath.exists();
 
-    auto db = QSqlDatabase::addDatabase(u"QSQLITE"_qs, DB_CONNECTION_NAME);
+    auto db = QSqlDatabase::addDatabase(u"QSQLITE"_s, DB_CONNECTION_NAME);
     db.setDatabaseName(dbPath.data());
     if (!db.open())
         throw RuntimeError(db.lastError().text());
@@ -325,7 +343,7 @@ BitTorrent::DBResumeDataStorage::DBResumeDataStorage(const Path &dbPath, QObject
             updateDB(dbVersion);
     }
 
-    m_asyncWorker = new Worker(dbPath, m_dbLock);
+    m_asyncWorker = new Worker(dbPath, m_dbLock, this);
     m_asyncWorker->start();
 }
 
@@ -336,9 +354,9 @@ BitTorrent::DBResumeDataStorage::~DBResumeDataStorage()
     QSqlDatabase::removeDatabase(DB_CONNECTION_NAME);
 }
 
-QVector<BitTorrent::TorrentID> BitTorrent::DBResumeDataStorage::registeredTorrents() const
+QList<BitTorrent::TorrentID> BitTorrent::DBResumeDataStorage::registeredTorrents() const
 {
-    const auto selectTorrentIDStatement = u"SELECT %1 FROM %2 ORDER BY %3;"_qs
+    const auto selectTorrentIDStatement = u"SELECT %1 FROM %2 ORDER BY %3;"_s
             .arg(quoted(DB_COLUMN_TORRENT_ID.name), quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_QUEUE_POSITION.name));
 
     auto db = QSqlDatabase::database(DB_CONNECTION_NAME);
@@ -347,7 +365,7 @@ QVector<BitTorrent::TorrentID> BitTorrent::DBResumeDataStorage::registeredTorren
     if (!query.exec(selectTorrentIDStatement))
         throw RuntimeError(query.lastError().text());
 
-    QVector<TorrentID> registeredTorrents;
+    QList<TorrentID> registeredTorrents;
     registeredTorrents.reserve(query.size());
     while (query.next())
         registeredTorrents.append(BitTorrent::TorrentID::fromString(query.value(0).toString()));
@@ -357,7 +375,7 @@ QVector<BitTorrent::TorrentID> BitTorrent::DBResumeDataStorage::registeredTorren
 
 BitTorrent::LoadResumeDataResult BitTorrent::DBResumeDataStorage::load(const TorrentID &id) const
 {
-    const QString selectTorrentStatement = u"SELECT * FROM %1 WHERE %2 = %3;"_qs
+    const QString selectTorrentStatement = u"SELECT * FROM %1 WHERE %2 = %3;"_s
         .arg(quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_TORRENT_ID.name), DB_COLUMN_TORRENT_ID.placeholder);
 
     auto db = QSqlDatabase::database(DB_CONNECTION_NAME);
@@ -393,24 +411,24 @@ void BitTorrent::DBResumeDataStorage::remove(const BitTorrent::TorrentID &id) co
     m_asyncWorker->remove(id);
 }
 
-void BitTorrent::DBResumeDataStorage::storeQueue(const QVector<TorrentID> &queue) const
+void BitTorrent::DBResumeDataStorage::storeQueue(const QList<TorrentID> &queue) const
 {
     m_asyncWorker->storeQueue(queue);
 }
 
 void BitTorrent::DBResumeDataStorage::doLoadAll() const
 {
-    const QString connectionName = u"ResumeDataStorageLoadAll"_qs;
+    const QString connectionName = u"ResumeDataStorageLoadAll"_s;
 
     {
-        auto db = QSqlDatabase::addDatabase(u"QSQLITE"_qs, connectionName);
+        auto db = QSqlDatabase::addDatabase(u"QSQLITE"_s, connectionName);
         db.setDatabaseName(path().data());
         if (!db.open())
             throw RuntimeError(db.lastError().text());
 
         QSqlQuery query {db};
 
-        const auto selectTorrentIDStatement = u"SELECT %1 FROM %2 ORDER BY %3;"_qs
+        const auto selectTorrentIDStatement = u"SELECT %1 FROM %2 ORDER BY %3;"_s
                 .arg(quoted(DB_COLUMN_TORRENT_ID.name), quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_QUEUE_POSITION.name));
 
         const QReadLocker locker {&m_dbLock};
@@ -418,14 +436,14 @@ void BitTorrent::DBResumeDataStorage::doLoadAll() const
         if (!query.exec(selectTorrentIDStatement))
             throw RuntimeError(query.lastError().text());
 
-        QVector<TorrentID> registeredTorrents;
+        QList<TorrentID> registeredTorrents;
         registeredTorrents.reserve(query.size());
         while (query.next())
             registeredTorrents.append(TorrentID::fromString(query.value(0).toString()));
 
         emit const_cast<DBResumeDataStorage *>(this)->loadStarted(registeredTorrents);
 
-        const auto selectStatement = u"SELECT * FROM %1 ORDER BY %2;"_qs.arg(quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_QUEUE_POSITION.name));
+        const auto selectStatement = u"SELECT * FROM %1 ORDER BY %2;"_s.arg(quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_QUEUE_POSITION.name));
         if (!query.exec(selectStatement))
             throw RuntimeError(query.lastError().text());
 
@@ -443,7 +461,7 @@ void BitTorrent::DBResumeDataStorage::doLoadAll() const
 
 int BitTorrent::DBResumeDataStorage::currentDBVersion() const
 {
-    const auto selectDBVersionStatement = u"SELECT %1 FROM %2 WHERE %3 = %4;"_qs
+    const auto selectDBVersionStatement = u"SELECT %1 FROM %2 WHERE %3 = %4;"_s
             .arg(quoted(DB_COLUMN_VALUE.name), quoted(DB_TABLE_META), quoted(DB_COLUMN_NAME.name), DB_COLUMN_NAME.placeholder);
 
     auto db = QSqlDatabase::database(DB_CONNECTION_NAME);
@@ -492,9 +510,9 @@ void BitTorrent::DBResumeDataStorage::createDB() const
     try
     {
         const QStringList tableMetaItems = {
-            makeColumnDefinition(DB_COLUMN_ID, "INTEGER PRIMARY KEY"),
-            makeColumnDefinition(DB_COLUMN_NAME, "TEXT NOT NULL UNIQUE"),
-            makeColumnDefinition(DB_COLUMN_VALUE, "BLOB")
+            makeColumnDefinition(DB_COLUMN_ID, u"INTEGER PRIMARY KEY"_s),
+            makeColumnDefinition(DB_COLUMN_NAME, u"TEXT NOT NULL UNIQUE"_s),
+            makeColumnDefinition(DB_COLUMN_VALUE, u"BLOB"_s)
         };
         const QString createTableMetaQuery = makeCreateTableStatement(DB_TABLE_META, tableMetaItems);
         if (!query.exec(createTableMetaQuery))
@@ -511,31 +529,36 @@ void BitTorrent::DBResumeDataStorage::createDB() const
             throw RuntimeError(query.lastError().text());
 
         const QStringList tableTorrentsItems = {
-            makeColumnDefinition(DB_COLUMN_ID, "INTEGER PRIMARY KEY"),
-            makeColumnDefinition(DB_COLUMN_TORRENT_ID, "BLOB NOT NULL UNIQUE"),
-            makeColumnDefinition(DB_COLUMN_QUEUE_POSITION, "INTEGER NOT NULL DEFAULT -1"),
-            makeColumnDefinition(DB_COLUMN_NAME, "TEXT"),
-            makeColumnDefinition(DB_COLUMN_CATEGORY, "TEXT"),
-            makeColumnDefinition(DB_COLUMN_TAGS, "TEXT"),
-            makeColumnDefinition(DB_COLUMN_TARGET_SAVE_PATH, "TEXT"),
-            makeColumnDefinition(DB_COLUMN_DOWNLOAD_PATH, "TEXT"),
-            makeColumnDefinition(DB_COLUMN_CONTENT_LAYOUT, "TEXT NOT NULL"),
-            makeColumnDefinition(DB_COLUMN_RATIO_LIMIT, "INTEGER NOT NULL"),
-            makeColumnDefinition(DB_COLUMN_SEEDING_TIME_LIMIT, "INTEGER NOT NULL"),
-            makeColumnDefinition(DB_COLUMN_HAS_OUTER_PIECES_PRIORITY, "INTEGER NOT NULL"),
-            makeColumnDefinition(DB_COLUMN_HAS_SEED_STATUS, "INTEGER NOT NULL"),
-            makeColumnDefinition(DB_COLUMN_OPERATING_MODE, "TEXT NOT NULL"),
-            makeColumnDefinition(DB_COLUMN_STOPPED, "INTEGER NOT NULL"),
-            makeColumnDefinition(DB_COLUMN_STOP_CONDITION, "TEXT NOT NULL DEFAULT `None`"),
-            makeColumnDefinition(DB_COLUMN_RESUMEDATA, "BLOB NOT NULL"),
-            makeColumnDefinition(DB_COLUMN_METADATA, "BLOB")
+            makeColumnDefinition(DB_COLUMN_ID, u"INTEGER PRIMARY KEY"_s),
+            makeColumnDefinition(DB_COLUMN_TORRENT_ID, u"BLOB NOT NULL UNIQUE"_s),
+            makeColumnDefinition(DB_COLUMN_QUEUE_POSITION, u"INTEGER NOT NULL DEFAULT -1"_s),
+            makeColumnDefinition(DB_COLUMN_NAME, u"TEXT"_s),
+            makeColumnDefinition(DB_COLUMN_CATEGORY, u"TEXT"_s),
+            makeColumnDefinition(DB_COLUMN_TAGS, u"TEXT"_s),
+            makeColumnDefinition(DB_COLUMN_TARGET_SAVE_PATH, u"TEXT"_s),
+            makeColumnDefinition(DB_COLUMN_DOWNLOAD_PATH, u"TEXT"_s),
+            makeColumnDefinition(DB_COLUMN_CONTENT_LAYOUT, u"TEXT NOT NULL"_s),
+            makeColumnDefinition(DB_COLUMN_RATIO_LIMIT, u"INTEGER NOT NULL"_s),
+            makeColumnDefinition(DB_COLUMN_SEEDING_TIME_LIMIT, u"INTEGER NOT NULL"_s),
+            makeColumnDefinition(DB_COLUMN_INACTIVE_SEEDING_TIME_LIMIT, u"INTEGER NOT NULL"_s),
+            makeColumnDefinition(DB_COLUMN_SHARE_LIMIT_ACTION, u"TEXT NOT NULL DEFAULT `Default`"_s),
+            makeColumnDefinition(DB_COLUMN_HAS_OUTER_PIECES_PRIORITY, u"INTEGER NOT NULL"_s),
+            makeColumnDefinition(DB_COLUMN_HAS_SEED_STATUS, u"INTEGER NOT NULL"_s),
+            makeColumnDefinition(DB_COLUMN_OPERATING_MODE, u"TEXT NOT NULL"_s),
+            makeColumnDefinition(DB_COLUMN_STOPPED, u"INTEGER NOT NULL"_s),
+            makeColumnDefinition(DB_COLUMN_STOP_CONDITION, u"TEXT NOT NULL DEFAULT `None`"_s),
+            makeColumnDefinition(DB_COLUMN_SSL_CERTIFICATE, u"TEXT"_s),
+            makeColumnDefinition(DB_COLUMN_SSL_PRIVATE_KEY, u"TEXT"_s),
+            makeColumnDefinition(DB_COLUMN_SSL_DH_PARAMS, u"TEXT"_s),
+            makeColumnDefinition(DB_COLUMN_RESUMEDATA, u"BLOB NOT NULL"_s),
+            makeColumnDefinition(DB_COLUMN_METADATA, u"BLOB"_s)
         };
         const QString createTableTorrentsQuery = makeCreateTableStatement(DB_TABLE_TORRENTS, tableTorrentsItems);
         if (!query.exec(createTableTorrentsQuery))
             throw RuntimeError(query.lastError().text());
 
-        const QString torrentsQueuePositionIndexName = u"%1_%2_INDEX"_qs.arg(DB_TABLE_TORRENTS, DB_COLUMN_QUEUE_POSITION.name);
-        const QString createTorrentsQueuePositionIndexQuery = u"CREATE INDEX %1 ON %2 (%3)"_qs
+        const QString torrentsQueuePositionIndexName = u"%1_%2_INDEX"_s.arg(DB_TABLE_TORRENTS, DB_COLUMN_QUEUE_POSITION.name);
+        const QString createTorrentsQueuePositionIndexQuery = u"CREATE INDEX %1 ON %2 (%3)"_s
                 .arg(quoted(torrentsQueuePositionIndexName), quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_QUEUE_POSITION.name));
         if (!query.exec(createTorrentsQueuePositionIndexQuery))
             throw RuntimeError(query.lastError().text());
@@ -566,38 +589,66 @@ void BitTorrent::DBResumeDataStorage::updateDB(const int fromVersion) const
 
     try
     {
-        if (fromVersion == 1)
+        const auto addColumn = [&query](const QString &table, const Column &column, const QString &definition)
         {
-            const auto testQuery = u"SELECT COUNT(%1) FROM %2;"_qs
-                    .arg(quoted(DB_COLUMN_DOWNLOAD_PATH.name), quoted(DB_TABLE_TORRENTS));
-            if (!query.exec(testQuery))
-            {
-                const auto alterTableTorrentsQuery = u"ALTER TABLE %1 ADD %2"_qs
-                        .arg(quoted(DB_TABLE_TORRENTS), makeColumnDefinition(DB_COLUMN_DOWNLOAD_PATH, "TEXT"));
-                if (!query.exec(alterTableTorrentsQuery))
-                    throw RuntimeError(query.lastError().text());
-            }
-        }
+            const auto testQuery = u"SELECT COUNT(%1) FROM %2;"_s.arg(quoted(column.name), quoted(table));
+            if (query.exec(testQuery))
+                return;
+
+            const auto alterTableQuery = u"ALTER TABLE %1 ADD %2"_s.arg(quoted(table), makeColumnDefinition(column, definition));
+            if (!query.exec(alterTableQuery))
+                throw RuntimeError(query.lastError().text());
+        };
+
+        if (fromVersion <= 1)
+            addColumn(DB_TABLE_TORRENTS, DB_COLUMN_DOWNLOAD_PATH, u"TEXT"_s);
 
         if (fromVersion <= 2)
-        {
-            const auto testQuery = u"SELECT COUNT(%1) FROM %2;"_qs
-                    .arg(quoted(DB_COLUMN_STOP_CONDITION.name), quoted(DB_TABLE_TORRENTS));
-            if (!query.exec(testQuery))
-            {
-                const auto alterTableTorrentsQuery = u"ALTER TABLE %1 ADD %2"_qs
-                        .arg(quoted(DB_TABLE_TORRENTS), makeColumnDefinition(DB_COLUMN_STOP_CONDITION, "TEXT NOT NULL DEFAULT `None`"));
-                if (!query.exec(alterTableTorrentsQuery))
-                    throw RuntimeError(query.lastError().text());
-            }
-        }
+            addColumn(DB_TABLE_TORRENTS, DB_COLUMN_STOP_CONDITION, u"TEXT NOT NULL DEFAULT `None`"_s);
 
         if (fromVersion <= 3)
         {
-            const QString torrentsQueuePositionIndexName = u"%1_%2_INDEX"_qs.arg(DB_TABLE_TORRENTS, DB_COLUMN_QUEUE_POSITION.name);
-            const QString createTorrentsQueuePositionIndexQuery = u"CREATE INDEX IF NOT EXISTS %1 ON %2 (%3)"_qs
+            const QString torrentsQueuePositionIndexName = u"%1_%2_INDEX"_s.arg(DB_TABLE_TORRENTS, DB_COLUMN_QUEUE_POSITION.name);
+            const QString createTorrentsQueuePositionIndexQuery = u"CREATE INDEX IF NOT EXISTS %1 ON %2 (%3)"_s
                     .arg(quoted(torrentsQueuePositionIndexName), quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_QUEUE_POSITION.name));
             if (!query.exec(createTorrentsQueuePositionIndexQuery))
+                throw RuntimeError(query.lastError().text());
+        }
+
+        if (fromVersion <= 4)
+            addColumn(DB_TABLE_TORRENTS, DB_COLUMN_INACTIVE_SEEDING_TIME_LIMIT, u"INTEGER NOT NULL DEFAULT -2"_s);
+
+        if (fromVersion <= 5)
+        {
+            addColumn(DB_TABLE_TORRENTS, DB_COLUMN_SSL_CERTIFICATE, u"TEXT"_s);
+            addColumn(DB_TABLE_TORRENTS, DB_COLUMN_SSL_PRIVATE_KEY, u"TEXT"_s);
+            addColumn(DB_TABLE_TORRENTS, DB_COLUMN_SSL_DH_PARAMS, u"TEXT"_s);
+        }
+
+        if (fromVersion <= 6)
+            addColumn(DB_TABLE_TORRENTS, DB_COLUMN_SHARE_LIMIT_ACTION, u"TEXT NOT NULL DEFAULT `Default`"_s);
+
+        if (fromVersion == 7)
+        {
+            const QString TEMP_COLUMN_NAME = DB_COLUMN_SHARE_LIMIT_ACTION.name + u"_temp";
+
+            auto queryStr = u"ALTER TABLE %1 ADD %2 %3"_s
+                    .arg(quoted(DB_TABLE_TORRENTS), TEMP_COLUMN_NAME, u"TEXT NOT NULL DEFAULT `Default`");
+            if (!query.exec(queryStr))
+                throw RuntimeError(query.lastError().text());
+
+            queryStr = u"UPDATE %1 SET %2 = %3"_s
+                    .arg(quoted(DB_TABLE_TORRENTS), quoted(TEMP_COLUMN_NAME), quoted(DB_COLUMN_SHARE_LIMIT_ACTION.name));
+            if (!query.exec(queryStr))
+                throw RuntimeError(query.lastError().text());
+
+            queryStr = u"ALTER TABLE %1 DROP %2"_s.arg(quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_SHARE_LIMIT_ACTION.name));
+            if (!query.exec(queryStr))
+                throw RuntimeError(query.lastError().text());
+
+            queryStr = u"ALTER TABLE %1 RENAME %2 TO %3"_s
+                    .arg(quoted(DB_TABLE_TORRENTS), quoted(TEMP_COLUMN_NAME), quoted(DB_COLUMN_SHARE_LIMIT_ACTION.name));
+            if (!query.exec(queryStr))
                 throw RuntimeError(query.lastError().text());
         }
 
@@ -626,19 +677,20 @@ void BitTorrent::DBResumeDataStorage::enableWALMode() const
     auto db = QSqlDatabase::database(DB_CONNECTION_NAME);
     QSqlQuery query {db};
 
-    if (!query.exec(u"PRAGMA journal_mode = WAL;"_qs))
+    if (!query.exec(u"PRAGMA journal_mode = WAL;"_s))
         throw RuntimeError(query.lastError().text());
 
     if (!query.next())
         throw RuntimeError(tr("Couldn't obtain query result."));
 
     const QString result = query.value(0).toString();
-    if (result.compare(u"WAL"_qs, Qt::CaseInsensitive) != 0)
+    if (result.compare(u"WAL"_s, Qt::CaseInsensitive) != 0)
         throw RuntimeError(tr("WAL mode is probably unsupported due to filesystem limitations."));
 }
 
-BitTorrent::DBResumeDataStorage::Worker::Worker(const Path &dbPath, QReadWriteLock &dbLock)
-    : m_path {dbPath}
+BitTorrent::DBResumeDataStorage::Worker::Worker(const Path &dbPath, QReadWriteLock &dbLock, QObject *parent)
+    : QThread(parent)
+    , m_path {dbPath}
     , m_dbLock {dbLock}
 {
 }
@@ -646,7 +698,7 @@ BitTorrent::DBResumeDataStorage::Worker::Worker(const Path &dbPath, QReadWriteLo
 void BitTorrent::DBResumeDataStorage::Worker::run()
 {
     {
-        auto db = QSqlDatabase::addDatabase(u"QSQLITE"_qs, m_connectionName);
+        auto db = QSqlDatabase::addDatabase(u"QSQLITE"_s, m_connectionName);
         db.setDatabaseName(m_path.data());
         if (!db.open())
             throw RuntimeError(db.lastError().text());
@@ -662,7 +714,7 @@ void BitTorrent::DBResumeDataStorage::Worker::run()
                     db.commit();
                     m_dbLock.unlock();
 
-                    qDebug() << "Resume data changes are commited. Transacted jobs:" << transactedJobsCount;
+                    qDebug() << "Resume data changes are committed. Transacted jobs:" << transactedJobsCount;
                     transactedJobsCount = 0;
                 }
 
@@ -703,8 +755,8 @@ void BitTorrent::DBResumeDataStorage::Worker::run()
 
 void DBResumeDataStorage::Worker::requestInterruption()
 {
-    m_waitCondition.wakeAll();
     QThread::requestInterruption();
+    m_waitCondition.wakeAll();
 }
 
 void BitTorrent::DBResumeDataStorage::Worker::store(const TorrentID &id, const LoadTorrentParams &resumeData)
@@ -717,7 +769,7 @@ void BitTorrent::DBResumeDataStorage::Worker::remove(const TorrentID &id)
     addJob(std::make_unique<RemoveJob>(id));
 }
 
-void BitTorrent::DBResumeDataStorage::Worker::storeQueue(const QVector<TorrentID> &queue)
+void BitTorrent::DBResumeDataStorage::Worker::storeQueue(const QList<TorrentID> &queue)
 {
     addJob(std::make_unique<StoreQueueJob>(queue));
 }
@@ -767,7 +819,7 @@ namespace
             }
         }
 
-        QVector<Column> columns {
+        QList<Column> columns {
             DB_COLUMN_TORRENT_ID,
             DB_COLUMN_NAME,
             DB_COLUMN_CATEGORY,
@@ -777,11 +829,16 @@ namespace
             DB_COLUMN_CONTENT_LAYOUT,
             DB_COLUMN_RATIO_LIMIT,
             DB_COLUMN_SEEDING_TIME_LIMIT,
+            DB_COLUMN_INACTIVE_SEEDING_TIME_LIMIT,
+            DB_COLUMN_SHARE_LIMIT_ACTION,
             DB_COLUMN_HAS_OUTER_PIECES_PRIORITY,
             DB_COLUMN_HAS_SEED_STATUS,
             DB_COLUMN_OPERATING_MODE,
             DB_COLUMN_STOPPED,
             DB_COLUMN_STOP_CONDITION,
+            DB_COLUMN_SSL_CERTIFICATE,
+            DB_COLUMN_SSL_PRIVATE_KEY,
+            DB_COLUMN_SSL_DH_PARAMS,
             DB_COLUMN_RESUMEDATA
         };
 
@@ -831,15 +888,20 @@ namespace
             query.bindValue(DB_COLUMN_NAME.placeholder, m_resumeData.name);
             query.bindValue(DB_COLUMN_CATEGORY.placeholder, m_resumeData.category);
             query.bindValue(DB_COLUMN_TAGS.placeholder, (m_resumeData.tags.isEmpty()
-                    ? QVariant(QVariant::String) : m_resumeData.tags.join(u","_qs)));
+                    ? QString() : Utils::String::joinIntoString(m_resumeData.tags, u","_s)));
             query.bindValue(DB_COLUMN_CONTENT_LAYOUT.placeholder, Utils::String::fromEnum(m_resumeData.contentLayout));
             query.bindValue(DB_COLUMN_RATIO_LIMIT.placeholder, static_cast<int>(m_resumeData.ratioLimit * 1000));
             query.bindValue(DB_COLUMN_SEEDING_TIME_LIMIT.placeholder, m_resumeData.seedingTimeLimit);
+            query.bindValue(DB_COLUMN_INACTIVE_SEEDING_TIME_LIMIT.placeholder, m_resumeData.inactiveSeedingTimeLimit);
+            query.bindValue(DB_COLUMN_SHARE_LIMIT_ACTION.placeholder, Utils::String::fromEnum(m_resumeData.shareLimitAction));
             query.bindValue(DB_COLUMN_HAS_OUTER_PIECES_PRIORITY.placeholder, m_resumeData.firstLastPiecePriority);
             query.bindValue(DB_COLUMN_HAS_SEED_STATUS.placeholder, m_resumeData.hasFinishedStatus);
             query.bindValue(DB_COLUMN_OPERATING_MODE.placeholder, Utils::String::fromEnum(m_resumeData.operatingMode));
             query.bindValue(DB_COLUMN_STOPPED.placeholder, m_resumeData.stopped);
             query.bindValue(DB_COLUMN_STOP_CONDITION.placeholder, Utils::String::fromEnum(m_resumeData.stopCondition));
+            query.bindValue(DB_COLUMN_SSL_CERTIFICATE.placeholder, QString::fromLatin1(m_resumeData.sslParameters.certificate.toPem()));
+            query.bindValue(DB_COLUMN_SSL_PRIVATE_KEY.placeholder, QString::fromLatin1(m_resumeData.sslParameters.privateKey.toPem()));
+            query.bindValue(DB_COLUMN_SSL_DH_PARAMS.placeholder, QString::fromLatin1(m_resumeData.sslParameters.dhParams));
 
             if (!m_resumeData.useAutoTMM)
             {
@@ -868,7 +930,7 @@ namespace
 
     void RemoveJob::perform(QSqlDatabase db)
     {
-        const auto deleteTorrentStatement = u"DELETE FROM %1 WHERE %2 = %3;"_qs
+        const auto deleteTorrentStatement = u"DELETE FROM %1 WHERE %2 = %3;"_s
                 .arg(quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_TORRENT_ID.name), DB_COLUMN_TORRENT_ID.placeholder);
 
         QSqlQuery query {db};
@@ -889,14 +951,14 @@ namespace
         }
     }
 
-    StoreQueueJob::StoreQueueJob(const QVector<TorrentID> &queue)
+    StoreQueueJob::StoreQueueJob(const QList<TorrentID> &queue)
         : m_queue {queue}
     {
     }
 
     void StoreQueueJob::perform(QSqlDatabase db)
     {
-        const auto updateQueuePosStatement = u"UPDATE %1 SET %2 = %3 WHERE %4 = %5;"_qs
+        const auto updateQueuePosStatement = u"UPDATE %1 SET %2 = %3 WHERE %4 = %5;"_s
                 .arg(quoted(DB_TABLE_TORRENTS), quoted(DB_COLUMN_QUEUE_POSITION.name), DB_COLUMN_QUEUE_POSITION.placeholder
                         , quoted(DB_COLUMN_TORRENT_ID.name), DB_COLUMN_TORRENT_ID.placeholder);
 

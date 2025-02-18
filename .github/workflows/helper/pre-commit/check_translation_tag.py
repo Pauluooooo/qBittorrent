@@ -26,9 +26,12 @@
 # but you are not obligated to do so. If you do not wish to do so, delete this
 # exception statement from your version.
 
-from typing import Optional, Sequence
+from collections.abc import Sequence
+from typing import Optional
 import argparse
 import re
+import sys
+
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser()
@@ -47,12 +50,12 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 for line in file:
                     if (match := regex.match(line)) is not None:
                         error_buffer += str(f"Defect file: \"{filename}\"\n"
-                              f"Line: {line_counter}\n"
-                              f"Column span: {match.span()}\n"
-                              f"Part: \"{match.group()}\"\n\n")
+                                            f"Line: {line_counter}\n"
+                                            f"Column span: {match.span()}\n"
+                                            f"Part: \"{match.group()}\"\n\n")
                     line_counter += 1
 
-            except UnicodeDecodeError as error:
+            except UnicodeDecodeError:
                 # not a text file, skip
                 continue
 
@@ -64,5 +67,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     return 0
 
+
 if __name__ == '__main__':
-    exit(main())
+    sys.exit(main())

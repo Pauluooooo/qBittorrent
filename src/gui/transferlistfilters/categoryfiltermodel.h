@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2016  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2016-2023  Vladimir Golovnev <glassez@yandex.ru>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -62,7 +62,7 @@ public:
 private slots:
     void categoryAdded(const QString &categoryName);
     void categoryRemoved(const QString &categoryName);
-    void torrentsLoaded(const QVector<BitTorrent::Torrent *> &torrents);
+    void torrentsLoaded(const QList<BitTorrent::Torrent *> &torrents);
     void torrentAboutToBeRemoved(BitTorrent::Torrent *torrent);
     void torrentCategoryChanged(BitTorrent::Torrent *torrent, const QString &oldCategory);
     void subcategoriesSupportChanged();
@@ -72,6 +72,6 @@ private:
     QModelIndex index(CategoryModelItem *item) const;
     CategoryModelItem *findItem(const QString &fullName) const;
 
-    bool m_isSubcategoriesEnabled;
+    bool m_isSubcategoriesEnabled = false;
     CategoryModelItem *m_rootItem = nullptr;
 };

@@ -29,13 +29,17 @@
 
 #include "trackersfilterwidget.h"
 
+#include <QCheckBox>
 #include <QIcon>
 #include <QListWidgetItem>
 #include <QMenu>
+#include <QMessageBox>
 #include <QUrl>
 
 #include "base/algorithm.h"
 #include "base/bittorrent/session.h"
+#include "base/bittorrent/trackerentry.h"
+#include "base/bittorrent/trackerentrystatus.h"
 #include "base/global.h"
 #include "base/net/downloadmanager.h"
 #include "base/preferences.h"
@@ -50,53 +54,94 @@ namespace
     {
         ALL_ROW,
         TRACKERLESS_ROW,
-        ERROR_ROW,
-        WARNING_ROW
+        TRACKERERROR_ROW,
+        OTHERERROR_ROW,
+        WARNING_ROW,
+
+        NUM_SPECIAL_ROWS
     };
+
+    const QString NULL_HOST = u""_s;
 
     QString getScheme(const QString &tracker)
     {
         const QString scheme = QUrl(tracker).scheme();
-        return !scheme.isEmpty() ? scheme : u"http"_qs;
+        return !scheme.isEmpty() ? scheme : u"http"_s;
     }
 
     QString getHost(const QString &url)
     {
-        // We want the domain + tld. Subdomains should be disregarded
-        // If failed to parse the domain or IP address, original input should be returned
+        // We want the hostname.
+        // If failed to parse the domain, original input should be returned
 
         const QString host = QUrl(url).host();
         if (host.isEmpty())
             return url;
 
-        // host is in IP format
-        if (!QHostAddress(host).isNull())
-            return host;
-
-        return host.section(u'.', -2, -1);
+        return host;
     }
 
-    const QString NULL_HOST = u""_qs;
+    QString getFaviconHost(const QString &trackerHost)
+    {
+        if (!QHostAddress(trackerHost).isNull())
+            return trackerHost;
+
+        return trackerHost.section(u'.', -2, -1);
+    }
+
+    QString getFormatStringForRow(const int row)
+    {
+        switch (row)
+        {
+        case ALL_ROW:
+            return TrackersFilterWidget::tr("All (%1)", "this is for the tracker filter");
+        case TRACKERLESS_ROW:
+            return TrackersFilterWidget::tr("Trackerless (%1)");
+        case TRACKERERROR_ROW:
+            return TrackersFilterWidget::tr("Tracker error (%1)");
+        case OTHERERROR_ROW:
+            return TrackersFilterWidget::tr("Other error (%1)");
+        case WARNING_ROW:
+            return TrackersFilterWidget::tr("Warning (%1)");
+        default:
+            return {};
+        }
+    }
+
+    QString formatItemText(const int row, const int torrentsCount)
+    {
+        return getFormatStringForRow(row).arg(torrentsCount);
+    }
+
+    QString formatItemText(const QString &host, const int torrentsCount)
+    {
+        return (host == NULL_HOST)
+            ? formatItemText(TRACKERLESS_ROW, torrentsCount)
+            : u"%1 (%2)"_s.arg(host, QString::number(torrentsCount));
+    }
 }
 
 TrackersFilterWidget::TrackersFilterWidget(QWidget *parent, TransferListWidget *transferList, const bool downloadFavicon)
     : BaseFilterWidget(parent, transferList)
     , m_downloadTrackerFavicon(downloadFavicon)
 {
-    auto *allTrackers = new QListWidgetItem(this);
-    allTrackers->setData(Qt::DisplayRole, tr("All (0)", "this is for the tracker filter"));
-    allTrackers->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"trackers"_qs, u"network-server"_qs));
-    auto *noTracker = new QListWidgetItem(this);
-    noTracker->setData(Qt::DisplayRole, tr("Trackerless (0)"));
-    noTracker->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"trackerless"_qs, u"network-server"_qs));
-    auto *errorTracker = new QListWidgetItem(this);
-    errorTracker->setData(Qt::DisplayRole, tr("Error (0)"));
-    errorTracker->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"tracker-error"_qs, u"dialog-error"_qs));
-    auto *warningTracker = new QListWidgetItem(this);
-    warningTracker->setData(Qt::DisplayRole, tr("Warning (0)"));
-    warningTracker->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"tracker-warning"_qs, u"dialog-warning"_qs));
+    auto *allTrackersItem = new QListWidgetItem(this);
+    allTrackersItem->setData(Qt::DisplayRole, formatItemText(ALL_ROW, 0));
+    allTrackersItem->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"trackers"_s, u"network-server"_s));
+    auto *trackerlessItem = new QListWidgetItem(this);
+    trackerlessItem->setData(Qt::DisplayRole, formatItemText(TRACKERLESS_ROW, 0));
+    trackerlessItem->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"trackerless"_s, u"network-server"_s));
+    auto *trackerErrorItem = new QListWidgetItem(this);
+    trackerErrorItem->setData(Qt::DisplayRole, formatItemText(TRACKERERROR_ROW, 0));
+    trackerErrorItem->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"tracker-error"_s, u"dialog-error"_s));
+    auto *otherErrorItem = new QListWidgetItem(this);
+    otherErrorItem->setData(Qt::DisplayRole, formatItemText(OTHERERROR_ROW, 0));
+    otherErrorItem->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"tracker-error"_s, u"dialog-error"_s));
+    auto *warningItem = new QListWidgetItem(this);
+    warningItem->setData(Qt::DisplayRole, formatItemText(WARNING_ROW, 0));
+    warningItem->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"tracker-warning"_s, u"dialog-warning"_s));
 
-    m_trackers[NULL_HOST] = {{}, noTracker};
+    m_trackers[NULL_HOST] = {{}, trackerlessItem};
 
     handleTorrentsLoaded(BitTorrent::Session::instance()->torrents());
 
@@ -110,18 +155,25 @@ TrackersFilterWidget::~TrackersFilterWidget()
         Utils::Fs::removeFile(iconPath);
 }
 
-void TrackersFilterWidget::addTrackers(const BitTorrent::Torrent *torrent, const QVector<BitTorrent::TrackerEntry> &trackers)
+void TrackersFilterWidget::addTrackers(const BitTorrent::Torrent *torrent, const QList<BitTorrent::TrackerEntry> &trackers)
 {
     const BitTorrent::TorrentID torrentID = torrent->id();
+
     for (const BitTorrent::TrackerEntry &tracker : trackers)
         addItems(tracker.url, {torrentID});
+
+    removeItem(NULL_HOST, torrentID);
 }
 
 void TrackersFilterWidget::removeTrackers(const BitTorrent::Torrent *torrent, const QStringList &trackers)
 {
     const BitTorrent::TorrentID torrentID = torrent->id();
+
     for (const QString &tracker : trackers)
         removeItem(tracker, torrentID);
+
+    if (torrent->trackers().isEmpty())
+        addItems(NULL_HOST, {torrentID});
 }
 
 void TrackersFilterWidget::refreshTrackers(const BitTorrent::Torrent *torrent)
@@ -129,6 +181,7 @@ void TrackersFilterWidget::refreshTrackers(const BitTorrent::Torrent *torrent)
     const BitTorrent::TorrentID torrentID = torrent->id();
 
     m_errors.remove(torrentID);
+    m_trackerErrors.remove(torrentID);
     m_warnings.remove(torrentID);
 
     Algorithm::removeIf(m_trackers, [this, &torrentID](const QString &host, TrackerData &trackerData)
@@ -147,34 +200,35 @@ void TrackersFilterWidget::refreshTrackers(const BitTorrent::Torrent *torrent)
             return true;
         }
 
-        trackerItem->setText(u"%1 (%2)"_qs.arg((host.isEmpty() ? tr("Trackerless") : host), QString::number(torrentIDs.size())));
+        trackerItem->setText(formatItemText(host, torrentIDs.size()));
         return false;
     });
 
-    const QVector<BitTorrent::TrackerEntry> trackerEntries = torrent->trackers();
-    const bool isTrackerless = trackerEntries.isEmpty();
-    if (isTrackerless)
+    const QList<BitTorrent::TrackerEntryStatus> trackers = torrent->trackers();
+    if (trackers.isEmpty())
     {
         addItems(NULL_HOST, {torrentID});
     }
     else
     {
-        for (const BitTorrent::TrackerEntry &trackerEntry : trackerEntries)
-            addItems(trackerEntry.url, {torrentID});
+        for (const BitTorrent::TrackerEntryStatus &status : trackers)
+            addItems(status.url, {torrentID});
+    }
+
+    item(OTHERERROR_ROW)->setText(formatItemText(OTHERERROR_ROW, m_errors.size()));
+    item(TRACKERERROR_ROW)->setText(formatItemText(TRACKERERROR_ROW, m_trackerErrors.size()));
+    item(WARNING_ROW)->setText(formatItemText(WARNING_ROW, m_warnings.size()));
+
+    if (const int row = currentRow(); (row == OTHERERROR_ROW)
+        || (row == TRACKERERROR_ROW) || (row == WARNING_ROW))
+    {
+        applyFilter(row);
     }
 
     updateGeometry();
 }
 
-void TrackersFilterWidget::changeTrackerless(const BitTorrent::Torrent *torrent, const bool trackerless)
-{
-    if (trackerless)
-        addItems(NULL_HOST, {torrent->id()});
-    else
-        removeItem(NULL_HOST, torrent->id());
-}
-
-void TrackersFilterWidget::addItems(const QString &trackerURL, const QVector<BitTorrent::TorrentID> &torrents)
+void TrackersFilterWidget::addItems(const QString &trackerURL, const QList<BitTorrent::TorrentID> &torrents)
 {
     const QString host = getHost(trackerURL);
     auto trackersIt = m_trackers.find(host);
@@ -188,13 +242,13 @@ void TrackersFilterWidget::addItems(const QString &trackerURL, const QVector<Bit
     else
     {
         trackerItem = new QListWidgetItem();
-        trackerItem->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"trackers"_qs, u"network-server"_qs));
+        trackerItem->setData(Qt::DecorationRole, UIThemeManager::instance()->getIcon(u"trackers"_s, u"network-server"_s));
 
         const TrackerData trackerData {{}, trackerItem};
         trackersIt = m_trackers.insert(host, trackerData);
 
         const QString scheme = getScheme(trackerURL);
-        downloadFavicon(u"%1://%2/favicon.ico"_qs.arg((scheme.startsWith(u"http") ? scheme : u"http"_qs), host));
+        downloadFavicon(host, u"%1://%2/favicon.ico"_s.arg((scheme.startsWith(u"http") ? scheme : u"http"_s), getFaviconHost(host)));
     }
 
     Q_ASSERT(trackerItem);
@@ -203,7 +257,7 @@ void TrackersFilterWidget::addItems(const QString &trackerURL, const QVector<Bit
     for (const BitTorrent::TorrentID &torrentID : torrents)
         torrentIDs.insert(torrentID);
 
-    trackerItem->setText(u"%1 (%2)"_qs.arg(((host == NULL_HOST) ? tr("Trackerless") : host), QString::number(torrentIDs.size())));
+    trackerItem->setText(formatItemText(host, torrentIDs.size()));
     if (exists)
     {
         if (item(currentRow()) == trackerItem)
@@ -211,10 +265,10 @@ void TrackersFilterWidget::addItems(const QString &trackerURL, const QVector<Bit
         return;
     }
 
-    Q_ASSERT(count() >= 4);
+    Q_ASSERT(count() >= NUM_SPECIAL_ROWS);
     const Utils::Compare::NaturalLessThan<Qt::CaseSensitive> naturalLessThan {};
     int insPos = count();
-    for (int i = 4; i < count(); ++i)
+    for (int i = NUM_SPECIAL_ROWS; i < count(); ++i)
     {
         if (naturalLessThan(host, item(i)->text()))
         {
@@ -237,30 +291,44 @@ void TrackersFilterWidget::removeItem(const QString &trackerURL, const BitTorren
 
     if (!host.isEmpty())
     {
-        // Remove from 'Error' and 'Warning' view
-        const auto errorHashesIt = m_errors.find(id);
-        if (errorHashesIt != m_errors.end())
+        // Remove from 'Error', 'Tracker error' and 'Warning' view
+        if (const auto errorHashesIt = m_errors.find(id)
+                ; errorHashesIt != m_errors.end())
         {
-            QSet<QString> &errored = errorHashesIt.value();
+            QSet<QString> &errored = *errorHashesIt;
             errored.remove(trackerURL);
             if (errored.isEmpty())
             {
                 m_errors.erase(errorHashesIt);
-                item(ERROR_ROW)->setText(tr("Error (%1)").arg(m_errors.size()));
-                if (currentRow() == ERROR_ROW)
-                    applyFilter(ERROR_ROW);
+                item(OTHERERROR_ROW)->setText(formatItemText(OTHERERROR_ROW, m_errors.size()));
+                if (currentRow() == OTHERERROR_ROW)
+                    applyFilter(OTHERERROR_ROW);
             }
         }
 
-        const auto warningHashesIt = m_warnings.find(id);
-        if (warningHashesIt != m_warnings.end())
+        if (const auto trackerErrorHashesIt = m_trackerErrors.find(id)
+                ; trackerErrorHashesIt != m_trackerErrors.end())
+        {
+            QSet<QString> &errored = *trackerErrorHashesIt;
+            errored.remove(trackerURL);
+            if (errored.isEmpty())
+            {
+                m_trackerErrors.erase(trackerErrorHashesIt);
+                item(TRACKERERROR_ROW)->setText(formatItemText(TRACKERERROR_ROW, m_trackerErrors.size()));
+                if (currentRow() == TRACKERERROR_ROW)
+                    applyFilter(TRACKERERROR_ROW);
+            }
+        }
+
+        if (const auto warningHashesIt = m_warnings.find(id)
+                ; warningHashesIt != m_warnings.end())
         {
             QSet<QString> &warned = *warningHashesIt;
             warned.remove(trackerURL);
             if (warned.isEmpty())
             {
                 m_warnings.erase(warningHashesIt);
-                item(WARNING_ROW)->setText(tr("Warning (%1)").arg(m_warnings.size()));
+                item(WARNING_ROW)->setText(formatItemText(WARNING_ROW, m_warnings.size()));
                 if (currentRow() == WARNING_ROW)
                     applyFilter(WARNING_ROW);
             }
@@ -279,12 +347,12 @@ void TrackersFilterWidget::removeItem(const QString &trackerURL, const BitTorren
         }
 
         if (trackerItem)
-            trackerItem->setText(u"%1 (%2)"_qs.arg(host, QString::number(torrentIDs.size())));
+            trackerItem->setText(u"%1 (%2)"_s.arg(host, QString::number(torrentIDs.size())));
     }
     else
     {
         trackerItem = item(TRACKERLESS_ROW);
-        trackerItem->setText(tr("Trackerless (%1)").arg(torrentIDs.size()));
+        trackerItem->setText(formatItemText(TRACKERLESS_ROW, torrentIDs.size()));
     }
 
     m_trackers.insert(host, {torrentIDs, trackerItem});
@@ -306,111 +374,218 @@ void TrackersFilterWidget::setDownloadTrackerFavicon(bool value)
             if (!tracker.isEmpty())
             {
                 const QString scheme = getScheme(tracker);
-                downloadFavicon(u"%1://%2/favicon.ico"_qs
-                                .arg((scheme.startsWith(u"http") ? scheme : u"http"_qs), getHost(tracker)));
+                downloadFavicon(tracker, u"%1://%2/favicon.ico"_s
+                        .arg((scheme.startsWith(u"http") ? scheme : u"http"_s), getFaviconHost(tracker)));
              }
         }
     }
 }
 
-void TrackersFilterWidget::handleTrackerEntriesUpdated(const BitTorrent::Torrent *torrent
-        , const QHash<QString, BitTorrent::TrackerEntry> &updatedTrackerEntries)
+void TrackersFilterWidget::handleTrackerStatusesUpdated(const BitTorrent::Torrent *torrent
+        , const QHash<QString, BitTorrent::TrackerEntryStatus> &updatedTrackers)
 {
     const BitTorrent::TorrentID id = torrent->id();
 
     auto errorHashesIt = m_errors.find(id);
+    auto trackerErrorHashesIt = m_trackerErrors.find(id);
     auto warningHashesIt = m_warnings.find(id);
 
-    for (const BitTorrent::TrackerEntry &trackerEntry : updatedTrackerEntries)
+    for (const BitTorrent::TrackerEntryStatus &trackerEntryStatus : updatedTrackers)
     {
-        if (trackerEntry.status == BitTorrent::TrackerEntry::Working)
+        switch (trackerEntryStatus.state)
         {
-            if (errorHashesIt != m_errors.end())
+        case BitTorrent::TrackerEndpointState::Working:
             {
-                QSet<QString> &errored = errorHashesIt.value();
-                errored.remove(trackerEntry.url);
-            }
+                // remove tracker from "error" and "tracker error" categories
+                if (errorHashesIt != m_errors.end())
+                    errorHashesIt->remove(trackerEntryStatus.url);
+                if (trackerErrorHashesIt != m_trackerErrors.end())
+                    trackerErrorHashesIt->remove(trackerEntryStatus.url);
 
-            if (trackerEntry.message.isEmpty())
-            {
-                if (warningHashesIt != m_warnings.end())
+                const bool hasNoWarningMessages = std::all_of(trackerEntryStatus.endpoints.cbegin(), trackerEntryStatus.endpoints.cend()
+                    , [](const BitTorrent::TrackerEndpointStatus &endpointEntry)
                 {
-                    QSet<QString> &warned = *warningHashesIt;
-                    warned.remove(trackerEntry.url);
+                    return endpointEntry.message.isEmpty() || (endpointEntry.state != BitTorrent::TrackerEndpointState::Working);
+                });
+                if (hasNoWarningMessages)
+                {
+                    if (warningHashesIt != m_warnings.end())
+                    {
+                        warningHashesIt->remove(trackerEntryStatus.url);
+                    }
+                }
+                else
+                {
+                    if (warningHashesIt == m_warnings.end())
+                        warningHashesIt = m_warnings.insert(id, {});
+                    warningHashesIt->insert(trackerEntryStatus.url);
                 }
             }
-            else
+            break;
+
+        case BitTorrent::TrackerEndpointState::NotWorking:
+        case BitTorrent::TrackerEndpointState::Unreachable:
             {
-                if (warningHashesIt == m_warnings.end())
-                    warningHashesIt = m_warnings.insert(id, {});
-                warningHashesIt.value().insert(trackerEntry.url);
+                // remove tracker from "tracker error" and  "warning" categories
+                if (warningHashesIt != m_warnings.end())
+                    warningHashesIt->remove(trackerEntryStatus.url);
+                if (trackerErrorHashesIt != m_trackerErrors.end())
+                    trackerErrorHashesIt->remove(trackerEntryStatus.url);
+
+                if (errorHashesIt == m_errors.end())
+                    errorHashesIt = m_errors.insert(id, {});
+                errorHashesIt->insert(trackerEntryStatus.url);
             }
-        }
-        else if (trackerEntry.status == BitTorrent::TrackerEntry::NotWorking)
-        {
-            if (errorHashesIt == m_errors.end())
-                errorHashesIt = m_errors.insert(id, {});
-            errorHashesIt.value().insert(trackerEntry.url);
-        }
+            break;
+
+        case BitTorrent::TrackerEndpointState::TrackerError:
+            {
+                // remove tracker from "error" and  "warning" categories
+                if (warningHashesIt != m_warnings.end())
+                    warningHashesIt->remove(trackerEntryStatus.url);
+                if (errorHashesIt != m_errors.end())
+                    errorHashesIt->remove(trackerEntryStatus.url);
+
+                if (trackerErrorHashesIt == m_trackerErrors.end())
+                    trackerErrorHashesIt = m_trackerErrors.insert(id, {});
+                trackerErrorHashesIt->insert(trackerEntryStatus.url);
+            }
+            break;
+
+        case BitTorrent::TrackerEndpointState::NotContacted:
+            {
+                // remove tracker from "error", "tracker error" and  "warning" categories
+                if (warningHashesIt != m_warnings.end())
+                    warningHashesIt->remove(trackerEntryStatus.url);
+                if (errorHashesIt != m_errors.end())
+                    errorHashesIt->remove(trackerEntryStatus.url);
+                if (trackerErrorHashesIt != m_trackerErrors.end())
+                    trackerErrorHashesIt->remove(trackerEntryStatus.url);
+            }
+            break;
+
+        case BitTorrent::TrackerEndpointState::Updating:
+            break;
+        };
     }
 
-    if ((errorHashesIt != m_errors.end()) && errorHashesIt.value().isEmpty())
+    if ((errorHashesIt != m_errors.end()) && errorHashesIt->isEmpty())
         m_errors.erase(errorHashesIt);
-    if ((warningHashesIt != m_warnings.end()) && warningHashesIt.value().isEmpty())
+    if ((trackerErrorHashesIt != m_trackerErrors.end()) && trackerErrorHashesIt->isEmpty())
+        m_trackerErrors.erase(trackerErrorHashesIt);
+    if ((warningHashesIt != m_warnings.end()) && warningHashesIt->isEmpty())
         m_warnings.erase(warningHashesIt);
 
-    item(ERROR_ROW)->setText(tr("Error (%1)").arg(m_errors.size()));
-    item(WARNING_ROW)->setText(tr("Warning (%1)").arg(m_warnings.size()));
+    item(OTHERERROR_ROW)->setText(formatItemText(OTHERERROR_ROW, m_errors.size()));
+    item(TRACKERERROR_ROW)->setText(formatItemText(TRACKERERROR_ROW, m_trackerErrors.size()));
+    item(WARNING_ROW)->setText(formatItemText(WARNING_ROW, m_warnings.size()));
 
-    if (currentRow() == ERROR_ROW)
-        applyFilter(ERROR_ROW);
-    else if (currentRow() == WARNING_ROW)
-        applyFilter(WARNING_ROW);
+    if (const int row = currentRow(); (row == OTHERERROR_ROW)
+        || (row == TRACKERERROR_ROW) || (row == WARNING_ROW))
+    {
+        applyFilter(row);
+    }
 }
 
-void TrackersFilterWidget::downloadFavicon(const QString &url)
+void TrackersFilterWidget::downloadFavicon(const QString &trackerHost, const QString &faviconURL)
 {
-    if (!m_downloadTrackerFavicon) return;
-    Net::DownloadManager::instance()->download(
-            Net::DownloadRequest(url).saveToFile(true), Preferences::instance()->useProxyForGeneralPurposes()
-            , this, &TrackersFilterWidget::handleFavicoDownloadFinished);
+    if (!m_downloadTrackerFavicon)
+        return;
+
+    QSet<QString> &downloadingFaviconNode = m_downloadingFavicons[faviconURL];
+    if (downloadingFaviconNode.isEmpty())
+    {
+        Net::DownloadManager::instance()->download(
+                Net::DownloadRequest(faviconURL).saveToFile(true), Preferences::instance()->useProxyForGeneralPurposes()
+                , this, &TrackersFilterWidget::handleFavicoDownloadFinished);
+    }
+
+    downloadingFaviconNode.insert(trackerHost);
+}
+
+void TrackersFilterWidget::removeTracker(const QString &tracker)
+{
+    for (const BitTorrent::TorrentID &torrentID : asConst(m_trackers.value(tracker).torrents))
+    {
+        auto *torrent = BitTorrent::Session::instance()->getTorrent(torrentID);
+        Q_ASSERT(torrent);
+        if (!torrent) [[unlikely]]
+            continue;
+
+        QStringList trackersToRemove;
+        for (const BitTorrent::TrackerEntryStatus &trackerEntryStatus : asConst(torrent->trackers()))
+        {
+            if ((trackerEntryStatus.url == tracker) || (QUrl(trackerEntryStatus.url).host() == tracker))
+                trackersToRemove.append(trackerEntryStatus.url);
+        }
+
+        torrent->removeTrackers({trackersToRemove});
+    }
+
+    updateGeometry();
 }
 
 void TrackersFilterWidget::handleFavicoDownloadFinished(const Net::DownloadResult &result)
 {
+    const QSet<QString> trackerHosts = m_downloadingFavicons.take(result.url);
+    Q_ASSERT(!trackerHosts.isEmpty());
+    if (trackerHosts.isEmpty()) [[unlikely]]
+        return;
+
+    QIcon icon;
+    bool failed = false;
     if (result.status != Net::DownloadStatus::Success)
     {
-        if (result.url.endsWith(u".ico", Qt::CaseInsensitive))
-            downloadFavicon(result.url.left(result.url.size() - 4) + u".png");
-        return;
-    }
-
-    const QString host = getHost(result.url);
-
-    if (!m_trackers.contains(host))
-    {
-        Utils::Fs::removeFile(result.filePath);
-        return;
-    }
-
-    QListWidgetItem *trackerItem = item(rowFromTracker(host));
-    if (!trackerItem) return;
-
-    const QIcon icon {result.filePath.data()};
-    //Detect a non-decodable icon
-    QList<QSize> sizes = icon.availableSizes();
-    bool invalid = (sizes.isEmpty() || icon.pixmap(sizes.first()).isNull());
-    if (invalid)
-    {
-        if (result.url.endsWith(u".ico", Qt::CaseInsensitive))
-            downloadFavicon(result.url.left(result.url.size() - 4) + u".png");
-        Utils::Fs::removeFile(result.filePath);
+        failed = true;
     }
     else
     {
-        trackerItem->setData(Qt::DecorationRole, QIcon(result.filePath.data()));
-        m_iconPaths.append(result.filePath);
+        icon = QIcon(result.filePath.data());
+        //Detect a non-decodable icon
+        QList<QSize> sizes = icon.availableSizes();
+        const bool invalid = (sizes.isEmpty() || icon.pixmap(sizes.first()).isNull());
+        if (invalid)
+        {
+            Utils::Fs::removeFile(result.filePath);
+            failed = true;
+        }
     }
+
+    if (failed)
+    {
+        if (result.url.endsWith(u".ico", Qt::CaseInsensitive))
+        {
+            const QString faviconURL = result.url.left(result.url.size() - 4) + u".png";
+            for (const auto &trackerHost : trackerHosts)
+            {
+                if (m_trackers.contains(trackerHost))
+                    downloadFavicon(trackerHost, faviconURL);
+            }
+        }
+
+        return;
+    }
+
+    bool matchedTrackerFound = false;
+    for (const auto &trackerHost : trackerHosts)
+    {
+        if (!m_trackers.contains(trackerHost))
+            continue;
+
+        matchedTrackerFound = true;
+
+        QListWidgetItem *trackerItem = item(rowFromTracker(trackerHost));
+        Q_ASSERT(trackerItem);
+        if (!trackerItem) [[unlikely]]
+            continue;
+
+        trackerItem->setData(Qt::DecorationRole, icon);
+    }
+
+    if (matchedTrackerFound)
+        m_iconPaths.append(result.filePath);
+    else
+        Utils::Fs::removeFile(result.filePath);
 }
 
 void TrackersFilterWidget::showMenu()
@@ -418,11 +593,18 @@ void TrackersFilterWidget::showMenu()
     QMenu *menu = new QMenu(this);
     menu->setAttribute(Qt::WA_DeleteOnClose);
 
-    menu->addAction(UIThemeManager::instance()->getIcon(u"torrent-start"_qs, u"media-playback-start"_qs), tr("Resume torrents")
+    if (currentRow() >= NUM_SPECIAL_ROWS)
+    {
+        menu->addAction(UIThemeManager::instance()->getIcon(u"edit-clear"_s, u"list-remove"_s), tr("Remove tracker")
+            , this, &TrackersFilterWidget::onRemoveTrackerTriggered);
+        menu->addSeparator();
+    }
+
+    menu->addAction(UIThemeManager::instance()->getIcon(u"torrent-start"_s, u"media-playback-start"_s), tr("Start torrents")
         , transferList(), &TransferListWidget::startVisibleTorrents);
-    menu->addAction(UIThemeManager::instance()->getIcon(u"torrent-stop"_qs, u"media-playback-pause"_qs), tr("Pause torrents")
-        , transferList(), &TransferListWidget::pauseVisibleTorrents);
-    menu->addAction(UIThemeManager::instance()->getIcon(u"list-remove"_qs), tr("Remove torrents")
+    menu->addAction(UIThemeManager::instance()->getIcon(u"torrent-stop"_s, u"media-playback-pause"_s), tr("Stop torrents")
+        , transferList(), &TransferListWidget::stopVisibleTorrents);
+    menu->addAction(UIThemeManager::instance()->getIcon(u"list-remove"_s), tr("Remove torrents")
         , transferList(), &TransferListWidget::deleteVisibleTorrents);
 
     menu->popup(QCursor::pos());
@@ -436,14 +618,14 @@ void TrackersFilterWidget::applyFilter(const int row)
         transferList()->applyTrackerFilter(getTorrentIDs(row));
 }
 
-void TrackersFilterWidget::handleTorrentsLoaded(const QVector<BitTorrent::Torrent *> &torrents)
+void TrackersFilterWidget::handleTorrentsLoaded(const QList<BitTorrent::Torrent *> &torrents)
 {
-    QHash<QString, QVector<BitTorrent::TorrentID>> torrentsPerTracker;
+    QHash<QString, QList<BitTorrent::TorrentID>> torrentsPerTracker;
     for (const BitTorrent::Torrent *torrent : torrents)
     {
         const BitTorrent::TorrentID torrentID = torrent->id();
-        const QVector<BitTorrent::TrackerEntry> trackers = torrent->trackers();
-        for (const BitTorrent::TrackerEntry &tracker : trackers)
+        const QList<BitTorrent::TrackerEntryStatus> trackers = torrent->trackers();
+        for (const BitTorrent::TrackerEntryStatus &tracker : trackers)
             torrentsPerTracker[tracker.url].append(torrentID);
 
         // Check for trackerless torrent
@@ -451,29 +633,55 @@ void TrackersFilterWidget::handleTorrentsLoaded(const QVector<BitTorrent::Torren
             torrentsPerTracker[NULL_HOST].append(torrentID);
     }
 
-    for (auto it = torrentsPerTracker.cbegin(); it != torrentsPerTracker.cend(); ++it)
+    for (const auto &[trackerURL, torrents] : torrentsPerTracker.asKeyValueRange())
     {
-        const QString &trackerURL = it.key();
-        const QVector<BitTorrent::TorrentID> &torrents = it.value();
         addItems(trackerURL, torrents);
     }
 
     m_totalTorrents += torrents.count();
-    item(ALL_ROW)->setText(tr("All (%1)", "this is for the tracker filter").arg(m_totalTorrents));
+    item(ALL_ROW)->setText(formatItemText(ALL_ROW, m_totalTorrents));
 }
 
 void TrackersFilterWidget::torrentAboutToBeDeleted(BitTorrent::Torrent *const torrent)
 {
     const BitTorrent::TorrentID torrentID = torrent->id();
-    const QVector<BitTorrent::TrackerEntry> trackers = torrent->trackers();
-    for (const BitTorrent::TrackerEntry &tracker : trackers)
+    const QList<BitTorrent::TrackerEntryStatus> trackers = torrent->trackers();
+    for (const BitTorrent::TrackerEntryStatus &tracker : trackers)
         removeItem(tracker.url, torrentID);
 
     // Check for trackerless torrent
     if (trackers.isEmpty())
         removeItem(NULL_HOST, torrentID);
 
-    item(ALL_ROW)->setText(tr("All (%1)", "this is for the tracker filter").arg(--m_totalTorrents));
+    item(ALL_ROW)->setText(formatItemText(ALL_ROW, --m_totalTorrents));
+}
+
+void TrackersFilterWidget::onRemoveTrackerTriggered()
+{
+    const int row = currentRow();
+    if (row < NUM_SPECIAL_ROWS)
+        return;
+
+    const QString &tracker = trackerFromRow(row);
+    if (!Preferences::instance()->confirmRemoveTrackerFromAllTorrents())
+    {
+        removeTracker(tracker);
+        return;
+    }
+
+    auto *confirmBox = new QMessageBox(QMessageBox::Question, tr("Removal confirmation")
+        , tr("Are you sure you want to remove tracker \"%1\" from all torrents?").arg(tracker)
+        , (QMessageBox::Yes | QMessageBox::No), this);
+    confirmBox->setCheckBox(new QCheckBox(tr("Don't ask me again.")));
+    confirmBox->setAttribute(Qt::WA_DeleteOnClose);
+    connect(confirmBox, &QDialog::accepted, this, [this, confirmBox, tracker]
+    {
+        removeTracker(tracker);
+
+        if (confirmBox->checkBox()->isChecked())
+            Preferences::instance()->setConfirmRemoveTrackerFromAllTorrents(false);
+    });
+    confirmBox->open();
 }
 
 QString TrackersFilterWidget::trackerFromRow(int row) const
@@ -489,7 +697,7 @@ QString TrackersFilterWidget::trackerFromRow(int row) const
 int TrackersFilterWidget::rowFromTracker(const QString &tracker) const
 {
     Q_ASSERT(!tracker.isEmpty());
-    for (int i = 4; i < count(); ++i)
+    for (int i = NUM_SPECIAL_ROWS; i < count(); ++i)
     {
         if (tracker == trackerFromRow(i))
             return i;
@@ -503,8 +711,10 @@ QSet<BitTorrent::TorrentID> TrackersFilterWidget::getTorrentIDs(const int row) c
     {
     case TRACKERLESS_ROW:
         return m_trackers.value(NULL_HOST).torrents;
-    case ERROR_ROW:
+    case OTHERERROR_ROW:
         return {m_errors.keyBegin(), m_errors.keyEnd()};
+    case TRACKERERROR_ROW:
+        return {m_trackerErrors.keyBegin(), m_trackerErrors.keyEnd()};
     case WARNING_ROW:
         return {m_warnings.keyBegin(), m_warnings.keyEnd()};
     default:

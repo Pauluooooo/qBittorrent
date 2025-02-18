@@ -34,8 +34,6 @@
 #include "base/utils/thread.h"
 #include "resumedatastorage.h"
 
-class QThread;
-
 namespace BitTorrent
 {
     class DBResumeDataStorage final : public ResumeDataStorage
@@ -47,12 +45,12 @@ namespace BitTorrent
         explicit DBResumeDataStorage(const Path &dbPath, QObject *parent = nullptr);
         ~DBResumeDataStorage() override;
 
-        QVector<TorrentID> registeredTorrents() const override;
+        QList<TorrentID> registeredTorrents() const override;
         LoadResumeDataResult load(const TorrentID &id) const override;
 
         void store(const TorrentID &id, const LoadTorrentParams &resumeData) const override;
         void remove(const TorrentID &id) const override;
-        void storeQueue(const QVector<TorrentID> &queue) const override;
+        void storeQueue(const QList<TorrentID> &queue) const override;
 
     private:
         void doLoadAll() const override;
@@ -60,8 +58,6 @@ namespace BitTorrent
         void createDB() const;
         void updateDB(int fromVersion) const;
         void enableWALMode() const;
-
-        Utils::Thread::UniquePtr m_ioThread;
 
         class Worker;
         Worker *m_asyncWorker = nullptr;

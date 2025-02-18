@@ -29,7 +29,7 @@
 
 #include "loglistview.h"
 
-#include <QtGlobal>
+#include <QtSystemDetection>
 #include <QApplication>
 #include <QClipboard>
 #include <QFontMetrics>
@@ -47,7 +47,7 @@
 
 namespace
 {
-    const QString SEPARATOR = u" - "_qs;
+    const QString SEPARATOR = u" - "_s;
 
     int horizontalAdvance(const QFontMetrics &fontMetrics, const QString &text)
     {

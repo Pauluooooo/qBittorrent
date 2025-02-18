@@ -32,8 +32,8 @@
 
 #include <memory>
 
-#include <QtGlobal>
 #include <QColor>
+#include <QCoreApplication>
 #include <QHash>
 #include <QIcon>
 #include <QString>
@@ -61,6 +61,8 @@ public:
 
 class DefaultThemeSource final : public UIThemeSource
 {
+    Q_DECLARE_TR_FUNCTIONS(DefaultThemeSource)
+
 public:
     DefaultThemeSource();
 
@@ -78,27 +80,32 @@ private:
 
 class CustomThemeSource : public UIThemeSource
 {
+    Q_DECLARE_TR_FUNCTIONS(CustomThemeSource)
+
 public:
     QColor getColor(const QString &colorId, ColorMode colorMode) const override;
     Path getIconPath(const QString &iconId, ColorMode colorMode) const override;
     QByteArray readStyleSheet() override;
 
 protected:
-    virtual Path themeRootPath() const = 0;
+    explicit CustomThemeSource(const Path &themeRootPath);
+
     DefaultThemeSource *defaultThemeSource() const;
 
 private:
+    Path themeRootPath() const;
     void loadColors();
 
     const std::unique_ptr<DefaultThemeSource> m_defaultThemeSource = std::make_unique<DefaultThemeSource>();
+    Path m_themeRootPath;
     QHash<QString, QColor> m_colors;
     QHash<QString, QColor> m_darkModeColors;
 };
 
 class QRCThemeSource final : public CustomThemeSource
 {
-private:
-    Path themeRootPath() const override;
+public:
+    QRCThemeSource();
 };
 
 class FolderThemeSource : public CustomThemeSource
@@ -109,7 +116,5 @@ public:
     QByteArray readStyleSheet() override;
 
 private:
-    Path themeRootPath() const override;
-
     const Path m_folder;
 };
